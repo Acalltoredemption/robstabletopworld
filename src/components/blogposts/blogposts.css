@@ -1,0 +1,22 @@
+.blogpost {
+    width: 100%;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: 1px solid black;
+}
+.blogimg {
+    display: block;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.blogpost-linkbutton {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.blogpost-author {
+    padding: 10px;
+}

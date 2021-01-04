@@ -1,0 +1,9 @@
+.navbar {
+    width: 100%;
+    height: 50px;
+    border: 1px solid black;
+}
+.navlinks {
+    width: 100%;
+    margin: auto;
+}
