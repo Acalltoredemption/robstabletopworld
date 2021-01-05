@@ -8,9 +8,12 @@ import {Button} from 'react-bootstrap';
 const BlogPosts = () => {
     return (
         <div className="blogpost">
+
         <div className="blogpost-image">
             <img className="blogimg" src={TankPlaceholder} alt="a blogpost image" />
         </div>
+
+
         <div className="blogpost-author">Rob Oren</div>
         <div className="blogpost-summary">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In suscipit libero sed lacus congue, eu sodales nisl vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla neque interdum metus ultrices, sed mattis nibh vulputate. Donec lacinia, turpis vel mattis pharetra, augue elit posuere massa, eu ultrices ex mi eget ipsum. In viverra tincidunt augue, ut auctor leo venenatis a. Vestibulum nec arcu leo. Nulla porttitor nec massa viverra euismod. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas vitae sollicitudin purus. Sed vehicula lorem eu ultricies pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit.

@@ -5,7 +5,7 @@ import './upcoming.css';
 const Upcoming = () => {
     return (
         <div className="upcoming">
-            <p className="upcoming-title">Upcoming Event!</p>
+            <p className="upcoming-title">Upcoming Event</p>
         <div className="image-border">
         <img className="upcomingimg" src={UpcomingImage} alt="image of an upcoming event" />
         </div>

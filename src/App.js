@@ -1,13 +1,17 @@
 import React from 'react';
-import BlogPosts from './components/blogposts/blogposts';
 import Header from './components/header/header';
 import NavBar from './components/navbar/navbar';
-import SideBar from './components/sidebar/sidebar';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import HomePage from './components/homepage/homepage';
+import AboutPage from './components/about/about';
+import ContactPage from './components/contact/contact';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
+import {
+    Switch,
+    Route,
+  } from "react-router-dom";
+
 
 
 const App = () => {
@@ -16,21 +20,11 @@ return (
         
         <Header />
         <NavBar />
-       
-        <Container>
-            <Row>
-                <Col sm={8}>
-       
-         <BlogPosts />
         
-                </Col>
-                <Col>
-        
-         <SideBar />
+        <Route exact path='/' component={HomePage} />
+        <Route path='/about' component={AboutPage} />
+        <Route path='/contact' component={ContactPage} />
        
-                </Col>
-         </Row>
-         </Container>
         
     
     </div>

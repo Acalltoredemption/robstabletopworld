@@ -12,18 +12,21 @@ const Merch = () => {
 
             <div className="merch-item">
                 <img className="merch-image" src={merch1} />
+                </div>
                 <p className="merch-desc">Description of item</p>
-            </div>
+            
 
             <div className="merch-item">
                 <img className="merch-image" src={merch2} />
+                </div>
                 <p className="merch-desc">Description of item</p>
-            </div>
+            
 
             <div className="merch-item">
                 <img className="merch-image" src={merch3} />
+                </div>
                 <p className="merch-desc">Description of item</p>
-            </div>
+            
             
 
         </div>

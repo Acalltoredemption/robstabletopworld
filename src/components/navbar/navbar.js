@@ -2,8 +2,6 @@ import React from 'react';
 import './navbar.css';
 import {
     BrowserRouter as Router,
-    Switch,
-    Route,
     Link
   } from "react-router-dom";
   import Container from 'react-bootstrap/Container';
@@ -14,7 +12,7 @@ import {
 const Navbar = () => {
 
     return (
-        <Router>
+        
           <div className="navlinks">
             <nav>
                 <Container>
@@ -26,19 +24,19 @@ const Navbar = () => {
                   <Link to="/about"><div className="navlink">About Me</div></Link>
                   </Col>
                   <Col sm>
-                  <Link to="/users"><div className="navlink">Contact Me</div></Link>
+                  <Link to="/contact"><div className="navlink">Contact Me</div></Link>
                   </Col>
                   <Col sm>
-                  <Link to="/youtube"><div className="navlink">Youtube</div></Link>
+                  <a href="https://www.youtube.com/user/seahawk8601"><div className="navlink">Youtube</div></a>
                   </Col>
                   <Col sm>
-                  <Link to="/twitter"><div className="navlink">Twitter</div></Link>
+                  <a href="https://twitter.com/seahawk860"><div className="navlink">Twitter</div></a>
                   </Col>
                   </Row>
                 </Container>
             </nav>
           </div>
-        </Router>
+        
       );
     }
     
