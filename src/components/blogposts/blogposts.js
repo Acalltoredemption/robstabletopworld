@@ -17,8 +17,9 @@ const BlogPosts = () => {
 
 Suspendisse mollis a nunc et finibus. Mauris non felis ac nisl suscipit interdum ut in mi. Donec eget vulputate purus. Nam eget laoreet mi. Maecenas ut bibendum nulla. Morbi non nisi tincidunt, accumsan nisl fermentum, volutpat odio. Suspendisse scelerisque, metus sodales sagittis dapibus, eros nisi congue lorem, ac vehicula massa justo vel dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam mauris tellus, imperdiet a arcu eget, condimentum ultricies ante. Nulla posuere eros pulvinar turpis porta pharetra. Duis cursus quam vel auctor finibus. Fusce et faucibus ligula. Suspendisse vitae lacus ac magna faucibus tempor id in lacus.
         </div>
+        <div className="buttondiv">
         <button className={Button}>To Article</button>
-        
+        </div>
         </div>
     )
 }

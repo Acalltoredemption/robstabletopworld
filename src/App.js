@@ -16,16 +16,22 @@ return (
         
         <Header />
         <NavBar />
+       
         <Container>
             <Row>
                 <Col sm={8}>
+       
          <BlogPosts />
+        
                 </Col>
                 <Col>
+        
          <SideBar />
+       
                 </Col>
          </Row>
          </Container>
+        
     
     </div>
 

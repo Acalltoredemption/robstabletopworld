@@ -11,8 +11,6 @@ import {
   import Col from 'react-bootstrap/Col';
 
 
-
-
 const Navbar = () => {
 
     return (

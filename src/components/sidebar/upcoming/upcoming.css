@@ -1,9 +1,15 @@
 .upcomingimg {
         display: block;
-        width: 70%;
+        width: 220px;
         margin-left: auto;
         margin-right: auto;
 }
+.upcomingimg:hover {
+        cursor: pointer;
+          transform: scale(1.1);
+          transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+          opacity: 0.8;
+      }
 .upcoming-title {
         text-align: center;
         font-size: 20px;
@@ -16,4 +22,14 @@
         text-align: center;
         font-size: 12px;
         padding: 0px;
+}
+
+.image-border{
+        width: 220px;
+        overflow: hidden;
+        border-style: groove;
+        border-width: thick;
+   border-color: gray;   
+   margin-left: auto;
+   margin-right: auto;
 }

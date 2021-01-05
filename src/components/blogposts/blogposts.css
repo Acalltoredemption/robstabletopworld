@@ -5,12 +5,32 @@
     margin-top: 15px;
     margin-bottom: 15px;
 }
+.blogpost-image {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+ border-style: groove;
+ border-width: thick;
+ border-color: gray;
+    
+}
 .blogimg {
     display: block;
-    width: 70%;
+    width: 500px;
     margin-left: auto;
     margin-right: auto;
 }
+
+.blogimg:hover {
+    cursor: pointer;
+      transform: scale(1.1);
+      transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+      opacity: 0.8;
+  }
+
+
+
 .blogpost-linkbutton {
     display: block;
     margin-left: auto;
@@ -21,4 +41,8 @@
 }
 .blogpost-summary {
     font-size: 14px;
+}
+.buttondiv {
+    text-align: center;
+    margin-top: 10px;
 }
