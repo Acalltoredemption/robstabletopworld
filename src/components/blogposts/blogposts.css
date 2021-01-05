@@ -4,7 +4,6 @@
     margin-right: 5px;
     margin-top: 15px;
     margin-bottom: 15px;
-    border: 1px solid black;
 }
 .blogimg {
     display: block;
@@ -19,4 +18,7 @@
 }
 .blogpost-author {
     padding: 10px;
+}
+.blogpost-summary {
+    font-size: 14px;
 }

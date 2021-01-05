@@ -4,3 +4,16 @@
         margin-left: auto;
         margin-right: auto;
 }
+.upcoming-title {
+        text-align: center;
+        font-size: 20px;
+}
+.upcoming-date {
+        text-align: center;
+        font-size: 14px;
+}
+.upcoming-desc {
+        text-align: center;
+        font-size: 12px;
+        padding: 0px;
+}

@@ -11,27 +11,30 @@ import {
   import Col from 'react-bootstrap/Col';
 
 
+
+
 const Navbar = () => {
+
     return (
         <Router>
           <div className="navlinks">
             <nav>
                 <Container>
                     <Row>
-                    <Col sm={2}>
-                  <Link to="/">Home</Link>
+                    <Col sm>
+                  <Link to="/"><div className="navlink">Home</div></Link>
                   </Col>
-                  <Col sm={2}>
-                  <Link to="/about">About Me</Link>
+                  <Col sm>
+                  <Link to="/about"><div className="navlink">About Me</div></Link>
                   </Col>
-                  <Col sm={2}>
-                  <Link to="/users">Contact Me</Link>
+                  <Col sm>
+                  <Link to="/users"><div className="navlink">Contact Me</div></Link>
                   </Col>
-                  <Col sm={2}>
-                  <Link to="/youtube">Youtube</Link>
+                  <Col sm>
+                  <Link to="/youtube"><div className="navlink">Youtube</div></Link>
                   </Col>
-                  <Col sm={2}>
-                  <Link to="/twitter">Twitter</Link>
+                  <Col sm>
+                  <Link to="/twitter"><div className="navlink">Twitter</div></Link>
                   </Col>
                   </Row>
                 </Container>
