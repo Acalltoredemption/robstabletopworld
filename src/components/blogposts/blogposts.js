@@ -2,7 +2,50 @@ import React from 'react';
 import TankPlaceholder from '../../images/worldoftanks.jpg';
 import './blogposts.css';
 import {Button} from 'react-bootstrap';
+import firebase from "firebase/app";
+import 'firebase/firestore';
 
+
+
+var firebaseConfig = {
+    apiKey: "AIzaSyCXkt08M0uJWxJHy7JhhiVanIm2iqyMzvk",
+    authDomain: "robs-tabletop-world.firebaseapp.com",
+    projectId: "robs-tabletop-world",
+    storageBucket: "robs-tabletop-world.appspot.com",
+    messagingSenderId: "272819274914",
+    appId: "1:272819274914:web:268f9eb9ed56d52d1ec3fb",
+    measurementId: "G-MSBBVFXXDP"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+  db.settings({ timestampsInSnapshots: true})
+
+ 
+  function renderBlog(doc){
+      let parentdiv = document.createElement('div');
+      let titlediv = document.createElement('div');
+      let authordiv = document.createElement('div');
+      let contentdiv = document.createElement('div');
+      let articlebutton = document.createElement('button');
+  
+      titlediv.textContent = doc.data().title;
+      authordiv.textContent = doc.data().author;
+      contentdiv.textContent = doc.data().content;
+      articlebutton.textContent = 'To Article';
+  
+      parentdiv.appendChild(titlediv);
+      parentdiv.appendChild(authordiv);
+      parentdiv.appendChild(contentdiv);
+      parentdiv.appendChild(articlebutton);
+      document.getElementById('blog-list').appendChild(parentdiv);
+  }
+  
+      db.collection('blogposts').get().then((snapshot) => {
+          snapshot.docs.forEach(doc => {
+              renderBlog(doc);
+          })
+      })
 
 
 const BlogPosts = () => {
@@ -10,7 +53,11 @@ const BlogPosts = () => {
         <div className="blogpost">
 
         <div className="blogpost-image">
-            <img className="blogimg" src={TankPlaceholder} alt="a blogpost image" />
+        <div className='content'>
+        <h1 className='title'>WORLD OF TANKS</h1>
+        </div>
+        <img className="blogimg" src={TankPlaceholder} alt="a blogpost image" /> 
+        
         </div>
 
 
@@ -23,7 +70,17 @@ Suspendisse mollis a nunc et finibus. Mauris non felis ac nisl suscipit interdum
         <div className="buttondiv">
         <button className={Button}>To Article</button>
         </div>
+
+
+        <ul id="blog-list">
+    
+        </ul>
+
+
+
         </div>
+
+
     )
 }
 

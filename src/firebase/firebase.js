@@ -1,7 +1,8 @@
 import firebase from "firebase/app";
 import 'firebase/firestore';
 
-firebase.initializeApp({
+
+  var firebaseConfig = {
     apiKey: "AIzaSyCXkt08M0uJWxJHy7JhhiVanIm2iqyMzvk",
     authDomain: "robs-tabletop-world.firebaseapp.com",
     projectId: "robs-tabletop-world",
@@ -9,7 +10,15 @@ firebase.initializeApp({
     messagingSenderId: "272819274914",
     appId: "1:272819274914:web:268f9eb9ed56d52d1ec3fb",
     measurementId: "G-MSBBVFXXDP"
-  });  
+  };
 
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+  db.settings({ timestampsInSnapshots: true})
+ 
 
   export default firebase;
+
+
+
+
