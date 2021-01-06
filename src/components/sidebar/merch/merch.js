@@ -2,6 +2,10 @@ import React from 'react';
 import merch1 from '../../../images/merch1.jpg';
 import merch2 from '../../../images/merch2.jpg';
 import merch3 from '../../../images/merch3.jpg';
+import merch4 from '../../../images/merch4.jpg';
+import merch5 from '../../../images/merch5.jpg';
+import leftarrow from '../../../images/arrow-left-circle.svg';
+import rightarrow from '../../../images/arrow-right-circle.svg';
 import Tilt from 'react-vanilla-tilt';
 
 import './merch.css';
@@ -23,13 +27,13 @@ const Merch = () => {
         <div className="merchbox">    
         <Tilt className="tiltbox">
             <div className="merch-item tiltitem">
-                <img className="merch-image" src={merch2} />
+                <img className="merch-image" src={merch5} />
                 </div>
         </Tilt>
         </div>
                 <p className="merch-desc">Description of item</p>
 
-                
+
                 <div className="merchbox">
             <Tilt className="tiltbox">
             <div className="merch-item tiltitem">
@@ -38,7 +42,26 @@ const Merch = () => {
             </Tilt>
             </div>
                 <p className="merch-desc">Description of item</p>
+
+                <div className="merchbox">    
+        <Tilt className="tiltbox">
+            <div className="merch-item tiltitem">
+                <img className="merch-image" src={merch4} />
+                </div>
+        </Tilt>
+        </div>
+                <p className="merch-desc">Description of item</p>
+
+                <div className="merchbox">    
+        <Tilt className="tiltbox">
+            <div className="merch-item tiltitem">
+                <img className="merch-image" src={merch2} />
+                </div>
+        </Tilt>
+        </div>
+                <p className="merch-desc">Description of item</p>
             
+            <p><img width="35" height="35" src={leftarrow} />        <img width="35" height="35"  src={rightarrow} /></p>
             
 
         </div>
