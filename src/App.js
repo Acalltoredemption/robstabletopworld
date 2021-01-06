@@ -4,6 +4,9 @@ import NavBar from './components/navbar/navbar';
 import HomePage from './components/homepage/homepage';
 import AboutPage from './components/about/about';
 import ContactPage from './components/contact/contact';
+import MakeBlogPage from './components/admin/makeblog/makeblog';
+
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
 import {
@@ -23,6 +26,7 @@ return (
         <Route exact path='/' component={HomePage} />
         <Route path='/about' component={AboutPage} />
         <Route path='/contact' component={ContactPage} />
+        <Route path='/makeblog' component={MakeBlogPage} />
        
     
     </div>

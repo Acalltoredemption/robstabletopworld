@@ -1,5 +1,6 @@
 import firebase from "firebase/app";
 import 'firebase/firestore';
+import 'firebase/database';
 
 
   var firebaseConfig = {
@@ -13,7 +14,7 @@ import 'firebase/firestore';
   };
 
   firebase.initializeApp(firebaseConfig);
-  const db = firebase.firestore();
+  firebase.firestore();
   db.settings({ timestampsInSnapshots: true})
  
 

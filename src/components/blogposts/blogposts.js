@@ -7,6 +7,7 @@ import 'firebase/firestore';
 
 
 
+
 var firebaseConfig = {
     apiKey: "AIzaSyCXkt08M0uJWxJHy7JhhiVanIm2iqyMzvk",
     authDomain: "robs-tabletop-world.firebaseapp.com",
@@ -23,6 +24,7 @@ var firebaseConfig = {
 
  
   function renderBlog(doc){
+      
       let parentdiv = document.createElement('div');
       let titlediv = document.createElement('div');
       let authordiv = document.createElement('div');
@@ -38,9 +40,11 @@ var firebaseConfig = {
       parentdiv.appendChild(authordiv);
       parentdiv.appendChild(contentdiv);
       parentdiv.appendChild(articlebutton);
+
       document.getElementById('blog-list').appendChild(parentdiv);
-  }
   
+  }
+  //getting data
       db.collection('blogposts').get().then((snapshot) => {
           snapshot.docs.forEach(doc => {
               renderBlog(doc);
@@ -48,18 +52,20 @@ var firebaseConfig = {
       })
 
 
+
+
+      
+
+
 const BlogPosts = () => {
     return (
         <div className="blogpost">
-
-        <div className="blogpost-image">
+        <div className="blogpost-image wrap section1">
         <div className='content'>
         <h1 className='title'>WORLD OF TANKS</h1>
         </div>
-        <img className="blogimg" src={TankPlaceholder} alt="a blogpost image" /> 
-        
+        <img className="blogimg contain image1" src={TankPlaceholder} alt="a blogpost image" /> 
         </div>
-
 
         <div className="blogpost-author">Rob Oren</div>
         <div className="blogpost-summary">

@@ -35,6 +35,9 @@ const Navbar = () => {
                   <Col sm>
                   <a href="https://www.instagram.com/robstabletopworld/"><div className="navlink">Instagram</div></a>
                   </Col>
+                  <Col sm>
+                  <Link to="/makeblog"><div className="navlink">Make Blogpost</div></Link>
+                  </Col>
                   </Row>
                 </Container>
             </nav>
