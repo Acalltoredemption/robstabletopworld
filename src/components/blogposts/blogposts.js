@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import TankPlaceholder from '../../images/worldoftanks.jpg';
 import './blogposts.css';
 import {Button} from 'react-bootstrap';
@@ -27,34 +27,50 @@ var firebaseConfig = {
   function renderBlog(doc){
       
       let parentdiv = document.createElement('div');
-      let titlediv = document.createElement('div');
+      let titleh1 = document.createElement('h1');
       let authordiv = document.createElement('div');
       let contentdiv = document.createElement('div');
       let articlebutton = document.createElement('button');
-  
-      titlediv.textContent = doc.data().title;
+      let articleimage = document.createElement('img');
+      let imagecontainer = document.createElement('div');
+      let titlecontent = document.createElement('div');
+
+
+
+      articleimage.src = doc.data().photo
+
+      
+
+      titleh1.textContent = doc.data().title;
       authordiv.textContent = doc.data().author;
       contentdiv.textContent = doc.data().content;
       articlebutton.textContent = 'To Article';
 
+
+      parentdiv.className = "blogpost";
+      articleimage.className = "blogimg";
+      imagecontainer.className = "blogpost-image";
+      titleh1.className = "title";
+      titlecontent.className = "content";
+    
+
+      
+
     
   
-      parentdiv.appendChild(titlediv);
+        titlecontent.appendChild(titleh1);
+
       parentdiv.appendChild(authordiv);
       parentdiv.appendChild(contentdiv);
       parentdiv.appendChild(articlebutton);
+      imagecontainer.appendChild(titlecontent);
+      imagecontainer.appendChild(articleimage);
+      parentdiv.appendChild(imagecontainer);
 
 
       document.getElementById('blog-list').appendChild(parentdiv);
   
   }
-  //getting data
-
-
-
-
-
-      
 
 
 const BlogPosts = () => {
@@ -105,8 +121,6 @@ Suspendisse mollis a nunc et finibus. Mauris non felis ac nisl suscipit interdum
         <ul id="blog-list">
     
         </ul>
-
-        
 
         </div>
 
