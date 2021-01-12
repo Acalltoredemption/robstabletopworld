@@ -69,11 +69,40 @@ class MakeBlog extends Component {
     
 return (
     <form id="add-blog-form" onSubmit={this.handleSubmit}>
-        <input type="text" onChange={this.handleChange} id="author" name="author" placeholder="Author Name" />
-        <input type="text" onChange={this.handleChange} id="title" name="title" placeholder="Post Title" />
-        <input type="text" onChange={this.handleChange} id="content" name="content" placeholder="Post Content" />
-        <input type="file" onChange={this.uploadImage} placeholder="Post Image" name="image" id="photo" />
-        <button>Add Post</button>
+
+
+        <div className="col-md-6">
+            <div className="form-group">
+                <label for="author">Author</label>
+        <input className="form-control" type="text" onChange={this.handleChange} id="author" name="author" placeholder="Author Name" />
+        </div>
+        </div>
+        <div className="col-md-6">
+            <div className="form-group">
+                <label for="title">Title</label>
+                <input className="form-control" type="text" onChange={this.handleChange} id="title" name="title" placeholder="Post Title" />
+        </div>
+        </div>
+
+
+
+    
+            <div className="col-md-12">
+                <div className="form-group">
+                <label for="content">Blogpost Content</label>
+        <textarea className="form-control" type="text" onChange={this.handleChange} id="content" name="content" placeholder="Post Content" />
+        </div>
+        </div>
+       
+        <div className="col-md-6">
+            <div className="form-group">
+                <label for="image">Blog Image</label>
+                <input className="form-control" type="file" onChange={this.uploadImage} placeholder="Post Image" name="image" id="photo" />
+        </div>
+        </div>
+        <div class="col-md-12">
+            <input type="submit" class="btn btn-success btn-send" value="Create Blog" />
+        </div>
 
         <img id="img"></img>
 
