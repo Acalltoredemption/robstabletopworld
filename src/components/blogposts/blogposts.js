@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import TankPlaceholder from '../../images/worldoftanks.jpg';
 import './blogposts.css';
 import {Button} from 'react-bootstrap';
@@ -49,11 +49,7 @@ var firebaseConfig = {
   
   }
   //getting data
-      db.collection('blogposts').get().then((snapshot) => {
-          snapshot.docs.forEach(doc => {
-              renderBlog(doc);
-          })
-      })
+
 
 
 
@@ -62,6 +58,19 @@ var firebaseConfig = {
 
 
 const BlogPosts = () => {
+
+ 
+
+ useEffect(() => {
+    db.collection('blogposts').get().then((snapshot) => {
+        snapshot.docs.forEach(doc => {
+            renderBlog(doc);
+        })
+    })
+ }, []);
+
+
+
     return (
         <div className="blogpost">
             <div className="blogbox">
