@@ -5,6 +5,7 @@ import HomePage from './components/homepage/homepage';
 import AboutPage from './components/about/about';
 import ContactPage from './components/contact/contact';
 import MakeBlogPage from './components/admin/makeblog/makeblog';
+import MakeEventPage from './components/admin/makeevent/makeevent';
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -27,6 +28,7 @@ return (
         <Route path='/about' component={AboutPage} />
         <Route path='/contact' component={ContactPage} />
         <Route path='/makeblog' component={MakeBlogPage} />
+        <Route path='/makeevent' component={MakeEventPage} />
        
     
     </div>

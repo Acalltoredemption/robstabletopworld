@@ -38,6 +38,9 @@ const Navbar = () => {
                   <Col sm>
                   <Link to="/makeblog"><div className="navlink">Make Blogpost</div></Link>
                   </Col>
+                  <Col sm>
+                  <Link to="/makeevent"><div className="navlink">Make Event</div></Link>
+                  </Col>
                   </Row>
                 </Container>
             </nav>
