@@ -2,26 +2,13 @@ import React, {useEffect} from 'react';
 import TankPlaceholder from '../../images/worldoftanks.jpg';
 import './blogposts.css';
 import {Button} from 'react-bootstrap';
-import firebase from "firebase/app";
-import 'firebase/firestore';
+import {db} from '../../firebase/firebaseconfig';
 import Tilt from 'react-vanilla-tilt';
 
 
 
 
-var firebaseConfig = {
-    apiKey: "AIzaSyCXkt08M0uJWxJHy7JhhiVanIm2iqyMzvk",
-    authDomain: "robs-tabletop-world.firebaseapp.com",
-    projectId: "robs-tabletop-world",
-    storageBucket: "robs-tabletop-world.appspot.com",
-    messagingSenderId: "272819274914",
-    appId: "1:272819274914:web:268f9eb9ed56d52d1ec3fb",
-    measurementId: "G-MSBBVFXXDP"
-  };
 
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.firestore();
-  db.settings({ timestampsInSnapshots: true})
 
  
   function renderBlog(doc){

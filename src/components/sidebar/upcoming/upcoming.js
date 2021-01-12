@@ -2,11 +2,9 @@ import React, {useEffect} from 'react';
 import UpcomingImage from '../../../images/blood-bowl-cover.jpg';
 import Tilt from 'react-vanilla-tilt';
 import './upcoming.css';
-import firebase from "firebase/app";
 import 'firebase/firestore';
 
-
- 
+import {db} from '../../../firebase/firebaseconfig';
 
  
   function renderEvent(doc){
