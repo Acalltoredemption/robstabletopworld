@@ -34,6 +34,9 @@ var firebaseConfig = {
       let articleimage = document.createElement('img');
       let imagecontainer = document.createElement('div');
       let titlecontent = document.createElement('div');
+      let blogboxcontainer = document.createElement('div');
+      let buttondiv = document.createElement('div');
+
 
 
 
@@ -52,20 +55,32 @@ var firebaseConfig = {
       imagecontainer.className = "blogpost-image";
       titleh1.className = "title";
       titlecontent.className = "content";
+      blogboxcontainer.className = "blogbox";
+      contentdiv.className = "blogpost-summary";
+      authordiv.className = "blogpost-author";
+      buttondiv.className = "buttondiv";
+    
     
 
       
 
     
   
-        titlecontent.appendChild(titleh1);
+        
 
-      parentdiv.appendChild(authordiv);
-      parentdiv.appendChild(contentdiv);
-      parentdiv.appendChild(articlebutton);
+      
+      buttondiv.appendChild(articlebutton);
+
+      titlecontent.appendChild(titleh1);
       imagecontainer.appendChild(titlecontent);
       imagecontainer.appendChild(articleimage);
-      parentdiv.appendChild(imagecontainer);
+      blogboxcontainer.appendChild(imagecontainer);
+
+      parentdiv.appendChild(blogboxcontainer);
+      parentdiv.appendChild(authordiv);
+      parentdiv.appendChild(contentdiv);
+      parentdiv.appendChild(buttondiv);
+      
 
 
       document.getElementById('blog-list').appendChild(parentdiv);
@@ -91,12 +106,16 @@ const BlogPosts = () => {
         <div className="blogpost">
             <div className="blogbox">
             <Tilt className="tiltbox">
+                
         <div className="blogpost-image">
         <div className='content'>
         <h1 className='title'>WORLD OF TANKS</h1>
         </div>
         <img className="blogimg" src={TankPlaceholder} alt="a blogpost image" /> 
         </div>
+
+
+
         </Tilt>
         </div>
         <div className="blogpost-author">Rob Oren</div>
@@ -117,8 +136,8 @@ Suspendisse mollis a nunc et finibus. Mauris non felis ac nisl suscipit interdum
 
         </div>
 
-
         <ul id="blog-list">
+   
     
         </ul>
 
