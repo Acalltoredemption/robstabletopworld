@@ -104,7 +104,7 @@ return (
             <input type="submit" class="btn btn-success btn-send" value="Create Event" />
         </div>
 
-        <img id="img"></img>
+        <img id="img" alt=""></img>
 
     </form>
 )

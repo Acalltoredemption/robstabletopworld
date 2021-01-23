@@ -6,7 +6,7 @@ import './contact.css';
 const Contact = () => {
     return (
         <div className="contactcomponent">
-<form id="contact-form" method="post" action="contact.php" role="form">
+<form id="contact-form" method="post"  action="contact.php">
 
 <div class="messages"></div>
 

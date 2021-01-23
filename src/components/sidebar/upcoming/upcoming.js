@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import UpcomingImage from '../../../images/blood-bowl-cover.jpg';
 import Tilt from 'react-vanilla-tilt';
 import './upcoming.css';
 import 'firebase/firestore';
@@ -36,7 +35,7 @@ const Upcoming = () => {
                 <h1 className="upcomingtitle">{title}</h1>
                 </div>
         
-                <img className="upcomingimg" src={photo} alt="image of an upcoming event" />
+                <img className="upcomingimg" src={photo} alt="an upcoming event" />
                 </div>
                 </Tilt>
                 </div>

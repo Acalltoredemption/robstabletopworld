@@ -48,6 +48,7 @@ class MakeBlog extends Component {
             alert("image upload successful!")
             const image = document.querySelector('#img')
             image.src = url;
+            image.alt = '';
             this.setState({photo: url})
             this.sendBlog();
     
@@ -104,7 +105,7 @@ return (
             <input type="submit" class="btn btn-success btn-send" value="Create Blog" />
         </div>
 
-        <img id="img"></img>
+        <img id="img" alt =""></img>
 
     </form>
 )

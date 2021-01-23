@@ -18,7 +18,7 @@ const Merch = () => {
             <div className="merchbox">
             <Tilt className="tiltbox" >
             <div className="merch-item tiltitem">
-                <img className="merch-image" src={merch1} />
+                <img className="merch-image" alt="shop item" src={merch1} />
                 </div>
             </Tilt>
             </div>
@@ -27,7 +27,7 @@ const Merch = () => {
         <div className="merchbox">    
         <Tilt className="tiltbox">
             <div className="merch-item tiltitem">
-                <img className="merch-image" src={merch5} />
+                <img className="merch-image" alt="shop item" src={merch5} />
                 </div>
         </Tilt>
         </div>
@@ -37,7 +37,7 @@ const Merch = () => {
                 <div className="merchbox">
             <Tilt className="tiltbox">
             <div className="merch-item tiltitem">
-                <img className="merch-image" src={merch3} />
+                <img className="merch-image" alt="shop item" src={merch3} />
                 </div>
             </Tilt>
             </div>
@@ -46,7 +46,7 @@ const Merch = () => {
                 <div className="merchbox">    
         <Tilt className="tiltbox">
             <div className="merch-item tiltitem">
-                <img className="merch-image" src={merch4} />
+                <img className="merch-image" alt="shop item" src={merch4} />
                 </div>
         </Tilt>
         </div>
@@ -55,13 +55,13 @@ const Merch = () => {
                 <div className="merchbox">    
         <Tilt className="tiltbox">
             <div className="merch-item tiltitem">
-                <img className="merch-image" src={merch2} />
+                <img className="merch-image" alt="shop item" src={merch2} />
                 </div>
         </Tilt>
         </div>
                 <p className="merch-desc">Description of item</p>
             
-            <p><img width="35" height="35" src={leftarrow} />        <img width="35" height="35"  src={rightarrow} /></p>
+            <p className="arrowholder"><img width="35" alt ="left pointer arrow" height="35" src={leftarrow} />        <img width="35" alt="right pointer arrow" height="35"  src={rightarrow} /></p>
             
 
         </div>

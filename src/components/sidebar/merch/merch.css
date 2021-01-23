@@ -5,7 +5,12 @@
         justify-content: center;
 
 }
+.arrowholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+}
 .merchlist {
     width: 100%;
     margin-left: 5px;

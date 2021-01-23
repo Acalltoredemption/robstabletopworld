@@ -8,7 +8,7 @@ import Tilt from 'react-vanilla-tilt';
 
 
 const BlogPosts = () => {
-     const [blogs, setBlogs] = useState('')
+     const [blogs, setBlogs] = useState([])
 
 
  useEffect(() => {
@@ -19,7 +19,7 @@ let title = doc.data().title;
 let author = doc.data().author;
 let content = doc.data().content;
 let photo = doc.data().photo;
-setBlogs( ...blogs,
+setBlogs(
  <div className="blogpost">
  <div className="blogbox">
 <Tilt className="tiltbox">       
@@ -27,7 +27,7 @@ setBlogs( ...blogs,
     <div className='content'>
     <h1 className='title'>{title}</h1>
     </div>
-    <img className="blogimg" src={photo} alt="a blogpost image" /> 
+    <img className="blogimg"  src={photo} alt="a blogpost" /> 
     </div>
     </Tilt>
     </div>
@@ -41,8 +41,9 @@ setBlogs( ...blogs,
 <div>
 </div>
 </div>
+
 )
-        })
+})
 })
     }, []);
 
