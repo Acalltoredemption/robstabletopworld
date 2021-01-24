@@ -8,6 +8,11 @@ import {
   import Col from 'react-bootstrap/Col';
 
 
+  const adminLinks = document.querySelectorAll('admin-link');
+
+
+
+
 const Navbar = () => {
 
     return (
@@ -35,10 +40,13 @@ const Navbar = () => {
                   <a href="https://www.instagram.com/robstabletopworld/"><div className="navlink">Instagram</div></a>
                   </Col>
                   <Col sm>
-                  <Link to="/makeblog"><div className="navlink">Make Blogpost</div></Link>
+                  <Link to="/makeblog"><div className="navlink admin-link">Make Blogpost</div></Link>
                   </Col>
                   <Col sm>
-                  <Link to="/makeevent"><div className="navlink">Make Event</div></Link>
+                  <Link to="/makeevent"><div className="navlink admin-link">Make Event</div></Link>
+                  </Col>
+                  <Col sm>
+                  <Link to="/login"><div className="navlink">Log In</div></Link>
                   </Col>
                   </Row>
                 </Container>

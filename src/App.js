@@ -6,6 +6,7 @@ import AboutPage from './components/about/about';
 import ContactPage from './components/contact/contact';
 import MakeBlogPage from './components/admin/makeblog/makeblog';
 import MakeEventPage from './components/admin/makeevent/makeevent';
+import LoginPage from './components/login/login';
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -21,7 +22,7 @@ const App = () => {
 return (
     <div className="Homepage">
         
-        <Header />
+        <Header /> 
         <NavBar />
         
         <Route exact path='/' component={HomePage} />
@@ -29,6 +30,7 @@ return (
         <Route path='/contact' component={ContactPage} />
         <Route path='/makeblog' component={MakeBlogPage} />
         <Route path='/makeevent' component={MakeEventPage} />
+        <Route path='/login' component={LoginPage} />
        
     
     </div>
