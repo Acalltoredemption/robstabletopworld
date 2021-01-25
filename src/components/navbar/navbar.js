@@ -8,7 +8,7 @@ import {
   import Col from 'react-bootstrap/Col';
 
 
-  const adminLinks = document.querySelectorAll('admin-link');
+//  const adminLinks = document.querySelectorAll('admin-link');
 
 
 
