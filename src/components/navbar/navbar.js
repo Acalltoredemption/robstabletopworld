@@ -48,6 +48,9 @@ const Navbar = () => {
                   <Col sm>
                   <Link to="/login"><div className="navlink">Log In</div></Link>
                   </Col>
+                  <Col sm>
+                  <Link to="/signup"><div className="navlink">Sign Up</div></Link>
+                  </Col>
                   </Row>
                 </Container>
             </nav>

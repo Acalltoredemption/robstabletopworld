@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-
 import {firebase, db} from "../../../firebase/firebaseconfig";
 
 

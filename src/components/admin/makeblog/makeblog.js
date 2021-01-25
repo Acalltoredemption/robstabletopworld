@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
-import firebase from "firebase/app";
-import 'firebase/firestore';
 import 'firebase/storage';
+import {firebase, db} from '../../../firebase/firebaseconfig';
 
 
-  const db = firebase.firestore();
+  
 
 
 

@@ -7,6 +7,7 @@ import ContactPage from './components/contact/contact';
 import MakeBlogPage from './components/admin/makeblog/makeblog';
 import MakeEventPage from './components/admin/makeevent/makeevent';
 import LoginPage from './components/login/login';
+import SignupPage from './components/signup/signup';
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -31,6 +32,7 @@ return (
         <Route path='/makeblog' component={MakeBlogPage} />
         <Route path='/makeevent' component={MakeEventPage} />
         <Route path='/login' component={LoginPage} />
+        <Route path='/signup' component={SignupPage} />
        
     
     </div>
