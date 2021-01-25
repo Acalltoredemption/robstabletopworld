@@ -8,7 +8,7 @@ import MakeBlogPage from './components/admin/makeblog/makeblog';
 import MakeEventPage from './components/admin/makeevent/makeevent';
 import LoginPage from './components/login/login';
 import SignupPage from './components/signup/signup';
-
+import {AuthProvider} from './contexts/AuthContext';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
@@ -21,6 +21,7 @@ import {
 const App = () => {
 
 return (
+    <AuthProvider>
     <div className="Homepage">
         
         <Header /> 
@@ -36,7 +37,7 @@ return (
        
     
     </div>
-
+    </AuthProvider>
 
 
 )
