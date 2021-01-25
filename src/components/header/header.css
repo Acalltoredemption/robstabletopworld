@@ -5,3 +5,13 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+.user-email {
+    font-size: 12px;
+}
+
+.logged-message {
+    font-size: 15px;
+    padding: none;
+    
+}

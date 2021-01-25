@@ -14,7 +14,7 @@ const SigningUp = () => {
     const emailRef = useRef();
     const passwordRef = useRef();
     const passwordConfirmRef = useRef();
-    const {signup} = useAuth();
+    const {signup, currentUser} = useAuth();
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false)
 
@@ -44,12 +44,13 @@ const SigningUp = () => {
 
         <div>
         <div className="centerme">
-            <p>Already have an account? <Link to="/login"><div>Log In</div></Link></p>
+            <p>Already have an account? <Link to="/login">Log In</Link></p>
         </div>
 
         <form className="loginform" onSubmit={handleSubmit}>
         <Container className="align-items-center w-100">
         <h2>Sign Up</h2>
+        {currentUser && currentUser.email}
         {error && <Alert variant="danger">{error}</Alert>}
         <div className="col-md-6">
             <div className="form-group">

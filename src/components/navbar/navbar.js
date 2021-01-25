@@ -6,14 +6,23 @@ import {
   import Container from 'react-bootstrap/Container';
   import Row from 'react-bootstrap/Row';
   import Col from 'react-bootstrap/Col';
-
-
-//  const adminLinks = document.querySelectorAll('admin-link');
-
-
+  import {useAuth} from '../../contexts/AuthContext';
 
 
 const Navbar = () => {
+  const adminLinks = document.querySelectorAll('admin-link');
+  const loggedOutLinks = document.querySelectorAll('logged-out');
+
+  const {currentUser} = useAuth();
+  if (currentUser) {
+      //toggle UI elements
+      adminLinks.forEach(item => item.style.display = 'block');
+      loggedOutLinks.forEach(item => item.style.display = 'none');
+  } else {
+      //toggle UI elements
+      adminLinks.forEach(item => item.style.display = 'none');
+      loggedOutLinks.forEach(item => item.style.display = 'block');
+  }
 
     return (
         
@@ -46,10 +55,13 @@ const Navbar = () => {
                   <Link to="/makeevent"><div className="navlink admin-link">Make Event</div></Link>
                   </Col>
                   <Col sm>
-                  <Link to="/login"><div className="navlink">Log In</div></Link>
+                  <Link to="/login"><div className="navlink logged-out">Log In</div></Link>
                   </Col>
                   <Col sm>
-                  <Link to="/signup"><div className="navlink">Sign Up</div></Link>
+                  <Link to="/signup"><div className="navlink logged-out">Sign Up</div></Link>
+                  </Col>
+                  <Col sm>
+                  <a><div className="navlink admin-link">Log Out</div></a>
                   </Col>
                   </Row>
                 </Container>
