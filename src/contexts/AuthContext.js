@@ -9,10 +9,6 @@ export function useAuth() {
     return useContext(AuthContext);
 }
 
-
-
-
-
 export function AuthProvider({ children }) {
 
     const [currentUser, setCurrentUser] = useState()
@@ -39,7 +35,7 @@ export function AuthProvider({ children }) {
         signup
     }
     return(
-        <AuthContext.Provider>
+        <AuthContext.Provider value={value}>
             {children}
         </AuthContext.Provider>
     )

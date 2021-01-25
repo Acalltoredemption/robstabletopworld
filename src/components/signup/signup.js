@@ -4,7 +4,9 @@ import {
   } from "react-router-dom";
   import './signup.css';
   import { Container } from 'react-bootstrap';
-import {useAuth, AuthProvider} from '../../contexts/AuthContext';
+import {useAuth} from '../../contexts/AuthContext';
+import {Alert} from 'react-bootstrap';
+
 
 
 
@@ -14,6 +16,7 @@ const SigningUp = () => {
     const passwordConfirmRef = useRef();
     const {signup} = useAuth();
     const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false)
 
 
    async function handleSubmit(e) {
@@ -21,9 +24,17 @@ const SigningUp = () => {
 
         if(passwordRef.current.value !== passwordConfirmRef.current.value) {
             return setError('Passwords do not match!');
-        } else {
-            signup(emailRef.current.value, passwordRef.current.value);
+        } 
+        
+        
+        try {
+            setError('')
+            setLoading(true)
+          await signup(emailRef.current.value, passwordRef.current.value);
+        } catch(e) {
+            setError('Failed to create an account!')
         }
+        setLoading(false)
 
 
         
@@ -39,6 +50,7 @@ const SigningUp = () => {
         <form className="loginform" onSubmit={handleSubmit}>
         <Container className="align-items-center w-100">
         <h2>Sign Up</h2>
+        {error && <Alert variant="danger">{error}</Alert>}
         <div className="col-md-6">
             <div className="form-group">
                 <label htmlFor="email">Email</label>
@@ -58,7 +70,7 @@ const SigningUp = () => {
         </div>
         </div>
         <div className="col-md-12">
-                    <input type="submit" className="btn btn-success btn-send" value="Log In" />
+                    <input type="submit" disabled={loading}className="btn btn-success btn-send" value="Log In" />
                 </div>
                 </Container>
         </form>
