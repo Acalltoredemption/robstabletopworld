@@ -74,13 +74,13 @@ return (
 
         <div className="col-md-6">
             <div className="form-group">
-                <label for="author">Author</label>
+                <label htmlFor="author">Author</label>
         <input className="form-control" type="text" onChange={this.handleChange} id="author" name="author" placeholder="Author Name" />
         </div>
         </div>
         <div className="col-md-6">
             <div className="form-group">
-                <label for="title">Title</label>
+                <label htmlFor="title">Title</label>
                 <input className="form-control" type="text" onChange={this.handleChange} id="title" name="title" placeholder="Post Title" />
         </div>
         </div>
@@ -90,19 +90,19 @@ return (
     
             <div className="col-md-12">
                 <div className="form-group">
-                <label for="content">Blogpost Content</label>
+                <label htmlFor="content">Blogpost Content</label>
         <textarea className="form-control" type="text" onChange={this.handleChange} id="content" name="content" placeholder="Post Content" />
         </div>
         </div>
        
         <div className="col-md-6">
             <div className="form-group">
-                <label for="image">Blog Image</label>
+                <label htmlFor="image">Blog Image</label>
                 <input className="form-control" type="file" onChange={this.uploadImage} placeholder="Post Image" name="image" id="photo" />
         </div>
         </div>
-        <div class="col-md-12">
-            <input type="submit" class="btn btn-success btn-send" value="Create Blog" />
+        <div className="col-md-12">
+            <input type="submit" className="btn btn-success btn-send" value="Create Blog" />
         </div>
 
         <img id="img" alt =""></img>

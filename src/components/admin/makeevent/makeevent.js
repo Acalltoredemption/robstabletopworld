@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
-import firebase from "firebase/app";
-import 'firebase/firestore';
-import 'firebase/storage';
+
+import {firebase, db} from "../../../firebase/firebaseconfig";
 
 
-  const db = firebase.firestore();
 
 
 
@@ -73,13 +71,13 @@ return (
 
         <div className="col-md-6">
             <div className="form-group">
-                <label for="date">Date</label>
+                <label htmlFor="date">Date</label>
         <input className="form-control" type="date" onChange={this.handleChange} id="date" name="date" placeholder="Event Date" />
         </div>
         </div>
         <div className="col-md-6">
             <div className="form-group">
-                <label for="title">Title</label>
+                <label htmlFor="title">Title</label>
                 <input className="form-control" type="text" onChange={this.handleChange} id="title" name="title" placeholder="Post Title" />
         </div>
         </div>
@@ -89,19 +87,19 @@ return (
     
             <div className="col-md-12">
                 <div className="form-group">
-                <label for="description">Event Description</label>
+                <label htmlFor="description">Event Description</label>
         <textarea className="form-control" type="text" onChange={this.handleChange} id="description" name="description" placeholder="Description" />
         </div>
         </div>
        
         <div className="col-md-6">
             <div className="form-group">
-                <label for="image">Event Image</label>
+                <label htmlFor="image">Event Image</label>
                 <input className="form-control" type="file" onChange={this.uploadImage} placeholder="Post Image" name="image" id="photo" />
         </div>
         </div>
-        <div class="col-md-12">
-            <input type="submit" class="btn btn-success btn-send" value="Create Event" />
+        <div className="col-md-12">
+            <input type="submit" className="btn btn-success btn-send" value="Create Event" />
         </div>
 
         <img id="img" alt=""></img>
