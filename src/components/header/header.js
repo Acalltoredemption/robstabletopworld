@@ -8,9 +8,24 @@ import { useHistory } from 'react-router-dom';
 const Header = () => {
     const {currentUser, logout} = useAuth();
     const history = useHistory()
-
+    let message = '';
+    const loggedIn = document.querySelectorAll('#logged-in');
+    const loggedOut = document.querySelectorAll('#logged-out');
+  
+    if (currentUser && currentUser.email) {
+        //toggle UI elements
+        message = 'Logged in as:';
+        loggedIn.forEach(item => item.style.display = 'block');
+        loggedOut.forEach(item => item.style.display = 'none');
+    } else {
+        //toggle UI elements
+        message = 'Log in or Sign up';
+        loggedIn.forEach(item => item.style.display = 'none');
+        loggedOut.forEach(item => item.style.display = 'block');
+    }
 
 async function handleLogout() {
+
 
         try {
             await logout()
@@ -36,13 +51,13 @@ async function handleLogout() {
         <Card.Body>
             <Card.Title>
                 <Card.Text>
-                <p className="logged-message">Logged in as:</p>
-                <p className='user-email'>{currentUser && currentUser.email}</p>
+                <h4 className="logged-message">{message}</h4>
+                <h4 className='user-email'>{currentUser && currentUser.email}</h4>
                 </Card.Text>
             </Card.Title>
-            <Button onClick={handleLogout} variant="primary" style={{position: 'absolute', bottom: 0}}>Log Out</Button>
-            <Button onClick={handleLogin} variant="primary" style={{position: 'absolute', bottom: 10}}>Log In</Button>
-            <Button onClick={handleSignup} variant="primary" style={{position: 'absolute', bottom: 20}}>Sign Up</Button>
+            <Button onClick={handleLogout} variant="primary" display="none" id="logged-in" style={{position: 'absolute', bottom: 0}}>Log Out</Button>
+            <Button onClick={handleLogin} variant="primary" id="logged-out" style={{position: 'absolute', bottom: 0}}>Log In</Button>
+            <Button onClick={handleSignup} variant="primary" id="logged-out" style={{position: 'absolute', bottom: 0, left: 100}}>Sign Up</Button>
         </Card.Body>
         </Card>
         </div>

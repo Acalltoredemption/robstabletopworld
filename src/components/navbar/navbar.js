@@ -54,15 +54,6 @@ const Navbar = () => {
                   <Col sm>
                   <Link to="/makeevent"><div className="navlink admin-link">Make Event</div></Link>
                   </Col>
-                  <Col sm>
-                  <Link to="/login"><div className="navlink logged-out">Log In</div></Link>
-                  </Col>
-                  <Col sm>
-                  <Link to="/signup"><div className="navlink logged-out">Sign Up</div></Link>
-                  </Col>
-                  <Col sm>
-                  <a><div className="navlink admin-link">Log Out</div></a>
-                  </Col>
                   </Row>
                 </Container>
             </nav>
