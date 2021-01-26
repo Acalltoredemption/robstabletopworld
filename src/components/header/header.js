@@ -1,5 +1,5 @@
 import React from 'react';
-import banner from '../../images/test.png';
+import banner from '../../images/RobsBanner.jpg';
 import './header.css';
 import { Card, Button } from 'react-bootstrap';
 import {useAuth} from '../../contexts/AuthContext';

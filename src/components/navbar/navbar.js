@@ -10,18 +10,19 @@ import {
 
 
 const Navbar = () => {
-  const adminLinks = document.querySelectorAll('admin-link');
-  const loggedOutLinks = document.querySelectorAll('logged-out');
-
   const {currentUser} = useAuth();
-  if (currentUser) {
+
+  const loggedIn = document.querySelectorAll('#logged-in');
+  const loggedOut = document.querySelectorAll('#logged-out');
+
+  if (currentUser && currentUser.email) {
       //toggle UI elements
-      adminLinks.forEach(item => item.style.display = 'block');
-      loggedOutLinks.forEach(item => item.style.display = 'none');
+      loggedIn.forEach(item => item.style.display = 'block');
+      loggedOut.forEach(item => item.style.display = 'none');
   } else {
       //toggle UI elements
-      adminLinks.forEach(item => item.style.display = 'none');
-      loggedOutLinks.forEach(item => item.style.display = 'block');
+      loggedIn.forEach(item => item.style.display = 'none');
+      loggedOut.forEach(item => item.style.display = 'block');
   }
 
     return (
@@ -49,10 +50,10 @@ const Navbar = () => {
                   <a href="https://www.instagram.com/robstabletopworld/"><div className="navlink">Instagram</div></a>
                   </Col>
                   <Col sm>
-                  <Link to="/makeblog"><div className="navlink admin-link">Make Blogpost</div></Link>
+                  <Link to="/makeblog" id="logged-in"><div className="navlink admin-link">Make Blogpost</div></Link>
                   </Col>
                   <Col sm>
-                  <Link to="/makeevent"><div className="navlink admin-link">Make Event</div></Link>
+                  <Link to="/makeevent" id="logged-in"><div className="navlink admin-link">Make Event</div></Link>
                   </Col>
                   </Row>
                 </Container>
