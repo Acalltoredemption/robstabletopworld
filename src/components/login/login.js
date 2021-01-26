@@ -5,13 +5,13 @@ import {
     Link
   } from "react-router-dom";
   import {Alert} from 'react-bootstrap';
-
+import { useHistory } from 'react-router-dom';
 
 
 const Login = () => {
     const emailRef = useRef();
     const passwordRef = useRef();
-
+    const history = useHistory()
     const {login} = useAuth();
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false)
@@ -24,7 +24,8 @@ const Login = () => {
             setError('')
             setLoading(true)
           await login(emailRef.current.value, passwordRef.current.value);
-          console.log(emailRef, passwordRef)
+          console.log(emailRef, passwordRef);
+          history.push('/')
         } catch(e) {
             setError('Failed to sign in!')
         }

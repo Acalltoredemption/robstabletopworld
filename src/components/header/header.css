@@ -8,10 +8,14 @@
 
 .user-email {
     font-size: 12px;
+    position: absolute;
+    top: 28px;
 }
 
 .logged-message {
     font-size: 15px;
     padding: none;
+    position: absolute;
+    top: 10px;
     
 }
