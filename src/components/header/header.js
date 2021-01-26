@@ -14,7 +14,7 @@ const Header = () => {
   
     if (currentUser && currentUser.email) {
         //toggle UI elements
-        message = 'Logged in as:';
+        message = 'Welcome!';
         loggedIn.forEach(item => item.style.display = 'block');
         loggedOut.forEach(item => item.style.display = 'none');
     } else {
@@ -50,9 +50,10 @@ async function handleLogout() {
         <Card style={{width: '15rem', height: '5.5rem', position: 'absolute', right: 0, top: 0, opacity: 0.7, background: 'white'}}>
         <Card.Body>
             <Card.Title>
-                <Card.Text>
-                <h4 className="logged-message">{message}</h4>
-                <h4 className='user-email'>{currentUser && currentUser.email}</h4>
+                <Card.Text className="logged-message">
+                {message}
+                <br></br>
+                {currentUser && currentUser.email}
                 </Card.Text>
             </Card.Title>
             <Button onClick={handleLogout} variant="primary" display="none" id="logged-in" style={{position: 'absolute', bottom: 0}}>Log Out</Button>
