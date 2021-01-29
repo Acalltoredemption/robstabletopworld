@@ -10,12 +10,14 @@ class BlogPosts extends React.Component {
         title: null,
         author: null,
         content: null,
-        photo: null
+        photo: null,
+        
     }
 
     componentDidMount(){
+var first = db.collection('blogposts').orderBy('date').limit(6);
 
-db.collection('blogposts')
+return first
 .get()
 .then(snapshot => {
     const blogs = []
@@ -60,6 +62,10 @@ console.log(blogs)
                         )
                     })
                 }
+<ul className="pager">
+
+
+</ul>
             </div>
         )
     }

@@ -13,6 +13,7 @@ class MakeBlog extends Component {
         content: '',
         author: '',
         photo: '',
+        date: '',
     }
     handleChange = (e) => {
         e.preventDefault();
@@ -59,7 +60,8 @@ class MakeBlog extends Component {
             title: this.state.title,
             content: this.state.content,
             author: this.state.author,
-            photo: this.state.photo
+            photo: this.state.photo, 
+            date: new Date()
 
         })
     }
