@@ -5,6 +5,13 @@
     justify-content: center;
 
 }
+.pagination-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
 .button-box {
     display: flex;
     align-items: center;

@@ -51,9 +51,20 @@ nextPage () {
         console.log("last", lastVisible)
     console.log(blogs)
     
-     this.next = db.collection('blogposts').orderBy('date').startAfter(lastVisible).limit(5) 
+     this.next = db.collection('blogposts').orderBy('date').startAfter(lastVisible).limit(5) ;
     })
 }
+
+
+
+
+
+
+
+
+
+
+
 
     render(){
         return(
@@ -86,10 +97,10 @@ nextPage () {
                         )
                     })
                 }
-<ul className="pager">
-<button onClick={(e) => this.nextPage()}value="Next Page"></button>
-
-</ul>
+<div className="pagination-container">
+<button>Last Page</button>
+<button onClick={(e) => this.nextPage()}>Next Page</button>
+</div>
             </div>
         )
     }
