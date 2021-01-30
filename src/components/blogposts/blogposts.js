@@ -15,7 +15,8 @@ class BlogPosts extends React.Component {
     }
 
     componentDidMount(){
-var first = db.collection('blogposts').orderBy('date').limit(6);
+var first = db.collection('blogposts').orderBy('date').limit(5);
+
 
 return first
 .get()
@@ -26,10 +27,33 @@ return first
         blogs.push(data)
     })
     this.setState({blogs : blogs})
+    var lastVisible = snapshot.docs[snapshot.docs.length -1];
+    console.log("last", lastVisible)
 console.log(blogs)
+
+ this.next = db.collection('blogposts').orderBy('date').startAfter(lastVisible).limit(5)
 })
-.catch(error => console.log(error))
-    }
+.catch(error => console.log(error)),  []}
+
+
+nextPage () {
+   
+    return this.next
+    .get()
+    .then(snapshot => {
+        const blogs = []
+        snapshot.forEach(doc => {
+            const data = doc.data()
+            blogs.push(data)
+        })
+        this.setState({blogs : blogs})
+        var lastVisible = snapshot.docs[snapshot.docs.length -1];
+        console.log("last", lastVisible)
+    console.log(blogs)
+    
+     this.next = db.collection('blogposts').orderBy('date').startAfter(lastVisible).limit(5) 
+    })
+}
 
     render(){
         return(
@@ -38,7 +62,7 @@ console.log(blogs)
                     this.state.blogs && 
                     this.state.blogs.map(blog => {
                         return (
-    <div className="blogpost">
+    <div className="blogpost" key={blog.title}>
   <div className="blogbox">
  <Tilt className="tiltbox">       
      <div className="blogpost-image">
@@ -63,7 +87,7 @@ console.log(blogs)
                     })
                 }
 <ul className="pager">
-
+<button onClick={(e) => this.nextPage()}value="Next Page"></button>
 
 </ul>
             </div>
