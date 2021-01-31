@@ -40,6 +40,7 @@ const BlogPosts = () => {
 
 return (
     <div>
+        <a name="top"></a>
         <Blog blogs={currentBlog} />
         <Pagination postsPerPage={postsPerPage} totalPosts={blogs.length} paginate={paginate} />
     </div>

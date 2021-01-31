@@ -46,6 +46,7 @@ async function handleLogout() {
 
     return (
         <div>
+            <a name="top"></a>
         <img className='banner' src={banner} alt='channel banner'></img>
         <Card style={{width: '15rem', height: '5.5rem', position: 'absolute', right: 0, top: 0, opacity: 0.7, background: 'white'}}>
         <Card.Body>
