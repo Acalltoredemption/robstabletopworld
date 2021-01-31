@@ -8,7 +8,7 @@ import Blog from '../blog/blog';
 const BlogPosts = () => {
     const [blogs, setBlogs] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage, setPostsPerPage] = useState(5);
+    const [postsPerPage] = useState(5);
 
 
     useEffect(() => {
@@ -32,13 +32,16 @@ const BlogPosts = () => {
     const indexOfLastBlog = currentPage * postsPerPage;
     const indexOfFirstBlog = indexOfLastBlog - postsPerPage;
     const currentBlog = blogs.slice(indexOfFirstBlog, indexOfLastBlog);
-    console.log(blogs.length);
+
+    //Change Page
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+    
 
 
 return (
     <div>
-        <Blog blogs={blogs} />
-        <Pagination postsPerPage={postsPerPage} totalPosts={blogs.length} />
+        <Blog blogs={currentBlog} />
+        <Pagination postsPerPage={postsPerPage} totalPosts={blogs.length} paginate={paginate} />
     </div>
 )
         
