@@ -4,33 +4,32 @@ import './blogedit.css';
 
 const BlogEdit = () => {
         const [blogs, setBlogs] = useState([]);
-        const [currentPage, setCurrentPage] = useState(1);
-        const [postsPerPage] = useState(5);
-    
-    
+
         useEffect(() => {
             const fetchPosts = async () => {
             
-                await db.collection('blogposts').orderBy('date', "desc").get().then(snapshot => {
+                await db.collection('blogposts').orderBy('date', "desc").get().then((snapshot) => {
                     this.blogstore = []
-                    snapshot.forEach(doc => {
-                        const data = doc.data()
+                    
+                    snapshot.docs.forEach(doc => {
+                        var data = {id: doc.id, ...doc.data() };
                          this.blogstore.push(data)
+                         
                     })
                 });
                 setBlogs(this.blogstore);
-                
-            }
-           
+                           
+            }      
             fetchPosts();
         }, []);
     
-        //get current posts
-        const indexOfLastBlog = currentPage * postsPerPage;
-        const indexOfFirstBlog = indexOfLastBlog - postsPerPage;
-        const currentBlog = blogs.slice(indexOfFirstBlog, indexOfLastBlog);
-    
-
+        function deleteBlog (e) {
+           let id = e.target.getAttribute('blogRef');
+           db.collection('blogposts').doc(id).delete();
+           
+        
+           
+        }
     
 
         return(
@@ -50,19 +49,19 @@ const BlogEdit = () => {
                 {
                 blogs && 
                 blogs.map(blog => {
-                    var blogRef = db.collection('blogposts').doc('date');
-                    console.log(blogRef);
 
             return(
                 <table className="table table-bordered blogdisplay">
                     <td className="blogitem">{blog.title}</td>
                     <td className="blogitem">{blog.author}</td>
                     <td className="blogitem"><img className="adminblogimg"  src={blog.photo} alt="a blogpost" /></td>
-                    <td className="blogitem" id={blog.date}><input type="submit" className="btn btn-danger btn-send" value="Delete" /> </td>
+                    <td className="blogitem"><button type="submit" onClick={deleteBlog} blogRef={blog.id} className="btn btn-danger">Delete</button> </td>
                     <td className="blogitem" id={blog.date}><input type="submit" className="btn btn-primary btn-send" value="Edit Blog" /> </td>
                 </table>
              )
-             })
+             }
+             )
+        
              }
 
              </div>
