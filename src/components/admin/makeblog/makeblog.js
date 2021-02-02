@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import 'firebase/storage';
 import {firebase, db} from '../../../firebase/firebaseconfig';
-
+import history from '../../../history/history';
 
   
 
@@ -44,8 +44,6 @@ class MakeBlog extends Component {
         task
         .then(snapshot => snapshot.ref.getDownloadURL())
         .then(url => {
-            console.log(url)
-            alert("image upload successful!")
             const image = document.querySelector('#img')
             image.src = url;
             image.alt = '';
@@ -64,6 +62,7 @@ class MakeBlog extends Component {
             date: new Date()
 
         })
+        history.push('/')
     }
 
 

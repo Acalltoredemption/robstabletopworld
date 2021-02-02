@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {firebase, db} from "../../../firebase/firebaseconfig";
-
+import history from '../../../history/history';
 
 
 
@@ -11,6 +11,7 @@ class MakeEvent extends Component {
         description: '',
         date: '',
         photo: '',
+        createdat: ''
     }
     handleChange = (e) => {
         e.preventDefault();
@@ -41,8 +42,6 @@ class MakeEvent extends Component {
         task
         .then(snapshot => snapshot.ref.getDownloadURL())
         .then(url => {
-            console.log(url)
-            alert("image upload successful!")
             const image = document.querySelector('#img')
             image.src = url;
             this.setState({photo: url})
@@ -56,9 +55,11 @@ class MakeEvent extends Component {
             title: this.state.title,
             description: this.state.description,
             date: this.state.date,
-            photo: this.state.photo
+            photo: this.state.photo,
+            createdat: new Date()
 
         })
+        history.push('/')
     }
 
 

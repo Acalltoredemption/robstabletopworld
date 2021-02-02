@@ -15,7 +15,7 @@ const Upcoming = () => {
 
     
     useEffect(() => {
-        db.collection('events').get().then((snapshot) => {
+        db.collection('events').orderBy('createdat', 'asc').get().then((snapshot) => {
             snapshot.docs.forEach(doc => {
                
                 let date = doc.data().date;

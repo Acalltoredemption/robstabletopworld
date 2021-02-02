@@ -5,10 +5,12 @@ import { BrowserRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
+import History from './history/history';
+
  
 
 ReactDOM.render(
-  <BrowserRouter>
+  <BrowserRouter history={History}>
     <App />
     </BrowserRouter>,
   document.getElementById('root')

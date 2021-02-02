@@ -11,6 +11,10 @@ import SignupPage from './components/signup/signup';
 import {AuthProvider} from './contexts/AuthContext';
 import AdminNav from './components/admin/adminnav/adminnav';
 import BlogEdit from './components/admin/blogedit/blogedit';
+import {Router} from 'react-router';
+
+import history from './history/history';
+
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
@@ -24,6 +28,7 @@ const App = () => {
 
 return (
     <AuthProvider>
+        <Router history={history}>
     <div className="Homepage">
         
         <Header /> 
@@ -41,6 +46,7 @@ return (
        
     
     </div>
+    </Router>
     </AuthProvider>
 
 

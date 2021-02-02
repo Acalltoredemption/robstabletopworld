@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {db} from '../../../firebase/firebaseconfig';
 import './blogedit.css';
+import history from '../../../history/history';
 
 const BlogEdit = () => {
         const [blogs, setBlogs] = useState([]);
@@ -26,7 +27,7 @@ const BlogEdit = () => {
         function deleteBlog (e) {
            let id = e.target.getAttribute('blogRef');
            db.collection('blogposts').doc(id).delete();
-           
+           history.push('/')
         
            
         }
@@ -55,7 +56,7 @@ const BlogEdit = () => {
                     <td className="blogitem">{blog.title}</td>
                     <td className="blogitem">{blog.author}</td>
                     <td className="blogitem"><img className="adminblogimg"  src={blog.photo} alt="a blogpost" /></td>
-                    <td className="blogitem"><button type="submit" onClick={deleteBlog} blogRef={blog.id} className="btn btn-danger">Delete</button> </td>
+                    <td className="blogitem"><button type="submit" onClick={(e) => deleteBlog(e)} blogRef={blog.id} className="btn btn-danger">Delete</button> </td>
                     <td className="blogitem" id={blog.date}><input type="submit" className="btn btn-primary btn-send" value="Edit Blog" /> </td>
                 </table>
              )
