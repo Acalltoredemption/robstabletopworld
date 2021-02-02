@@ -14,7 +14,7 @@ const BlogPosts = () => {
     useEffect(() => {
         const fetchPosts = async () => {
         
-            await db.collection('blogposts').orderBy('date').get().then(snapshot => {
+            await db.collection('blogposts').orderBy('date', "desc").get().then(snapshot => {
                 this.blogstore = []
                 snapshot.forEach(doc => {
                     const data = doc.data()
@@ -40,7 +40,7 @@ const BlogPosts = () => {
 
 return (
     <div>
-        <a name="top"></a>
+        
         <Blog blogs={currentBlog} />
         <Pagination postsPerPage={postsPerPage} totalPosts={blogs.length} paginate={paginate} />
     </div>
