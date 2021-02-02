@@ -1,15 +1,15 @@
 import React from 'react';
-import './navbar.css';
+import './adminnav.css';
 import {
     Link
   } from "react-router-dom";
   import Container from 'react-bootstrap/Container';
   import Row from 'react-bootstrap/Row';
   import Col from 'react-bootstrap/Col';
-  import {useAuth} from '../../contexts/AuthContext';
+  import {useAuth} from '../../../contexts/AuthContext';
 
 
-const Navbar = () => {
+const AdminNav = () => {
   const {currentUser} = useAuth();
 
   const loggedIn = document.querySelectorAll('#logged-in');
@@ -27,27 +27,15 @@ const Navbar = () => {
 
     return (
         
-          <div className="navlinks">
+          <div className="adminnavlinks">
             <nav>
-                <Container>
+                <Container> 
                     <Row>
-                    <Col sm>
-                  <Link to="/"><div className="navlink">Home</div></Link>
+                  <Col sm>
+                  <Link to="/makeblog" id="logged-in"><div className="navlink admin-link">Make Blogpost</div></Link>
                   </Col>
                   <Col sm>
-                  <Link to="/about"><div className="navlink">About Me</div></Link>
-                  </Col>
-                  <Col sm>
-                  <Link to="/contact"><div className="navlink">Contact Me</div></Link>
-                  </Col>
-                  <Col sm>
-                  <a href="https://www.youtube.com/user/seahawk8601"><div className="navlink">Youtube</div></a>
-                  </Col>
-                  <Col sm>
-                  <a href="https://twitter.com/seahawk860"><div className="navlink">Twitter</div></a>
-                  </Col>
-                  <Col sm>
-                  <a href="https://www.instagram.com/robstabletopworld/"><div className="navlink">Instagram</div></a>
+                  <Link to="/makeevent" id="logged-in"><div className="navlink admin-link">Make Event</div></Link>
                   </Col>
                   </Row>
                 </Container>
@@ -58,4 +46,4 @@ const Navbar = () => {
     }
     
 
-export default Navbar;
+export default AdminNav;

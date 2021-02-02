@@ -9,6 +9,7 @@ import MakeEventPage from './components/admin/makeevent/makeevent';
 import LoginPage from './components/login/login';
 import SignupPage from './components/signup/signup';
 import {AuthProvider} from './contexts/AuthContext';
+import AdminNav from './components/admin/adminnav/adminnav';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
@@ -26,6 +27,7 @@ return (
         
         <Header /> 
         <NavBar />
+        <AdminNav />
         
         <Route exact path='/' component={HomePage} />
         <Route path='/about' component={AboutPage} />
