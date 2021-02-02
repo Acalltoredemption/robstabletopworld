@@ -37,6 +37,9 @@ const AdminNav = () => {
                   <Col sm>
                   <Link to="/makeevent" id="logged-in"><div className="navlink admin-link">Make Event</div></Link>
                   </Col>
+                  <Col sm>
+                  <Link to="/blogedit" id="logged-in"><div className="navlink admin-link">View Blogs</div></Link>
+                  </Col>
                   </Row>
                 </Container>
             </nav>

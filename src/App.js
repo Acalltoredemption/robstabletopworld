@@ -10,6 +10,7 @@ import LoginPage from './components/login/login';
 import SignupPage from './components/signup/signup';
 import {AuthProvider} from './contexts/AuthContext';
 import AdminNav from './components/admin/adminnav/adminnav';
+import BlogEdit from './components/admin/blogedit/blogedit';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
@@ -34,6 +35,7 @@ return (
         <Route path='/contact' component={ContactPage} />
         <Route path='/makeblog' component={MakeBlogPage} />
         <Route path='/makeevent' component={MakeEventPage} />
+        <Route path='/blogedit' component={BlogEdit} />
         <Route path='/login' component={LoginPage} />
         <Route path='/signup' component={SignupPage} />
        
