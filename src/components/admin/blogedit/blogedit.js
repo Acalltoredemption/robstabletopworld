@@ -21,7 +21,7 @@ const BlogEdit = () => {
                 setBlogs(this.blogstore);
                 
             }
-    
+           
             fetchPosts();
         }, []);
     
@@ -30,38 +30,42 @@ const BlogEdit = () => {
         const indexOfFirstBlog = indexOfLastBlog - postsPerPage;
         const currentBlog = blogs.slice(indexOfFirstBlog, indexOfLastBlog);
     
-        //Change Page
-        const paginate = (pageNumber) => setCurrentPage(pageNumber);
-        
-   // blog. title, photo, author, content
+
     
+
         return(
             <div>
-                <table class="table table-bordered table-hover">
+                <div id="bulkOptionContainer" className="col-xs-4">
+                <table class="table table-bordered blogdisplay">
                 <thead>
                     <tr>
-                        <th>Title</th>
-                        <th>Author</th>
-                        <th>Image</th>
-                        <th>Delete</th>
+                        <th className="blogitem">Title</th>
+                        <th className="blogitem">Author</th>
+                        <th className="blogitem">Image</th>
+                        <th className="blogitem">Delete</th>
+                        <th className="blogitem">Edit</th>
                     </tr>
                 </thead>
-                <tbody>
+             </table>
                 {
                 blogs && 
                 blogs.map(blog => {
+                    var blogRef = db.collection('blogposts').doc('date');
+                    console.log(blogRef);
+
             return(
-                <div>
-                    <td>{blog.title}</td>
-                    <td>{blog.author}</td>
-                    <td>{blog.title}</td>
-                    <td><button>Delete</button></td>
-                </div>
+                <table className="table table-bordered blogdisplay">
+                    <td className="blogitem">{blog.title}</td>
+                    <td className="blogitem">{blog.author}</td>
+                    <td className="blogitem"><img className="adminblogimg"  src={blog.photo} alt="a blogpost" /></td>
+                    <td className="blogitem" id={blog.date}><input type="submit" className="btn btn-danger btn-send" value="Delete" /> </td>
+                    <td className="blogitem" id={blog.date}><input type="submit" className="btn btn-primary btn-send" value="Edit Blog" /> </td>
+                </table>
              )
              })
              }
-             </tbody>
-             </table>
+
+             </div>
             </div>
             
                 )
