@@ -8,6 +8,7 @@ import MakeBlogPage from './components/admin/makeblog/makeblog';
 import MakeEventPage from './components/admin/makeevent/makeevent';
 import LoginPage from './components/login/login';
 import SignupPage from './components/signup/signup';
+import SubmissionsPage from './components/submissions/submissions';
 import {AuthProvider} from './contexts/AuthContext';
 import AdminNav from './components/admin/adminnav/adminnav';
 import BlogEdit from './components/admin/blogedit/blogedit';
@@ -21,6 +22,7 @@ import './app.css';
 import {
     Route,
   } from "react-router-dom";
+import Submissions from './components/submissions/submissions';
 
 
 
@@ -38,6 +40,7 @@ return (
         <Route exact path='/' component={HomePage} />
         <Route path='/about' component={AboutPage} />
         <Route path='/contact' component={ContactPage} />
+        <Route path='/submissions' component={SubmissionsPage} />
         <Route path='/makeblog' component={MakeBlogPage} />
         <Route path='/makeevent' component={MakeEventPage} />
         <Route path='/blogedit' component={BlogEdit} />
