@@ -41,6 +41,12 @@ const Navbar = () => {
                   <Link to="/contact"><div className="navlink">Contact Me</div></Link>
                   </Col>
                   <Col sm>
+                  <Link to="/community"><div className="navlink">Community</div></Link>
+                  </Col>
+                  <Col sm id="logged-in">
+                  <Link to="/submissions" id="logged-in"><div className="navlink" id="logged-in">Submissions</div></Link>
+                  </Col>
+                  <Col sm>
                   <a href="https://www.youtube.com/user/seahawk8601"><div className="navlink">Youtube</div></a>
                   </Col>
                   <Col sm>
@@ -49,6 +55,7 @@ const Navbar = () => {
                   <Col sm>
                   <a href="https://www.instagram.com/robstabletopworld/"><div className="navlink">Instagram</div></a>
                   </Col>
+
                   </Row>
                 </Container>
             </nav>
