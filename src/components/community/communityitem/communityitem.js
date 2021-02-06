@@ -11,8 +11,8 @@ const Item = ({items}) => {
             items && 
             items.map(item => {
                 return(
-        <div>
-            <p>{item.name}</p>
+        <div className="showcaseitemholder">
+            <h5 className="showcaseauthor">{item.name}</h5>
          <img className="showcaseitem" src={item.photo} />
             <p>{item.description}</p>
         </div>

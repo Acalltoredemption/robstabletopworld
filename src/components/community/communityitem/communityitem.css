@@ -3,12 +3,21 @@
     height: 300px;
     animation: slider 9s infinite linear;
     box-shadow: 2px 3px 8px 4px grey;
+    padding: 3px;
+}
+.showcaseitem:hover {
+    cursor: pointer;
+}
+.showcaseauthor{
+    text-align: center;
+}
+.showcaseitemholder {
     padding: 5px;
 }
 .comtitle {
-    width:100%;
-    margin-left: auto;
-    margin-right: auto;
+    text-align: center;
+    margin-bottom: 5%;
+    margin-top: 5%;
 }
 .showcaseholder {
     display: inline-grid;

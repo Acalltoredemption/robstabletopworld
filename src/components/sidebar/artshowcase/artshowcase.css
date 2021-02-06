@@ -4,7 +4,13 @@
     animation: slider 9s infinite linear;
     box-shadow: 2px 3px 8px 4px grey;
 }
-
+.showcasetitle {
+    text-align: center;
+    margin-top: 10px;
+}
+.mainholder {
+    margin-top: 10px;
+}
 @keyframes slider {
     0%{ }
     35%{ }

@@ -9,19 +9,18 @@ const Showcase = () => {
     const [showcase, setShowcase] = useState('')
 
     useEffect(() => {
-        db.collection('showcase').orderBy('date', 'asc').get().then((snapshot) => {
+        db.collection('showcase').orderBy('approved', 'date', 'asc').get().then((snapshot) => {
             snapshot.docs.forEach(doc => {
                
                 let date = doc.data().date;
                 let photo = doc.data().photo;
-                let name = doc.data().name;
+                let name = doc.data().name; 
                 console.log(doc.data());
         
                 setShowcase(
-                    <div>
-                    <h4>Community Showcase</h4>
+                    <div className="mainholder">
+                    <h5 className="showcasetitle">Community Showcase</h5>
                     <img className="showcase maindiv" src={photo} />
-                    <p>{name}</p>
                     </div>
                 )
             })
