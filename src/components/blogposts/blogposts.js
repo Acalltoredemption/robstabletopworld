@@ -23,8 +23,9 @@ const BlogPosts = () => {
             });
             setBlogs(this.blogstore);
             
+            
         }
-
+        
         fetchPosts();
     }, []);
 
