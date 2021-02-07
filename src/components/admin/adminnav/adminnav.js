@@ -40,6 +40,12 @@ const AdminNav = () => {
                   <Col sm>
                   <Link to="/blogedit" id="logged-in"><div className="navlink admin-link">View Blogs</div></Link>
                   </Col>
+                  <Col sm>
+                  <Link to="/addmerch" id="logged-in"><div className="navlink admin-link">Add Merch</div></Link>
+                  </Col>
+                  <Col sm>
+                  <Link to="/approve" id="logged-in"><div className="navlink admin-link">Approve Submissions</div></Link>
+                  </Col>
                   </Row>
                 </Container>
             </nav>

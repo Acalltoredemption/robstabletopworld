@@ -61,7 +61,9 @@ const Merch = () => {
         </div>
                 <p className="merch-desc">Description of item</p>
             
-            <p className="arrowholder"><img width="35" alt ="left pointer arrow" height="35" src={leftarrow} />        <img width="35" alt="right pointer arrow" height="35"  src={rightarrow} /></p>
+            <p className="arrowholder"><img width="35" alt ="left pointer arrow" height="35" src={leftarrow} />
+            <img width="35" alt="right pointer arrow" height="35"  src={rightarrow} />
+            </p>
             
 
         </div>

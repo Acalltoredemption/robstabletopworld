@@ -9,7 +9,7 @@ const Showcase = () => {
     const [showcase, setShowcase] = useState('')
 
     useEffect(() => {
-        db.collection('showcase').orderBy('approved', 'date', 'asc').get().then((snapshot) => {
+        db.collection('showcase').orderBy('date', 'asc').get().then((snapshot) => {
             snapshot.docs.forEach(doc => {
                
                 let date = doc.data().date;
