@@ -1,13 +1,13 @@
 .showcaseitem {
     width: 100%;
     height: 300px;
-    animation: slider 9s infinite linear;
-    box-shadow: 2px 3px 8px 4px grey;
-    padding: 3px;
+    box-shadow: 2px 2px 6px 4px grey;
+   
     border-radius: 5px;
 }
 .showcaseitem:hover {
     cursor: pointer;
+    transform: scale(1.1);
     
 }
 .showcaseauthor{
@@ -62,17 +62,18 @@
 .modalitem {
     width: 700px;
     height: 600px;
-    position: absolute;
-    top: 15%;
+    position: block;
+    top: 10%;
     right: 30%;
 }
 .modaldesc {
-    width: 700px;
-    height: 600px;
-    position: absolute;
+    width: 20%;
+    height: 100%;
+    position: block;
     top: 2%;
     right: auto;
     color: white;
+    padding: 25px;
 }
 
 .closebutton {

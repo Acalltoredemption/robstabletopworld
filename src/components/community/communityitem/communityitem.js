@@ -19,11 +19,12 @@ const Item = ({items}) => {
             function showModal(){
                 document.getElementById(item.name).className="showmodal"
             }
+
+            
                 return(
         <div className="showcaseitemholder" key={item.name}>
             <h5 className="showcaseauthor">{item.name}</h5>
          <img className="showcaseitem" src={item.photo} onClick={showModal} />
-            <p>{item.description}</p>
 
 
         <div id={specialkey} className="hidemodal">

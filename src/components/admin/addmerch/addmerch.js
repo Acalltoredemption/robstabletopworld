@@ -70,7 +70,7 @@ return (
     <form id="add-blog-form" onSubmit={this.handleSubmit}>       
         <div className="col-md-6">
             <div className="form-group">
-                <label htmlFor="image">Blog Image</label>
+                <label htmlFor="image">Merch Image</label>
                 <input className="form-control" type="file" onChange={this.uploadImage} placeholder="Post Image" name="image" id="photo" />
         </div>
 
