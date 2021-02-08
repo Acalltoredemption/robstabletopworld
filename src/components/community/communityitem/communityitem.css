@@ -60,8 +60,19 @@
 }
 
 .modalitem {
-    width: 70%;
-    height: auto;
+    width: 700px;
+    height: 600px;
+    position: absolute;
+    top: 15%;
+    right: 30%;
+}
+.modaldesc {
+    width: 700px;
+    height: 600px;
+    position: absolute;
+    top: 2%;
+    right: auto;
+    color: white;
 }
 
 .closebutton {
@@ -72,6 +83,7 @@
         font-size: 40px;
         font-weight: bold;
         transition: 0.3s;
+        z-index: 5
 }
 .closebutton:hover {
     cursor: pointer;

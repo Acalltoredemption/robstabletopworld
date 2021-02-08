@@ -29,7 +29,7 @@ const Item = ({items}) => {
         <div id={specialkey} className="hidemodal">
             <span className="closebutton" onClick={closeModal}>X</span>
         <img className="modalitem" src={item.photo} />
-        <p>{item.description}</p>
+        <p className="modaldesc">{item.description}</p>
         </div>
 
 
