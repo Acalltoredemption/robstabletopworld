@@ -1,3 +1,4 @@
+
 import React from 'react';
 import './communityitem.css';
 
@@ -10,12 +11,31 @@ const Item = ({items}) => {
             {
             items && 
             items.map(item => {
+            var specialkey = item.name;
+
+            function closeModal(){
+                document.getElementById(item.name).className="hidemodal"
+            }
+            function showModal(){
+                document.getElementById(item.name).className="showmodal"
+            }
                 return(
-        <div className="showcaseitemholder">
+        <div className="showcaseitemholder" key={item.name}>
             <h5 className="showcaseauthor">{item.name}</h5>
-         <img className="showcaseitem" src={item.photo} />
+         <img className="showcaseitem" src={item.photo} onClick={showModal} />
             <p>{item.description}</p>
+
+
+        <div id={specialkey} className="hidemodal">
+            <span className="closebutton" onClick={closeModal}>X</span>
+        <img className="modalitem" src={item.photo} />
+        <p>{item.description}</p>
         </div>
+
+
+        </div>
+
+
         
                             )
                         })

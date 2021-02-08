@@ -4,9 +4,11 @@
     animation: slider 9s infinite linear;
     box-shadow: 2px 3px 8px 4px grey;
     padding: 3px;
+    border-radius: 5px;
 }
 .showcaseitem:hover {
     cursor: pointer;
+    
 }
 .showcaseauthor{
     text-align: center;
@@ -23,4 +25,54 @@
     display: inline-grid;
     grid-template-columns: auto auto auto;
 
+}
+
+
+.hidemodal {
+    
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    
+}
+.showmodal {
+    display: flex; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    align-items: center;
+    justify-content: center;
+}
+
+.modalitem {
+    width: 70%;
+    height: auto;
+}
+
+.closebutton {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+}
+.closebutton:hover {
+    cursor: pointer;
 }

@@ -24,7 +24,7 @@ class AddMerch extends Component {
     }
     handleSubmit = (e) => {
         e.preventDefault();
-        this.createBlog(this.state);
+        this.createMerch(this.state);
     }
 
     createMerch = () => {
