@@ -1,74 +1,53 @@
-import React from 'react';
-import merch1 from '../../../images/merch1.jpg';
-import merch2 from '../../../images/merch2.jpg';
-import merch3 from '../../../images/merch3.jpg';
-import merch4 from '../../../images/merch4.jpg';
-import merch5 from '../../../images/merch5.jpg';
-import leftarrow from '../../../images/arrow-left-circle.svg';
-import rightarrow from '../../../images/arrow-right-circle.svg';
-import Tilt from 'react-vanilla-tilt';
-
+import React, {useState, useEffect} from 'react';
+import {db} from '../../../firebase/firebaseconfig';
+import MerchItem from '../merch/merchitem/merchitem';
+import Pagination from '../../../components/pagination/pagination';
 import './merch.css';
 
 
 const Merch = () => {
-    return (
-        <div className="merchlist">
-            <p className="merch-title">Check out our 'merch!</p>
-            <div className="merchbox">
-            <Tilt className="tiltbox" >
-            <div className="merch-item tiltitem">
-                <img className="merch-image" alt="shop item" src={merch1} />
-                </div>
-            </Tilt>
-            </div>
-                <p className="merch-desc">Description of item</p>
-
-        <div className="merchbox">    
-        <Tilt className="tiltbox">
-            <div className="merch-item tiltitem">
-                <img className="merch-image" alt="shop item" src={merch5} />
-                </div>
-        </Tilt>
-        </div>
-                <p className="merch-desc">Description of item</p>
+    const [merch, setMerch] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postsPerPage] = useState(5);
 
 
-                <div className="merchbox">
-            <Tilt className="tiltbox">
-            <div className="merch-item tiltitem">
-                <img className="merch-image" alt="shop item" src={merch3} />
-                </div>
-            </Tilt>
-            </div>
-                <p className="merch-desc">Description of item</p>
-
-                <div className="merchbox">    
-        <Tilt className="tiltbox">
-            <div className="merch-item tiltitem">
-                <img className="merch-image" alt="shop item" src={merch4} />
-                </div>
-        </Tilt>
-        </div>
-                <p className="merch-desc">Description of item</p>
-
-                <div className="merchbox">    
-        <Tilt className="tiltbox">
-            <div className="merch-item tiltitem">
-                <img className="merch-image" alt="shop item" src={merch2} />
-                </div>
-        </Tilt>
-        </div>
-                <p className="merch-desc">Description of item</p>
+    useEffect(() => {
+        const fetchMerch = async () => {
+        
+            await db.collection('merch').orderBy('date', "desc").get().then(snapshot => {
+                this.merchstore = []
+                snapshot.forEach(doc => {
+                    const data = doc.data()
+                     this.merchstore.push(data)
+                })
+            });
+            setMerch(this.merchstore);
             
-            <p className="arrowholder"><img width="35" alt ="left pointer arrow" height="35" src={leftarrow} />
-            <img width="35" alt="right pointer arrow" height="35"  src={rightarrow} />
-            </p>
             
+        }
+        
+        fetchMerch();
+    }, []);
 
-        </div>
+    //get current posts
+    const indexOfLastMerch = currentPage * postsPerPage;
+    const indexOfFirstMerch = indexOfLastMerch - postsPerPage;
+    const currentMerch = merch.slice(indexOfFirstMerch, indexOfLastMerch);
 
-    )
+    //Change Page
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+    
+
+
+return (
+    <div>
+        <h5 className="showcasetitle">Our Merch</h5>
+        <MerchItem merch={currentMerch} />
+        <Pagination postsPerPage={postsPerPage} totalPosts={merch.length} paginate={paginate} />
+    </div>
+)
+        
+    
 }
 
 export default Merch;

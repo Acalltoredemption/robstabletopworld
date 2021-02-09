@@ -68,3 +68,8 @@ margin-right: auto;
   .tiltitem {
       display: inline-table;
   }
+
+  .showcasetitle {
+    text-align: center;
+    margin-top: 10px;
+}

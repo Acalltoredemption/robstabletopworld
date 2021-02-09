@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {db} from '../../../firebase/firebaseconfig';
 import './approve.css';
 import history from '../../../history/history';
+import '../../../firebase/firebaseconfig';
 
 const Approve = () => {
         const [showcase, setShowcase] = useState([]);
@@ -9,7 +10,7 @@ const Approve = () => {
         useEffect(() => {
             const fetchShowcases = async () => {
             
-                await db.collection('showcase').orderBy('date', "desc").get().then((snapshot) => {
+                await db.collection('showcase').orderBy('unapproved').get().then((snapshot) => {
                     this.showcases = []
                     
                     snapshot.docs.forEach(doc => {
@@ -51,10 +52,12 @@ const Approve = () => {
                 {
                 showcase && 
                 showcase.map(showcase => {
+                    const showcaseRef = db.collection('showcase').doc(showcase.id);
                     function approveBlog (e) {
                         db.collection('showcase').doc(showcase.id).set({
                             approved: true
                         }, { merge: true});
+                        history.push('/')
                     }
             return(
                 <table className="table table-bordered blogdisplay">

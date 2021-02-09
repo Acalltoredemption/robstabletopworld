@@ -9,8 +9,10 @@ const SideBar = () => {
     return (
         <div className="sidebar">
             <Upcoming />
+            <div className="side-control">
             <Showcase />
             <Merch />
+            </div>
         </div>
     )
 }

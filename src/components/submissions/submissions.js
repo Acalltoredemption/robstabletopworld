@@ -57,7 +57,8 @@ class Submissions extends Component {
             name: this.state.name,
             description: this.state.description,
             photo: this.state.photo, 
-            date: new Date()
+            date: new Date(),
+            unapproved: true
 
         })
         history.push('/')
