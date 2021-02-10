@@ -21,7 +21,6 @@ const Header = () => {
         message = 'Welcome!';
         loggedIn.forEach(item => item.style.display = 'block');
         loggedOut.forEach(item => item.style.display = 'none');
-        console.log(currentUser.uid);
         if (currentUser.uid === 'cw67NhgIsDhyAdp2AMEuFm11a2G2'){
             message= 'You are logged in as Admin'
         }
