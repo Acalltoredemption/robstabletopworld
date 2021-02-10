@@ -57,9 +57,9 @@ const Upcoming = () => {
 
     return (
 
-        <ul id="event-list">
+        <div className="holderdiv" id="event-list">
 {events}
-        </ul>
+        </div>
     )
 }
 

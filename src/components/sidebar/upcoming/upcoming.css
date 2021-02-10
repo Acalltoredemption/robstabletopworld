@@ -50,6 +50,11 @@
         align-items: center;
         justify-content: center;
 }
+.holderdiv {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
 
 .upcomingcontent {
         height: 20px;

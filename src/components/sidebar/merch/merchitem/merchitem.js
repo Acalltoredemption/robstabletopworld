@@ -7,16 +7,16 @@ import './merchitem.css'
 const MerchItem = ({merch}) => {
     
     return (
-        <div className="upcoming">
+        <div>
             {merch &&
             merch.map(merch => {
             return(
             <div key={merch.url}>
-            <div className="upcomingbox">
-            <Tilt className="tiltbox"> 
+            <div className="merchbox">
+            <Tilt> 
             <div className="image-border">
                 <a href={merch.url}>
-            <img className="showcase maindiv" src={merch.photo} alt="an merchandise item" />
+            <img className="merchimg" src={merch.photo} alt="an merchandise item" />
             </a>
             </div>
             </Tilt> 

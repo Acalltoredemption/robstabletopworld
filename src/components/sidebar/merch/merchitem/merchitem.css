@@ -1,15 +1,13 @@
-.upcomingbox {
+.merchbox {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.upcoming {
-    width: 100%;
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-top: 15px;
-    margin-bottom: 15px;
+
+.merchimg {
+    width: 220px;
 }
+
 .upcomingimg {
     display: block;
     width: 220px;
@@ -74,10 +72,7 @@ border-color: gray;
     }
 
     
-.tiltbox {
-    display: inline-flex;
-    
-}
+
 
 .tiltitem {
     display: inline-table;

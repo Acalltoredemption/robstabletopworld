@@ -16,6 +16,11 @@
    
     padding: 7px;
 }
+.testy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .mainholder:hover{
     cursor: pointer;
 
