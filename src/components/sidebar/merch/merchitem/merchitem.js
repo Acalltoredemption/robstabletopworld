@@ -11,7 +11,7 @@ const MerchItem = ({merch}) => {
             {merch &&
             merch.map(merch => {
             return(
-            <div>
+            <div key={merch.url}>
             <div className="upcomingbox">
             <Tilt className="tiltbox"> 
             <div className="image-border">

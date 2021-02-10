@@ -4,7 +4,7 @@ import './header.css';
 import { Card, Button } from 'react-bootstrap';
 import {useAuth} from '../../contexts/AuthContext';
 import { useHistory } from 'react-router-dom';
-import { auth } from '../../firebase/firebaseconfig';
+
 
 const Header = () => {
     const {currentUser, logout} = useAuth();

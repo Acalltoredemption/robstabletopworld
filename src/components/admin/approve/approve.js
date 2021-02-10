@@ -52,7 +52,7 @@ const Approve = () => {
                 {
                 showcase && 
                 showcase.map(showcase => {
-                    const showcaseRef = db.collection('showcase').doc(showcase.id);
+
                     function approveBlog (e) {
                         db.collection('showcase').doc(showcase.id).set({
                             approved: true
@@ -64,7 +64,7 @@ const Approve = () => {
                     <td className="blogitem">{showcase.name}</td>
                     <td className="blogitem">{showcase.description}</td>
                     <td className="blogitem"><img className="adminblogimg"  src={showcase.photo} alt="a blogpost" /></td>
-                    <td className="blogitem"><button type="submit" onClick={(e) => deleteBlog(e)} showcaseRef={showcase.id} className="btn btn-danger">Delete</button> </td>
+                    <td className="blogitem"><button type="submit" onClick={(e) => deleteBlog(e)} className="btn btn-danger">Delete</button> </td>
                     <td className="blogitem" id={showcase.date}><input type="submit" onClick={(e) => approveBlog(e)} showcaseid={showcase.id} className="btn btn-success btn-send" value="Approve" /> </td>
                 </table>
              )

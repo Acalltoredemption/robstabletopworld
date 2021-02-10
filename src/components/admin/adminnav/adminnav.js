@@ -20,7 +20,6 @@ const AdminNav = () => {
       loggedIn.forEach(item => item.style.display = 'block');
       loggedOut.forEach(item => item.style.display = 'none');
       if (currentUser.uid === 'cw67NhgIsDhyAdp2AMEuFm11a2G2'){
-       console.log('You are logged in as Admin')
        loggedInAdmin.forEach(item => item.style.display = 'block');
        
     }

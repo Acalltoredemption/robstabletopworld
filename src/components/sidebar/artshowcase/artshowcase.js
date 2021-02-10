@@ -14,16 +14,15 @@ const Showcase = () => {
         db.collection('showcase').orderBy('date', 'asc').get().then((snapshot) => {
             snapshot.docs.forEach(doc => {
                
-                let date = doc.data().date;
+
                 let photo = doc.data().photo;
-                let name = doc.data().name; 
-                console.log(doc.data());
+ 
         
                 setShowcase(
-                    <div className="mainholder" onClick={redirect}>
+                    <div className="mainholder" key={photo} onClick={redirect}>
                     <h5 className="showcasetitle">Community Showcase</h5>
                     <div className="image-border">
-                    <img className="showcase maindiv" src={photo} />
+                    <img className="showcase maindiv" src={photo} alt="a community art sample" />
                     </div>
                     </div>
                 )

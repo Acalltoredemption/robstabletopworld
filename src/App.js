@@ -8,7 +8,7 @@ import MakeBlogPage from './components/admin/makeblog/makeblog';
 import MakeEventPage from './components/admin/makeevent/makeevent';
 import LoginPage from './components/login/login';
 import SignupPage from './components/signup/signup';
-import MerchPage from './components/admin/addmerch/addmerch';
+import AddMerch from './components/admin/addmerch/addmerch';
 import SubmissionsPage from './components/submissions/submissions';
 import ApprovePage from './components/admin/approve/approve';
 import CommunityPage from './components/community/community';
@@ -25,7 +25,7 @@ import './app.css';
 import {
     Route,
   } from "react-router-dom";
-import AddMerch from './components/admin/addmerch/addmerch';
+
 
 
 

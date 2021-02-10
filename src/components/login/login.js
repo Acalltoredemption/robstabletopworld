@@ -14,7 +14,7 @@ const Login = () => {
     const history = useHistory()
     const {login} = useAuth();
     const [error, setError] = useState('');
-    const [loading, setLoading] = useState(false)
+
 
 
    async function handleSubmit(e) {
@@ -22,14 +22,13 @@ const Login = () => {
      
         try {
             setError('')
-            setLoading(true)
+
           await login(emailRef.current.value, passwordRef.current.value);
-          console.log(emailRef, passwordRef);
           history.push('/')
         } catch(e) {
             setError('Failed to sign in!')
         }
-        setLoading(false)
+  
 
 
         
