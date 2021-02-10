@@ -4,6 +4,7 @@ import './header.css';
 import { Card, Button } from 'react-bootstrap';
 import {useAuth} from '../../contexts/AuthContext';
 import { useHistory } from 'react-router-dom';
+import { auth } from '../../firebase/firebaseconfig';
 
 const Header = () => {
     const {currentUser, logout} = useAuth();
@@ -11,12 +12,19 @@ const Header = () => {
     let message = '';
     const loggedIn = document.querySelectorAll('#logged-in');
     const loggedOut = document.querySelectorAll('#logged-out');
+
+
+    
   
     if (currentUser && currentUser.email) {
         //toggle UI elements
         message = 'Welcome!';
         loggedIn.forEach(item => item.style.display = 'block');
         loggedOut.forEach(item => item.style.display = 'none');
+        console.log(currentUser.uid);
+        if (currentUser.uid === 'cw67NhgIsDhyAdp2AMEuFm11a2G2'){
+            message= 'You are logged in as Admin'
+        }
     } else {
         //toggle UI elements
         message = 'Log in or Sign up';
