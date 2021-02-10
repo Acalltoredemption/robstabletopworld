@@ -24,12 +24,12 @@ const Item = ({items}) => {
                 return(
         <div className="showcaseitemholder" key={item.name}>
             <h5 className="showcaseauthor">{item.name}</h5>
-         <img className="showcaseitem" src={item.photo} onClick={showModal} />
+         <img className="showcaseitem" src={item.photo} onClick={showModal} alt="a community artwork submission" />
 
 
         <div id={specialkey} className="hidemodal">
             <span className="closebutton" onClick={closeModal}>X</span>
-        <img className="modalitem" src={item.photo} />
+        <img className="modalitem" src={item.photo} alt="a community artwork submission"  />
         <p className="modaldesc">{item.description}</p>
         </div>
 
