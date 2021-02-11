@@ -40,7 +40,7 @@ const Merch = () => {
 
 
 return (
-    <div className="green">
+    <div>
         <h5 className="showcasetitle">Our Merch</h5>
         <MerchItem merch={currentMerch} />
         <Pagination postsPerPage={postsPerPage} totalPosts={merch.length} paginate={paginate} />

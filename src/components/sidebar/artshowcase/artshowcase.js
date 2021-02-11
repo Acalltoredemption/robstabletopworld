@@ -19,14 +19,14 @@ const Showcase = () => {
  
         
                 setShowcase(
-                    <div className="testy">
+                   
                     <div className="mainholder" key={photo} onClick={redirect}>
                     <h5 className="showcasetitle">Community Showcase</h5>
-                    <div className="image-border">
-                    <img className="showcase maindiv" src={photo} alt="a community art sample" />
+                    <div className="art-image-border">
+                    <img className=" maindiv" src={photo} alt="a community art sample" />
                     </div>
                     </div>
-                    </div>
+                    
                 )
             })
         })
@@ -35,9 +35,9 @@ const Showcase = () => {
 
     return (
 
-        <ul id="showcase-list">
+        <div id="showcase-list">
             {showcase}
-        </ul>
+        </div>
     )
 
 }

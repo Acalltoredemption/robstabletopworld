@@ -7,9 +7,9 @@ import './sidebar.css';
 
 const SideBar = () => {
     return (
-        <div className="sidebar">
+        <div>
             <Upcoming />
-            <div className="side-control">
+            <div>
             <Showcase />
             <Merch />
             </div>

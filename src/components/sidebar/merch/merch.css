@@ -5,9 +5,7 @@
         justify-content: center;
 
 }
-.green {
-    background-color: green;
-}
+
 .arrowholder {
     display: flex;
     align-items: center;
