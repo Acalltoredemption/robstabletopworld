@@ -11,7 +11,8 @@ class MakeEvent extends Component {
         description: '',
         date: '',
         photo: '',
-        createdat: ''
+        createdat: '',
+        url: ''
     }
     handleChange = (e) => {
         e.preventDefault();
@@ -56,6 +57,7 @@ class MakeEvent extends Component {
             description: this.state.description,
             date: this.state.date,
             photo: this.state.photo,
+            url: this.state.url,
             createdat: new Date()
 
         })
@@ -98,6 +100,14 @@ return (
                 <input className="form-control" type="file" onChange={this.uploadImage} placeholder="Post Image" name="image" id="photo" />
         </div>
         </div>
+
+        <div className="col-md-6">
+            <div className="form-group">
+                <label htmlFor="url">Event URL</label>
+                <input className="form-control" type="text" onChange={this.handleChange} id="url" name="url" placeholder="Event URL" />
+        </div>
+        </div>
+
         <div className="col-md-12">
             <input type="submit" className="btn btn-success btn-send" value="Create Event" />
         </div>

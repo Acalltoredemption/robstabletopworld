@@ -16,7 +16,7 @@ import {AuthProvider} from './contexts/AuthContext';
 import AdminNav from './components/admin/adminnav/adminnav';
 import BlogEdit from './components/admin/blogedit/blogedit';
 import {Router} from 'react-router';
-
+import ArticlePage from './components/article/article';
 import history from './history/history';
 
 
@@ -41,7 +41,9 @@ return (
         <NavBar />
         <AdminNav />
         
+        
         <Route exact path='/' component={HomePage} />
+        <Route path='/article' component={ArticlePage} />
         <Route path='/about' component={AboutPage} />
         <Route path='/contact' component={ContactPage} />
         <Route path='/submissions' component={SubmissionsPage} />

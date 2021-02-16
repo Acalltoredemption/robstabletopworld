@@ -17,7 +17,7 @@ const BlogPosts = () => {
             await db.collection('blogposts').orderBy('date', "desc").get().then(snapshot => {
                 this.blogstore = []
                 snapshot.forEach(doc => {
-                    const data = doc.data()
+                    var data = {id: doc.id, ...doc.data() };
                      this.blogstore.push(data)
                 })
             });

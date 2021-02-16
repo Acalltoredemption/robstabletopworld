@@ -10,6 +10,7 @@ const Header = () => {
     const {currentUser, logout} = useAuth();
     const history = useHistory()
     let message = '';
+    let adminmessage = '';
     const loggedIn = document.querySelectorAll('#logged-in');
     const loggedOut = document.querySelectorAll('#logged-out');
 
@@ -22,7 +23,7 @@ const Header = () => {
         loggedIn.forEach(item => item.style.display = 'block');
         loggedOut.forEach(item => item.style.display = 'none');
         if (currentUser.uid === 'cw67NhgIsDhyAdp2AMEuFm11a2G2'){
-            message= 'You are logged in as Admin'
+            adminmessage= 'You are logged in as Admin'
         }
     } else {
         //toggle UI elements
@@ -60,6 +61,7 @@ async function handleLogout() {
             <Card.Title>
                 <Card.Text className="logged-message">
                 {message}
+                {adminmessage}
                 <br></br>
                 {currentUser && currentUser.email}
                 </Card.Text>

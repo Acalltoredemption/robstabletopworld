@@ -1,7 +1,10 @@
 import React from 'react';
 import Tilt from 'react-vanilla-tilt';
 
+
+
 const  Blog = ({blogs}) => {
+
     return(
         <div>
             {
@@ -15,7 +18,7 @@ const  Blog = ({blogs}) => {
          <div className='content'>
          <h1 className='title'>{blog.title}</h1>
          </div>
-         <img className="blogimg"  src={blog.photo} alt="a blogpost" /> 
+         <img className="blogimg"  src={blog.photo} alt="a blogpost" onClick={() => console.log(blog.id)}/> 
          </div>
     </Tilt>
          </div>

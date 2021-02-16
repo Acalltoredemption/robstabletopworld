@@ -22,6 +22,7 @@ const Upcoming = () => {
                 let description = doc.data().description;
                 let photo = doc.data().photo;
                 let title = doc.data().title;
+                let url = doc.data().url;
         
                 setEvents(
                     <div className="upcoming">
@@ -34,8 +35,9 @@ const Upcoming = () => {
                 <div className="upcomingcontent">
                 <h1 className="upcomingtitle">{title}</h1>
                 </div>
-        
+                <a href={url}>
                 <img className="upcomingimg" src={photo} alt="an upcoming event" />
+                </a>
                 </div>
                 </Tilt>
                 </div>
