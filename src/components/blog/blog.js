@@ -1,6 +1,7 @@
 import React from 'react';
 import Tilt from 'react-vanilla-tilt';
 import history from '../../history/history';
+import './blog.css'
 
 
 const  Blog = ({blogs}) => {
@@ -14,21 +15,14 @@ const  Blog = ({blogs}) => {
         <div className="blogpost" key={blog.title}>
       <div className="blogbox">
      <Tilt className="tiltbox">       
-         <div className="blogpost-image">
-         <div className='content'>
-         <h1 className='title'>{blog.title}</h1>
+         <div className="pageblogpost-image">
+         <div className='pagecontent' onClick={() => history.push('/article?' + blog.id)}>
+         <h1 className='title' onClick={() => history.push('/article?' + blog.id)}>{blog.title}</h1>
          </div>
          <img className="blogimg"  src={blog.photo} alt="a blogpost" onClick={() => history.push('/article?' + blog.id)} /> 
          </div>
     </Tilt>
          </div>
-         <div className="blogpost-author">{blog.author}</div>
-         <div className="blogpost-summary">
-             {blog.content}
-         </div>
-         <div className="buttondiv"> 
-         <input type="submit" className="btn btn-success btn-send" value="To Article" />
-      </div>
      <div>
      </div>
      </div>

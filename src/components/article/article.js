@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {db} from '../../firebase/firebaseconfig';
-
+import history from '../../history/history';
 
 const  Article = () => {
 
@@ -35,8 +35,8 @@ const  Article = () => {
                 return(
         <div className="blogpost" key={blog.title}>
       <div className="blogbox">       
-         <div className="blogpost-image">
-         <div className='content'>
+         <div className="pageblogpost-image">
+         <div className='pagecontent'>
          <h1 className='title'>{blog.title}</h1>
          </div>
          <img className="blogimg"  src={blog.photo} alt="a blogpost" /> 
@@ -47,7 +47,7 @@ const  Article = () => {
              {blog.content}
          </div>
          <div className="buttondiv"> 
-         <input type="submit" className="btn btn-success btn-send" value="To Article" />
+         <input className="btn btn-success btn-send" value="Home" onClick={() => history.push('/')} />
       </div>
      <div>
      </div>
