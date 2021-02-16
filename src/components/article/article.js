@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {db} from '../../firebase/firebaseconfig';
 import history from '../../history/history';
+import './article.css';
 
 const  Article = () => {
 

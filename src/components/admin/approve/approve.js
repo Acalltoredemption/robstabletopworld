@@ -3,6 +3,7 @@ import {db} from '../../../firebase/firebaseconfig';
 import './approve.css';
 import history from '../../../history/history';
 import '../../../firebase/firebaseconfig';
+import firebase from 'firebase'
 
 const Approve = () => {
         const [showcase, setShowcase] = useState([]);
@@ -25,13 +26,7 @@ const Approve = () => {
             fetchShowcases();
         }, []);
     
-        function deleteBlog (e) {
-           let id = e.target.getAttribute('showcaseRef');
-           db.collection('showcase').doc(id).delete();
-           history.push('/')
-        
-           
-        }
+
 
     
 
@@ -52,11 +47,19 @@ const Approve = () => {
                 {
                 showcase && 
                 showcase.map(showcase => {
+                    function deleteBlog (e) {
+                        db.collection('showcase').doc(showcase.id).delete();
+                        history.push('/')
+                     }
 
                     function approveBlog (e) {
                         db.collection('showcase').doc(showcase.id).set({
                             approved: true
                         }, { merge: true});
+                        var docRef = db.collection('showcase').doc(showcase.id);
+                        var removeUnapproval = docRef.update({
+                            unapproved: firebase.firestore.FieldValue.delete()
+                        })
                         history.push('/')
                     }
             return(

@@ -25,7 +25,7 @@ const Upcoming = () => {
                 let url = doc.data().url;
         
                 setEvents(
-                    <div className="upcoming">
+                    <div className="upcoming"> 
                 
                     <p className="upcoming-title">Upcoming Event</p>
                     <div className="upcomingbox">
@@ -43,8 +43,8 @@ const Upcoming = () => {
                 </div>
         
         
-                    <p className="upcoming-date">{date}</p>
-                <div className="upcoming-desc">
+                <p className="upcoming-dates">{date}</p>
+                <div className="upcoming-descs">
                     {description}
                 </div>
                 

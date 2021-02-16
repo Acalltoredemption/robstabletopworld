@@ -77,9 +77,17 @@
 }
 .blogpost-author {
     padding: 10px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .blogpost-summary {
-    font-size: 14px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
 }
 .buttondiv {
     text-align: center;
