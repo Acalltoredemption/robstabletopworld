@@ -9,6 +9,7 @@ import MakeEventPage from './components/admin/makeevent/makeevent';
 import LoginPage from './components/login/login';
 import SignupPage from './components/signup/signup';
 import AddMerch from './components/admin/addmerch/addmerch';
+import ViewMerch from './components/admin/viewmerch/viewmerch';
 import SubmissionsPage from './components/submissions/submissions';
 import ApprovePage from './components/admin/approve/approve';
 import ApprovedPage from './components/admin/approved/approved';
@@ -54,6 +55,7 @@ return (
         <Route path='/approve' component={ApprovePage} />
         <Route path='/approved' component={ApprovedPage} />
         <Route path="/addmerch" component={AddMerch} />
+        <Route path='/merch' component={ViewMerch} />
         <Route path='/blogedit' component={BlogEdit} />
         <Route path='/login' component={LoginPage} />
         <Route path='/signup' component={SignupPage} />

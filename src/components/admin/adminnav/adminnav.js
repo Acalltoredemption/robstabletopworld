@@ -49,6 +49,9 @@ const AdminNav = () => {
                   <Link to="/addmerch" id="logged-in-admin"><div className="navlink admin-link">Add Merch</div></Link>
                   </Col>
                   <Col sm>
+                  <Link to="/merch" id="logged-in-admin"><div className="navlink admin-link">View Merch</div></Link>
+                  </Col>
+                  <Col sm>
                   <Link to="/approve" id="logged-in-admin"><div className="navlink admin-link">View Submissions</div></Link>
                   </Col>
                   </Row>
