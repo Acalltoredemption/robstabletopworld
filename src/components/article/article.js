@@ -8,8 +8,9 @@ const  Article = () => {
 
     useEffect(() => {
         const fetchPosts = async () => {
-        
-            await db.collection('blogposts').doc('HGxZ3Bty8CifBKgljk0a').get().then(doc => {
+            const queryString = window.location.search.substr(1);
+            console.log(queryString);
+            await db.collection('blogposts').doc(queryString).get().then(doc => {
                 this.blogstore = []
                 
                     var data = {id: doc.id, ...doc.data() };
