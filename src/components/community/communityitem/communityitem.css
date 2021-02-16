@@ -1,20 +1,25 @@
 .showcaseitem {
     width: 100%;
     height: 300px;
-    box-shadow: 2px 2px 6px 4px grey;
+    
    
     border-radius: 5px;
 }
 .showcaseitem:hover {
     cursor: pointer;
-    transform: scale(1.1);
+    transform: scale(1.04);
     
 }
 .showcaseauthor{
     text-align: center;
+    
 }
 .showcaseitemholder {
-    padding: 5px;
+    padding: 8px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 2px 2px 6px 4px grey;
 }
 .comtitle {
     text-align: center;

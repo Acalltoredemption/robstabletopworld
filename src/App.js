@@ -11,6 +11,7 @@ import SignupPage from './components/signup/signup';
 import AddMerch from './components/admin/addmerch/addmerch';
 import SubmissionsPage from './components/submissions/submissions';
 import ApprovePage from './components/admin/approve/approve';
+import ApprovedPage from './components/admin/approved/approved';
 import CommunityPage from './components/community/community';
 import {AuthProvider} from './contexts/AuthContext';
 import AdminNav from './components/admin/adminnav/adminnav';
@@ -51,6 +52,7 @@ return (
         <Route path='/makeblog' component={MakeBlogPage} />
         <Route path='/makeevent' component={MakeEventPage} />
         <Route path='/approve' component={ApprovePage} />
+        <Route path='/approved' component={ApprovedPage} />
         <Route path="/addmerch" component={AddMerch} />
         <Route path='/blogedit' component={BlogEdit} />
         <Route path='/login' component={LoginPage} />

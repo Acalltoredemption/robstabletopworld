@@ -1,17 +1,17 @@
 import React, {useState, useEffect} from 'react';
 import {db} from '../../../firebase/firebaseconfig';
-import './approve.css';
+import './approved.css';
 import history from '../../../history/history';
 import '../../../firebase/firebaseconfig';
 import firebase from 'firebase'
 
-const Approve = () => {
+const Approved = () => {
         const [showcase, setShowcase] = useState([]);
 
         useEffect(() => {
             const fetchShowcases = async () => {
             
-                await db.collection('showcase').orderBy('unapproved').get().then((snapshot) => {
+                await db.collection('showcase').orderBy('approved').get().then((snapshot) => {
                     this.showcases = []
                     
                     snapshot.docs.forEach(doc => {
@@ -34,8 +34,8 @@ const Approve = () => {
             <div>
                 <div id="bulkOptionContainer" className="col-xs-4">
                     <div className="approvalheading">
-                    <div><input type="submit" className="btn btn-success btn-send" onClick={() => history.push('/approved')} value="View Approved Submissions" /></div>
-                    <div>Unapproved Submissions</div>
+                    <div><input type="submit" className="btn btn-success btn-send" onClick={() => history.push('/approve')} value="View UnApproved Submissions" /></div>
+                    <div>Approved Submissions</div>
                     </div>
                 <table class="table table-bordered blogdisplay">
                 <thead>
@@ -44,7 +44,6 @@ const Approve = () => {
                         <th className="blogitem">Description</th>
                         <th className="blogitem">Photo</th>
                         <th className="blogitem">Delete</th>
-                        <th className="blogitem">Approve</th>
                     </tr>
                 </thead>
              </table>
@@ -72,7 +71,6 @@ const Approve = () => {
                     <td className="blogitem">{showcase.description}</td>
                     <td className="blogitem"><img className="adminblogimg"  src={showcase.photo} alt="a blogpost" /></td>
                     <td className="blogitem"><button type="submit" onClick={(e) => deleteBlog(e)} className="btn btn-danger">Delete</button> </td>
-                    <td className="blogitem" id={showcase.date}><input type="submit" onClick={(e) => approveBlog(e)} showcaseid={showcase.id} className="btn btn-success btn-send" value="Approve" /> </td>
                 </table>
              )
              }
@@ -90,4 +88,4 @@ const Approve = () => {
     
 
  
-export default Approve;
+export default Approved;

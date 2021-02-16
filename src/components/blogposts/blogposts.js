@@ -11,6 +11,8 @@ const BlogPosts = () => {
     const [postsPerPage] = useState(5);
 
 
+    
+
     useEffect(() => {
         const fetchPosts = async () => {
         
@@ -19,6 +21,7 @@ const BlogPosts = () => {
                 snapshot.forEach(doc => {
                     var data = {id: doc.id, ...doc.data() };
                      this.blogstore.push(data)
+                     
                 })
             });
             setBlogs(this.blogstore);

@@ -8,3 +8,8 @@
 .blogitem {
     width: 20%;
 }
+.approvalheading {
+    text-align: center;
+    padding: 15px;
+    font-size: 25px;
+}
