@@ -83,7 +83,7 @@
     justify-content: center;
 }
 .blogpost-summary {
-    font-size: 15px;
+    font-size: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -148,3 +148,10 @@
     .tiltitem {
         display: inline-table;
     }
+
+.commentholder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

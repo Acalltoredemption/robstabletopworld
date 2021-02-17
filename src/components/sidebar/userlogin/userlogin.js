@@ -51,21 +51,23 @@ async function handleLogout() {
 
 
     return ( 
+        <div className="loginholder">
         <Card style={{width: '30rem', height: '8.5rem', position: 'block', background: 'white'}}>
-        <Card.Body>
-            <Card.Title>
-                <Card.Text className="logged-message">
+        <Card.Body> 
+            <Card.Title className="logged-message">
+                <Card.Text>
                 {message}
                 {adminmessage}
                 <br></br>
                 {currentUser && currentUser.email}
                 </Card.Text>
             </Card.Title>
-            <Button onClick={handleLogout} variant="primary" display="none" id="logged-in" style={{position: 'absolute', bottom: 5}}>Log Out</Button>
-            <Button onClick={handleLogin} variant="primary" id="logged-out" style={{position: 'absolute', bottom: 5}}>Log In</Button>
-            <Button onClick={handleSignup} variant="primary" id="logged-out" style={{position: 'absolute', bottom: 5, left: 100}}>Sign Up</Button>
+            <Button onClick={handleLogout} variant="primary" display="none" id="logged-in" style={{position: 'absolute', bottom: 25, width: 100}}>Log Out</Button>
+            <Button onClick={handleLogin} variant="primary" display="block" id="logged-out" style={{position: 'absolute', bottom: 25, left: 50, width: 100}}>Log In</Button>
+            <Button onClick={handleSignup} variant="primary" display="block" id="logged-out" style={{position: 'absolute', bottom: 25, right: 50, width: 100}}>Sign Up</Button>
         </Card.Body>
         </Card>
+        </div>
 
      );
 }
