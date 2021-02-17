@@ -1,27 +1,27 @@
 import React, {useEffect, useState} from 'react';
-import './artshowcase.css';
+import './membershowcase.css';
 import 'firebase/firestore';
 import history from '../../../history/history';
 import {db} from '../../../firebase/firebaseconfig';
 
 
-const Showcase = () => {
-    const [showcase, setShowcase] = useState('')
+const MemberShowcase = () => {
+    const [membershowcase, setmemberShowcase] = useState('')
     function redirect(){
-        history.push('/art')
+        history.push('/community')
     }
     useEffect(() => {
-        db.collection('showcase').orderBy('date', 'asc').get().then((snapshot) => {
+        db.collection('community').orderBy('date', 'asc').get().then((snapshot) => {
             snapshot.docs.forEach(doc => {
                
 
                 let photo = doc.data().photo;
  
         
-                setShowcase(
+                setmemberShowcase(
                    
                     <div className="mainholder" key={photo} onClick={redirect}>
-                    <h5 className="showcasetitle">Art Showcase</h5>
+                    <h5 className="showcasetitle">Our Community</h5>
                     <div className="art-image-border">
                     <img className=" maindiv" src={photo} alt="a community art sample" />
                     </div>
@@ -36,10 +36,10 @@ const Showcase = () => {
     return (
 
         <div id="showcase-list">
-            {showcase}
+            {membershowcase}
         </div>
     )
 
 }
  
-export default Showcase;
+export default MemberShowcase;

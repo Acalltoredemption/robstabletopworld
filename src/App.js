@@ -12,6 +12,7 @@ import AddMerch from './components/admin/addmerch/addmerch';
 import ViewMerch from './components/admin/viewmerch/viewmerch';
 import SubmissionsPage from './components/submissions/submissions';
 import CommunitySubmit from './components/submissions/communitysubmit';
+import OurCommunityPage from './components/community/ourcommunity/ourcommunity';
 import ApprovePage from './components/admin/approve/approve';
 import ApprovedPage from './components/admin/approved/approved';
 import ArtPage from './components/community/community';
@@ -51,6 +52,7 @@ return (
         <Route path='/contact' component={ContactPage} />
         <Route path='/submissions' component={SubmissionsPage} />
         <Route path='/communitysubmit' component={CommunitySubmit} />
+        <Route path='/community' component={OurCommunityPage} />
         <Route path='/art' component={ArtPage} />
         <Route path='/makeblog' component={MakeBlogPage} />
         <Route path='/makeevent' component={MakeEventPage} />

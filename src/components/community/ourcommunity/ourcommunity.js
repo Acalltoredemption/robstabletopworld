@@ -42,11 +42,11 @@ const OurCommunity = () => {
             <Row>
                 <div>
                 <Members members={members} />
-                <Pagination postsPerPage={postsPerPage} totalPosts={showcase.length} paginate={paginate} />
+                <Pagination postsPerPage={postsPerPage} totalPosts={members.length} paginate={paginate} />
                 </div>
             </Row>
         </Container>
      );
 }
  
-export default Community;
+export default OurCommunity;

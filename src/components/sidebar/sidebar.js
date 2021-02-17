@@ -1,6 +1,6 @@
 import React from 'react';
 import Upcoming from './upcoming/upcoming';
-import Merch from './merch/merch';
+import MemberShowcase from './membershowcase/membershowcase';
 import Showcase from './artshowcase/artshowcase';
 import './sidebar.css';
 
@@ -11,7 +11,7 @@ const SideBar = () => {
             <Upcoming />
             <div>
             <Showcase />
-            <Merch />
+            <MemberShowcase />
             </div>
         </div>
     )

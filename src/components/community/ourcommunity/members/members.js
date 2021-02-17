@@ -1,4 +1,3 @@
-
 import React from 'react';
 import './members.css';
 
@@ -47,4 +46,4 @@ const Members = ({members}) => {
             )
 }
  
-export default Item;
+export default Members;
