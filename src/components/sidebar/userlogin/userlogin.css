@@ -1,0 +1,13 @@
+.user-email {
+    font-size: 12px;
+    position: block;
+    top: 28px;
+}
+
+.logged-message {
+    font-size: 12px;
+    padding: none;
+    position: block;
+    top: 10px;
+    
+}
