@@ -43,6 +43,9 @@ const Navbar = () => {
                   <Col sm>
                   <Link to="/art"><div className="navlink">Art Showcase</div></Link>
                   </Col>
+                  <Col sm>
+                  <Link to="/community"><div className="navlink">Our Community</div></Link>
+                  </Col>
                   <Col sm id="logged-in">
                   <Link to="/submissions" id="logged-in"><div className="navlink" id="logged-in">Submissions</div></Link>
                   </Col>
