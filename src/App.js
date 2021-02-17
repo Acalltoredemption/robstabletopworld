@@ -11,9 +11,10 @@ import SignupPage from './components/signup/signup';
 import AddMerch from './components/admin/addmerch/addmerch';
 import ViewMerch from './components/admin/viewmerch/viewmerch';
 import SubmissionsPage from './components/submissions/submissions';
+import CommunitySubmit from './components/submissions/communitysubmit';
 import ApprovePage from './components/admin/approve/approve';
 import ApprovedPage from './components/admin/approved/approved';
-import CommunityPage from './components/community/community';
+import ArtPage from './components/community/community';
 import {AuthProvider} from './contexts/AuthContext';
 import AdminNav from './components/admin/adminnav/adminnav';
 import BlogEdit from './components/admin/blogedit/blogedit';
@@ -49,7 +50,8 @@ return (
         <Route path='/about' component={AboutPage} />
         <Route path='/contact' component={ContactPage} />
         <Route path='/submissions' component={SubmissionsPage} />
-        <Route path='/community' component={CommunityPage} />
+        <Route path='/communitysubmit' component={CommunitySubmit} />
+        <Route path='/art' component={ArtPage} />
         <Route path='/makeblog' component={MakeBlogPage} />
         <Route path='/makeevent' component={MakeEventPage} />
         <Route path='/approve' component={ApprovePage} />
