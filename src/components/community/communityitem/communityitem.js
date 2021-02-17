@@ -6,7 +6,7 @@ import './communityitem.css';
 const Item = ({items}) => {
     return(
         <div>
-        <h3 className="comtitle">Community Showcase</h3>
+        <h3 className="comtitle">Art Showcase</h3>
         <div className="showcaseholder">
             {
             items && 

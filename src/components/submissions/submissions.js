@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import 'firebase/storage';
 import {firebase, db} from '../../firebase/firebaseconfig';
 import history from '../../history/history';
-
+import './submissions.css'
   
 
 
@@ -70,9 +70,10 @@ class Submissions extends Component {
 return (
     <form id="add-blog-form" onSubmit={this.handleSubmit}>
 
-        <div className="infodiv">
-            <h3>Community Submissions</h3>
-            <p>Have a project that came out well or something you'd like to share? Submit it below for consideration to be added to our Community Showcase!</p>
+        <div className="infodiv communitysubmit">
+        <button type="submit" className="communitybutton" onClick={() => history.push('/communitysubmit')} className="btn btn-primary">Community Submissions</button>
+            <h3>Art Submissions</h3>
+            <p>Have a project that came out well or something you'd like to share? Submit it below for consideration to be added to our Art Showcase!</p>
         </div>
         <div className="col-md-6">
             <div className="form-group">

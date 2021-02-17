@@ -15,7 +15,7 @@ const Community = () => {
     useEffect(() => {
         const fetchShowcase = async () => {
             var showcaseRef = db.collection('showcase');
-            await showcaseRef.orderBy('date', 'desc').get().then(snapshot => {
+            await showcaseRef.orderBy('approved').get().then(snapshot => {
                 this.showcasestore = []
                 snapshot.forEach(doc => {
                     const data = doc.data()

@@ -27,7 +27,7 @@ const Upcoming = () => {
                 setEvents(
                     <div className="upcoming"> 
                 
-                    <p className="upcoming-title">Upcoming Event</p>
+                    <p className="upcoming-title">Video of the Week!</p>
                     <div className="upcomingbox">
                     <Tilt className="tiltbox"> 
                 <div className="image-border">
@@ -41,9 +41,6 @@ const Upcoming = () => {
                 </div>
                 </Tilt>
                 </div>
-        
-        
-                <p className="upcoming-dates">{date}</p>
                 <div className="upcoming-descs">
                     {description}
                 </div>
