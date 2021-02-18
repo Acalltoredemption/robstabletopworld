@@ -6,6 +6,7 @@ import './article.css';
 const  Article = () => {
 
     const [blog, setBlog] = useState([]);
+    const [comments, setComments] = useState([]);
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -19,13 +20,37 @@ const  Article = () => {
                      
                 })
             ;
-            setBlog(this.blogstore);
-            
-            
+            setBlog(this.blogstore);        
         }
         
         fetchPosts();
+
+
+
     }, []);
+
+    useEffect(() => {
+        const fetchComments = async () => {
+            var commentRef = db.collection('comments');
+            await commentRef.orderBy('approved').get().then(snapshot => {
+                this.commentstore = []
+                snapshot.forEach(doc => {
+                    const data = doc.data()
+                     this.commentstore.push(data)
+                })
+            });
+            setComments(this.commentstore);
+            
+        }
+
+        fetchComments();
+    }, []);
+
+
+
+
+
+
 
 
     return(
@@ -51,7 +76,24 @@ const  Article = () => {
          <div className="buttondiv"> 
 
 
+                { comments &&
+                    comments.map(comment => {
+                        return(
+                            <div className="commentholder">
+                            <div className="commentbox">
+                                <div className="commentusername">
+                                {comment.username}
+                                </div>
+                                {comment.content}
+                                <div className="commentdate">
+                                {comment.date}
+                                </div>
+                            </div>
+                            </div>
+                        )
+                    })
 
+                }
          <div className="row">
         <div className="col-md-12">
             <div className="form-group">
