@@ -22,9 +22,12 @@ const Item = ({items}) => {
 
             
                 return(
-        <div className="showcaseitemholder" key={item.name}>
-            <h5 className="showcaseauthor">{item.name}</h5>
-         <img className="showcaseitem" src={item.photo} onClick={showModal} alt="a community artwork submission" />
+  
+<div key={item.name}>
+<div class="showcasecard">
+<img src={item.photo} alt="A community artwork submission" onClick={showModal} className='showcaseimage' />
+<div class="container">
+  <h4><b>{item.name}</b></h4>
 
 
         <div id={specialkey} className="hidemodal">
@@ -34,7 +37,9 @@ const Item = ({items}) => {
         </div>
 
 
-        </div>
+</div>
+</div>
+</div>
 
 
         

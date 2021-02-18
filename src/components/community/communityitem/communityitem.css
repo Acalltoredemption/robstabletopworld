@@ -1,35 +1,27 @@
-.showcaseitem {
+
+.showcaseimage {
     width: 100%;
+}
+
+.showcasecard {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
     height: 300px;
-    
-   
-    border-radius: 5px;
-}
-.showcaseitem:hover {
-    cursor: pointer;
-    transform: scale(1.04);
-    
-}
-.showcaseauthor{
-    text-align: center;
-    
-}
-.showcaseitemholder {
-    padding: 8px;
-    border: 1px solid black;
-    border-radius: 10px;
-    margin: 10px;
-    box-shadow: 2px 2px 6px 4px grey;
-}
-.comtitle {
-    text-align: center;
-    margin-bottom: 5%;
-    margin-top: 5%;
-}
+  }
+  
+  /* On mouse-over, add a deeper shadow */
+  .showcasecard:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+
+
+
+
 .showcaseholder {
     display: inline-grid;
     grid-template-columns: auto auto auto;
-
+    width: 100%;
 }
 
 
