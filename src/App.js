@@ -15,6 +15,7 @@ import CommunitySubmit from './components/submissions/communitysubmit';
 import OurCommunityPage from './components/community/ourcommunity/ourcommunity';
 import ApprovePage from './components/admin/approve/approve';
 import ApprovedPage from './components/admin/approved/approved';
+import AddWarPage from './components/admin/addwar/addwar';
 import ArtPage from './components/community/community';
 import {AuthProvider} from './contexts/AuthContext';
 import AdminNav from './components/admin/adminnav/adminnav';
@@ -55,6 +56,7 @@ return (
         <Route path='/community' component={OurCommunityPage} />
         <Route path='/art' component={ArtPage} />
         <Route path='/makeblog' component={MakeBlogPage} />
+        <Route path='/warandpieces' component={AddWarPage} />
         <Route path='/makeevent' component={MakeEventPage} />
         <Route path='/approve' component={ApprovePage} />
         <Route path='/approved' component={ApprovedPage} />

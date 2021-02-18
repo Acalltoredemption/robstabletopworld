@@ -81,15 +81,17 @@ const  Article = () => {
                         return(
                             <div className="commentholder">
                             <div className="commentbox">
-                                <div className="commentusername">
+                            <div className="commentusername">
                                 {comment.username}
                                 </div>
-                                {comment.content}
                                 <div className="commentdate">
                                 {comment.date}
                                 </div>
+                                {comment.content}
+
                             </div>
                             </div>
+
                         )
                     })
 

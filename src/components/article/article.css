@@ -153,8 +153,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}
 
+}
+.commentbox:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
 .commentusername {
     font-weight: bold;
     font-size: 18px;
@@ -164,9 +167,10 @@
 }
 
 .commentbox {
-    border: 1px solid black;
-    width: 60%;
+    
+    width: 50%;
     margin: 10px;
-    border-radius: 3px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
 }
 

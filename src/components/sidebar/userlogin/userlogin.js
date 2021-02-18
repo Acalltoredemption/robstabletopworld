@@ -63,8 +63,8 @@ async function handleLogout() {
                 </Card.Text>
             </Card.Title>
             <Button onClick={handleLogout} variant="primary" display="none" id="logged-in" style={{position: 'absolute', bottom: 25, width: 100}}>Log Out</Button>
-            <Button onClick={handleLogin} variant="primary" display="block" id="logged-out" style={{position: 'absolute', bottom: 25, left: 50, width: 100}}>Log In</Button>
-            <Button onClick={handleSignup} variant="primary" display="block" id="logged-out" style={{position: 'absolute', bottom: 25, right: 50, width: 100}}>Sign Up</Button>
+            <Button onClick={handleLogin} variant="primary" display="none" id="logged-out" style={{position: 'absolute', bottom: 25, left: 50, width: 100}}>Log In</Button>
+            <Button onClick={handleSignup} variant="primary" display="none" id="logged-out" style={{position: 'absolute', bottom: 25, right: 50, width: 100}}>Sign Up</Button>
         </Card.Body>
         </Card>
         </div>

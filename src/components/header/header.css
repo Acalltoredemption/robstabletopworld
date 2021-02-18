@@ -10,14 +10,14 @@
     width: 70px;
     position: absolute;
     right: 0px;
-    top: 0px;
+    top: 3px;
 }
 .Twitter {
     background-color: transparent;
     width: 70px;
     position: absolute;
     right: 70px;
-    top: 0px;
+    top: 3px;
 }
 
 .Instagram {
@@ -25,5 +25,15 @@
     width: 70px;
     position: absolute;
     right: 140px;
-    top: 0px;
+    top: 3px;
+}
+
+.Youtube:hover {
+    transform: scale(1.1);
+}
+.Twitter:hover {
+    transform: scale(1.1);
+}
+.Instagram:hover {
+    transform: scale(1.1);
 }
