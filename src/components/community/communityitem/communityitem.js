@@ -1,12 +1,19 @@
-
 import React from 'react';
 import './communityitem.css';
+import artimage from '../../../images/ArtShowcase.png';
 
 
 const Item = ({items}) => {
     return(
-        <div>
-        <h3 className="comtitle">Art Showcase</h3>
+        <div >
+            <div className="artbanner">
+        <div className="comtitle">
+            <img src={artimage} className="dungeonimg" />
+            <div className="thetitle">
+        <h2>Art Showcase</h2>
+            </div>
+        </div>
+        </div>
         <div className="showcaseholder">
             {
             items && 

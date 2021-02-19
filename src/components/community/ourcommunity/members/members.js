@@ -1,11 +1,18 @@
 import React from 'react';
 import './members.css';
-
+import comimage from '../../../../images/CommunityShowcase.png';
 
 const Members = ({members}) => {
     return(
         <div>
-        <h3 className="comtitle">Our Community</h3>
+        <div className="artbanner">
+        <div className="comtitle">
+            <img src={comimage} className="comimg" />
+            <div className="thetitle">
+        <h2>Community Showcase</h2>
+            </div>
+        </div>
+        </div>
         <div className="showcaseholder">
             {
             members && 
@@ -21,19 +28,23 @@ const Members = ({members}) => {
 
             
                 return(
-        <div className="showcaseitemholder" key={member.name}>
-            <h5 className="showcaseauthor">{member.name}</h5>
-         <img className="showcaseitem" src={member.photo} onClick={showModal} alt="a community member photo" />
+<div key={member.name}>
+<div class="showcasecard">
+<img src={member.photo} alt="A community member photo" onClick={showModal} className='showcaseitem' />
+<div class="container">
+  <h4><b>{member.name}</b></h4>
 
 
         <div id={specialkey} className="hidemodal">
             <span className="closebutton" onClick={closeModal}>X</span>
-        <img className="modalitem" src={member.photo} alt="a community artwork submission"  />
+        <img className="modalitem" src={member.photo} alt="a community photo submission"  />
         <p className="modaldesc">{member.bio}</p>
         </div>
 
 
-        </div>
+</div>
+</div>
+</div>
 
 
         
