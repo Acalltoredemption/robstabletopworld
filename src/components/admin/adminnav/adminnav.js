@@ -40,13 +40,16 @@ const AdminNav = () => {
                   <Link to="/makeblog" id="logged-in-admin"><div className="navlink admin-link">Make Blogpost</div></Link>
                   </Col>
                   <Col sm>
-                  <Link to="/makeevent" id="logged-in-admin"><div className="navlink admin-link">Make Event</div></Link>
+                  <Link to="/makeevent" id="logged-in-admin"><div className="navlink admin-link">Vid of the Week</div></Link>
                   </Col>
                   <Col sm>
                   <Link to="/blogedit" id="logged-in-admin"><div className="navlink admin-link">View Blogs</div></Link>
                   </Col>
                   <Col sm>
                   <Link to="/approve" id="logged-in-admin"><div className="navlink admin-link">Art Submissions</div></Link>
+                  </Col>
+                  <Col sm>
+                  <Link to="/communitysubmissions" id="logged-in-admin"><div className="navlink admin-link">Community Submissions</div></Link>
                   </Col>
                   <Col sm>
                   <Link to="/warandpieces" id="logged-in-admin"><div className="navlink admin-link">War & Pieces</div></Link>
