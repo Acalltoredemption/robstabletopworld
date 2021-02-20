@@ -61,10 +61,10 @@ const Approve = () => {
                             approved: true
                         }, { merge: true});
                         var docRef = db.collection('showcase').doc(showcase.id);
-                        var removeUnapproval = docRef.update({
+                        docRef.update({
                             unapproved: firebase.firestore.FieldValue.delete()
                         })
-                        history.push('/')
+                        history.push('/') 
                     }
             return(
                 <table className="table table-bordered blogdisplay">
