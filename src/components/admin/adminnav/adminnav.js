@@ -54,6 +54,9 @@ const AdminNav = () => {
                   <Col sm>
                   <Link to="/warandpieces" id="logged-in-admin"><div className="navlink admin-link">War & Pieces</div></Link>
                   </Col>
+                  <Col sm>
+                  <Link to="/comments" id="logged-in-admin"><div className="navlink admin-link">Blog Comments</div></Link>
+                  </Col>
                   </Row>
                 </Container>
             </nav>

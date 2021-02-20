@@ -17,6 +17,7 @@ import ApprovePage from './components/admin/approve/approve';
 import ApprovedPage from './components/admin/approved/approved';
 import ApproveCommunity from './components/admin/approvecommunity/approvecommunity';
 import ApprovedCommunity from './components/admin/approvedcommunity/approvedcommunity';
+import ApproveComments from './components/admin/comments/comments';
 import AddWarPage from './components/admin/addwar/addwar';
 import ArtPage from './components/community/community';
 import {AuthProvider} from './contexts/AuthContext';
@@ -63,6 +64,7 @@ return (
         <Route path='/approve' component={ApprovePage} />
         <Route path='/approvedcommunity' component={ApprovedCommunity} />
         <Route path='/communitysubmissions' component={ApproveCommunity} />
+        <Route path='/comments' component={ApproveComments} />
         <Route path='/approved' component={ApprovedPage} />
         <Route path="/addmerch" component={AddMerch} />
         <Route path='/merch' component={ViewMerch} />
