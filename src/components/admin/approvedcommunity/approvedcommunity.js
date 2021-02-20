@@ -1,17 +1,17 @@
 import React, {useState, useEffect} from 'react';
 import {db} from '../../../firebase/firebaseconfig';
-import './approved.css';
+import './approvedcommunity.css';
 import history from '../../../history/history';
 import '../../../firebase/firebaseconfig';
 import firebase from 'firebase'
 
-const Approved = () => {
+const ApprovedCommunity = () => {
         const [showcase, setShowcase] = useState([]);
 
         useEffect(() => {
             const fetchShowcases = async () => {
             
-                await db.collection('showcase').orderBy('approved').get().then((snapshot) => {
+                await db.collection('community').orderBy('approved').get().then((snapshot) => {
                     this.showcases = []
                     
                     snapshot.docs.forEach(doc => {
@@ -34,14 +34,14 @@ const Approved = () => {
             <div>
                 <div id="bulkOptionContainer" className="col-xs-4">
                     <div className="approvalheading">
-                    <div><input type="submit" className="btn btn-success btn-send" onClick={() => history.push('/approve')} value="View UnApproved Submissions" /></div>
-                    <div>Approved Submissions</div>
+                    <div><input type="submit" className="btn btn-success btn-send" onClick={() => history.push('/communitysubmissions')} value="View UnApproved Members" /></div>
+                    <div>Approved Community Members</div>
                     </div>
                 <table class="table table-bordered blogdisplay">
                 <thead>
                     <tr>
                         <th className="blogitem">Name</th>
-                        <th className="blogitem">Description</th>
+                        <th className="blogitem">Bio</th>
                         <th className="blogitem">Photo</th>
                         <th className="blogitem">Delete</th>
                     </tr>
@@ -51,14 +51,13 @@ const Approved = () => {
                 showcase && 
                 showcase.map(showcase => {
                     function deleteBlog (e) {
-                        db.collection('showcase').doc(showcase.id).delete();
+                        db.collection('community').doc(showcase.id).delete();
                         history.push('/')
                      }
-
             return(
                 <table className="table table-bordered blogdisplay">
                     <td className="blogitem">{showcase.name}</td>
-                    <td className="blogitem">{showcase.description}</td>
+                    <td className="blogitem">{showcase.bio}</td>
                     <td className="blogitem"><img className="adminblogimg"  src={showcase.photo} alt="a blogpost" /></td>
                     <td className="blogitem"><button type="submit" onClick={(e) => deleteBlog(e)} className="btn btn-danger">Delete</button> </td>
                 </table>
@@ -78,4 +77,4 @@ const Approved = () => {
     
 
  
-export default Approved;
+export default ApprovedCommunity;
