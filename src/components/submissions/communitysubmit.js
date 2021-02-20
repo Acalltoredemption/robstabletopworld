@@ -70,7 +70,7 @@ return (
     <form id="add-blog-form" onSubmit={this.handleCommunitySubmit}>
 
         <div className="infodiv communitysubmit">
-        <button type="submit" className="communitybutton" onClick={() => history.push('/submissions')} className="btn btn-primary">Art Submissions</button>
+        <button type="submit" onClick={() => history.push('/submissions')} className="btn communitybutton btn-primary">Art Submissions</button>
             <h3>Community Submissions</h3>
             <p>Join the Robs Tabletop World community! Tell us a bit about yourself and be featured here on the website!</p>
         </div>

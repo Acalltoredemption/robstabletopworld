@@ -71,7 +71,7 @@ return (
     <form id="add-blog-form" onSubmit={this.handleSubmit}>
 
         <div className="infodiv communitysubmit">
-        <button type="submit" className="communitybutton" onClick={() => history.push('/communitysubmit')} className="btn btn-primary">Community Submissions</button>
+        <button type="submit"  onClick={() => history.push('/communitysubmit')} className="communitybutton btn btn-primary">Community Submissions</button>
             <h3>Art Submissions</h3>
             <p>Have a project that came out well or something you'd like to share? Submit it below for consideration to be added to our Art Showcase!</p>
         </div>
