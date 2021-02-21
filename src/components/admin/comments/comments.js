@@ -43,11 +43,6 @@ const ApproveComments = () => {
 
         }, []);
 
-    
-
-
-    
-
         return(
             <div>
                 <div id="bulkOptionContainer" className="col-xs-4">

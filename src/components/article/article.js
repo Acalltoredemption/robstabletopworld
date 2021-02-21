@@ -72,6 +72,10 @@ const  Article = () => {
          <div className="blogpost-summary">
              {blog.content}
          </div>
+         <div className="pageblogpost-image">
+    
+         <img className="blogimg" src={blog.secondphoto} alt="a blogpost" />
+         </div>
          <hr></hr>
          <div className="buttondiv"> 
 

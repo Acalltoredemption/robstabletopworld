@@ -19,14 +19,14 @@ const userLogin = () => {
         //toggle UI elements
         message = 'Welcome!';
         loggedIn.forEach(item => item.style.display = 'block');
-        loggedOut.forEach(item => item.style.display = 'none');
+        loggedOut.forEach(item => item.style.display = 'hidden');
         if (currentUser.uid === 'cw67NhgIsDhyAdp2AMEuFm11a2G2'){
             adminmessage= 'You are logged in as Admin'
         }
     } else {
         //toggle UI elements
         message = 'Log in or Sign up';
-        loggedIn.forEach(item => item.style.display = 'none');
+        loggedIn.forEach(item => item.style.display = 'hidden');
         loggedOut.forEach(item => item.style.display = 'block');
     }
 
@@ -62,9 +62,9 @@ async function handleLogout() {
                 {currentUser && currentUser.email}
                 </Card.Text>
             </Card.Title>
-            <Button onClick={handleLogout} variant="primary" display="none" id="logged-in" style={{position: 'absolute', bottom: 25, width: 100}}>Log Out</Button>
-            <Button onClick={handleLogin} variant="primary" display="none" id="logged-out" style={{position: 'absolute', bottom: 25, left: 50, width: 100}}>Log In</Button>
-            <Button onClick={handleSignup} variant="primary" display="none" id="logged-out" style={{position: 'absolute', bottom: 25, right: 50, width: 100}}>Sign Up</Button>
+            <Button onClick={handleLogout} variant="primary" display="hidden" id="logged-in" style={{position: 'absolute', bottom: 25, width: 100}}>Log Out</Button>
+            <Button onClick={handleLogin} variant="primary" display="hidden" id="logged-out" style={{position: 'absolute', bottom: 25, left: 50, width: 100}}>Log In</Button>
+            <Button onClick={handleSignup} variant="primary" display="hidden" id="logged-out" style={{position: 'absolute', bottom: 25, right: 50, width: 100}}>Sign Up</Button>
         </Card.Body>
         </Card>
         </div>
