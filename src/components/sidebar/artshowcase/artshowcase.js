@@ -23,7 +23,7 @@ const Showcase = () => {
                     <div className="mainholder" key={photo} onClick={redirect}>
                     <h5 className="showcasetitle">Art Showcase</h5>
                     <div className="art-image-border">
-                    <img className=" maindiv" src={photo} alt="a community art sample" />
+                    <img className="maindiv" src={photo} alt="a community art sample" />
                     </div>
                     </div>
                     
