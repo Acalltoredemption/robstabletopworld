@@ -136,8 +136,11 @@ class MakeBlog3 extends Component {
 return (
     <div>
     <div className="makeblogbuttons">
-        <button className="btn btn-primary" style={{margin: '2px'}} onClick={this.makeBlog}>One Image</button>
-        <button className="btn btn-primary" style={{margin: '2px'}} onClick={this.makeBlog2}>Two Images</button>
+        <button className="btn btn-primary" style={{margin: '2px'}} onClick={this.makeBlog}>One Image (Shorter Blogs)</button>
+        <button className="btn btn-primary" style={{margin: '2px'}} onClick={this.makeBlog2}>Two Images (Mid-Length Blogs)</button>
+    </div>
+    <div className="makeblogbuttons">
+    <p>This is a LONG Blog Entry form with 3 images and 3 text entries. Please fill out all sections before submitting, OR choose another size above.</p>
     </div>
     <form id="add-blog-form" onSubmit={this.handleSubmit}>
 
