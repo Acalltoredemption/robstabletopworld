@@ -5,6 +5,7 @@ import 'firebase/firestore';
 import {db} from '../../firebase/firebaseconfig';
 import Item from '../community/communityitem/communityitem'; 
 import Pagination from '../../components/pagination/pagination';
+import './community.css'
 
 const Community = () => {
 
@@ -42,7 +43,9 @@ const Community = () => {
             <Row>
                 <div>
                 <Item items={currentShowcase} />
+                <div className="paginationholder">
                 <Pagination postsPerPage={postsPerPage} totalPosts={showcase.length} paginate={paginate} />
+                </div>
                 </div>
             </Row>
         </Container>

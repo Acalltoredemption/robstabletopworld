@@ -70,6 +70,10 @@ class AddWar extends Component {
     render(){
     
 return (
+    <div>
+        <div className="titleholder">
+            <p>Update the contents of the War and Pieces redirect on homepage. Please fill out ALL fields.</p>
+        </div>
     <form id="add-blog-form" onSubmit={this.handleSubmit}>
 
         <div className="col-md-6">
@@ -98,6 +102,7 @@ return (
 
 
     </form>
+    </div>
 )
     }
 }

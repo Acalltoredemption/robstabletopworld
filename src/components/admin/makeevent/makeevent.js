@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {firebase, db} from "../../../firebase/firebaseconfig";
 import history from '../../../history/history';
+import './makeevent.css';
 
 
 
@@ -9,7 +10,6 @@ class MakeEvent extends Component {
     state = {
         title: '',
         description: '',
-        date: '',
         photo: '',
         createdat: '',
         url: ''
@@ -55,7 +55,6 @@ class MakeEvent extends Component {
             ...event, 
             title: this.state.title,
             description: this.state.description,
-            date: this.state.date,
             photo: this.state.photo,
             url: this.state.url,
             createdat: new Date()
@@ -68,18 +67,15 @@ class MakeEvent extends Component {
     render(){
     
 return (
+    <div>
+    <div className="titleholder">
+        <p>Video of the Week entry for homepage. Please fill ALL fields</p>
+    </div>
     <form id="add-blog-form" onSubmit={this.handleSubmit}>
 
-
         <div className="col-md-6">
             <div className="form-group">
-                <label htmlFor="date">Date</label>
-        <input className="form-control" type="date" onChange={this.handleChange} id="date" name="date" placeholder="Event Date" />
-        </div>
-        </div>
-        <div className="col-md-6">
-            <div className="form-group">
-                <label htmlFor="title">Title</label>
+                <label htmlFor="title">Video Title</label>
                 <input className="form-control" type="text" onChange={this.handleChange} id="title" name="title" placeholder="Post Title" />
         </div>
         </div>
@@ -89,21 +85,21 @@ return (
     
             <div className="col-md-12">
                 <div className="form-group">
-                <label htmlFor="description">Event Description</label>
+                <label htmlFor="description">Brief Description</label>
         <textarea className="form-control" type="text" onChange={this.handleChange} id="description" name="description" placeholder="Description" />
         </div>
         </div>
        
         <div className="col-md-6">
             <div className="form-group">
-                <label htmlFor="image">Event Image</label>
+                <label htmlFor="image">Video Image (or thumbnail)</label>
                 <input className="form-control" type="file" onChange={this.uploadImage} placeholder="Post Image" name="image" id="photo" />
         </div>
         </div>
 
         <div className="col-md-6">
             <div className="form-group">
-                <label htmlFor="url">Event URL</label>
+                <label htmlFor="url">Direct URL to video</label>
                 <input className="form-control" type="text" onChange={this.handleChange} id="url" name="url" placeholder="Event URL" />
         </div>
         </div>
@@ -115,6 +111,7 @@ return (
         <img id="img" alt=""></img>
 
     </form>
+    </div>
 )
     }
 }

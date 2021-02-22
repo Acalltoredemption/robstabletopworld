@@ -1,7 +1,6 @@
-.paginationholder {
+.titleholder {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    color: red;
+    margin-top: 15px;
 }
