@@ -58,6 +58,22 @@ const  Article = () => {
             {
             blog && 
             blog.map(blog => {
+                const secondImage = document.querySelectorAll('#secondimg');
+                const thirdImg = document.querySelectorAll('#thirdimg');
+            
+                if (blog.secondphoto !== undefined) {
+                    secondImage.forEach(item => item.style.display = 'flex');
+                } else {
+                    secondImage.forEach(item => item.style.display = 'none');
+                } 
+
+                if (blog.thirdphoto !== undefined){
+                    thirdImg.forEach(item => item.style.display = 'flex');
+                } else {
+                    thirdImg.forEach(item => item.style.display = 'none');
+                }
+
+
                 return(
         <div className="blogpost" key={blog.title}>
       <div className="blogbox">       
@@ -72,9 +88,28 @@ const  Article = () => {
          <div className="blogpost-summary">
              {blog.content}
          </div>
-         <div className="pageblogpost-image">
-    
+
+         
+         <div className="thecenterertwo" id="secondimg">
+            <div className="hidediv" >
+        <div className="pageblogpost-image" >
          <img className="blogimg" src={blog.secondphoto} alt="a blogpost" />
+         </div>
+         </div>
+        </div>
+
+         <div className="blogpost-summary">
+             {blog.secondcontent}
+         </div>
+
+         <div className="thecentererthree" id="thirdimg"> 
+        <div className="pageblogpost-image">
+         <img className="blogimg" src={blog.thirdphoto} alt="a blogpost" />
+         </div>
+        </div>
+
+        <div className="blogpost-summary">
+             {blog.thirdcontent}
          </div>
          <hr></hr>
          <div className="buttondiv"> 

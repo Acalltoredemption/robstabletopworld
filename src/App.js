@@ -6,6 +6,7 @@ import AboutPage from './components/about/about';
 import ContactPage from './components/contact/contact';
 import MakeBlogPage from './components/admin/makeblog/makeblog';
 import MakeBlog2Page from './components/admin/makeblog/makeblog2/makeblog2';
+import MakeBlog3Page from './components/admin/makeblog/makeblog3/makeblog3';
 import MakeEventPage from './components/admin/makeevent/makeevent';
 import LoginPage from './components/login/login';
 import SignupPage from './components/signup/signup';
@@ -61,7 +62,8 @@ return (
         <Route path='/community' component={OurCommunityPage} />
         <Route path='/art' component={ArtPage} />
         <Route path='/makeblog' component={MakeBlogPage} />
-        <Route path='/makeblog2' component={MakeBlog2} />
+        <Route path='/makeblog2' component={MakeBlog2Page} />
+        <Route path='/makeblog3' component={MakeBlog3Page} />
         <Route path='/warandpieces' component={AddWarPage} />
         <Route path='/makeevent' component={MakeEventPage} />
         <Route path='/approve' component={ApprovePage} />

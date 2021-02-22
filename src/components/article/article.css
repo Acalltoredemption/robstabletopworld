@@ -55,10 +55,9 @@
  -webkit-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.5);
 	-moz-box-shadow:  0px 0px 10px 1px rgba(0,0,0,0.5);
     box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
 }
+
 
 .blogimg {
     display: block;
@@ -83,6 +82,11 @@
 .blogpost-author {
     padding: 10px;
     font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.theholder{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -179,4 +183,14 @@
     transition: 0.3s;
 }
 
+.thecenterertwo{
+
+    align-items: center;
+    justify-content: center;
+} 
+.thecentererthree{
+
+    align-items: center;
+    justify-content: center;
+}
 
