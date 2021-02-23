@@ -10,7 +10,7 @@ const ApproveComments = () => {
         useEffect(() => {
             const fetchMessages = async () => {
             
-                await db.collection('messages').orderBy('date').get().then((snapshot) => {
+                await db.collection('messages').orderBy('date', 'desc').get().then((snapshot) => {
                     this.messages = []
                     
                     snapshot.docs.forEach(doc => {
