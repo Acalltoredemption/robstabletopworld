@@ -100,5 +100,7 @@ border-color: gray;
         font-size: 30px;
         color: white;
         font-weight: bold;
+        -webkit-text-stroke: 1px black;
+        text-decoration: outline;
 
 }

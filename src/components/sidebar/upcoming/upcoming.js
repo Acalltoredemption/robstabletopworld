@@ -25,29 +25,27 @@ const Upcoming = () => {
                 let url = doc.data().url;
         
                 setEvents(
-                    <div className="upcoming"> 
-                
-                    <p className="upcoming-title">Video of the Week!</p>
-                    <div className="upcomingbox">
-                    <Tilt className="tiltbox"> 
-                <div className="image-border">
-        
-                <div className="upcomingcontent">
-                <h1 className="upcomingtitle">{title}</h1>
-                </div>
-                <a href={url}>
-                <img className="upcomingimg" src={photo} alt="an upcoming event" />
-                </a>
-                </div>
-                </Tilt>
-                </div>
-                <div className="upcoming-descs">
-                    {description}
-                </div>
-                
-        
-        
-                </div>
+
+<div className="upcoming" key={photo}> 
+<div className="upcomingbox">
+<Tilt className="tiltbox"> 
+<div className="image-border">
+<div className="upcomingcontent2">
+<p className="wartitletwo">Video of the Week</p>
+</div>
+<a href={url}>
+<img className="upcomingimg" src={photo} alt="an upcoming event" />
+</a>
+</div>
+</Tilt>
+</div> 
+<div className="upcoming-descs">
+    {title}
+</div>
+<div className="upcoming-descs">
+    {description}
+</div>
+</div>  
                 )
             })
         })

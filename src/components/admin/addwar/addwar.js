@@ -3,17 +3,17 @@ import 'firebase/storage';
 import {firebase, db} from '../../../firebase/firebaseconfig';
 import history from '../../../history/history';
 
-  
-
-
 
 class AddWar extends Component {
+    
+    
     state = {
         title: '',
         photo: '',
         date: '',
         url: ''
     }
+
     handleChange = (e) => {
         e.preventDefault();
         this.setState({
@@ -68,7 +68,10 @@ class AddWar extends Component {
 
 
     render(){
-    
+
+
+
+
 return (
     <div>
         <div className="titleholder">
