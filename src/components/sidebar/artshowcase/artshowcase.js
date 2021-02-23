@@ -3,7 +3,7 @@ import './artshowcase.css';
 import 'firebase/firestore';
 import history from '../../../history/history';
 import {db} from '../../../firebase/firebaseconfig';
-
+import Tilt from 'react-vanilla-tilt';
 
 const Showcase = () => {
     const [showcase, setShowcase] = useState('')
@@ -20,13 +20,19 @@ const Showcase = () => {
         
                 setShowcase(
                    
-                    <div className="mainholder" key={photo} onClick={redirect}>
-                    <h5 className="showcasetitle">Art Showcase</h5>
-                    <div className="art-image-border">
-                    <img className="maindiv" src={photo} alt="a community art sample" />
-                    </div>
-                    </div>
-                    
+
+<div className="upcoming" key={photo} onClick={redirect}> 
+<div className="upcomingbox">
+<Tilt className="tiltbox"> 
+<div className="image-border">
+<div className="upcomingcontent2">
+<p className="wartitle">Art Showcase</p>
+</div>
+<img className="upcomingimg" src={photo} alt="an upcoming event" />
+</div>
+</Tilt>
+</div> 
+</div>                
                 )
             })
         })

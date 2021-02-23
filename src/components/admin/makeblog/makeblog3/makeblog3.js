@@ -193,7 +193,7 @@ return (
         <div className="col-md-12">
                 <div className="form-group">
                 <label htmlFor="content">Additional Blogpost Content</label>
-        <textarea className="form-control" type="text" onChange={this.handleChange} id="thirdcontent" name="content" placeholder="Post Content" content="wefsef" />
+        <textarea className="form-control" type="text" onChange={this.handleChange} id="thirdcontent" name="content" placeholder="Post Content"  />
         </div>
         </div>
 

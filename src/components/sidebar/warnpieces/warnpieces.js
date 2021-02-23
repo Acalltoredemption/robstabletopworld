@@ -3,6 +3,7 @@ import './warnpieces.css';
 import 'firebase/firestore';
 import history from '../../../history/history';
 import {db} from '../../../firebase/firebaseconfig';
+import Tilt from 'react-vanilla-tilt';
 
 
 const WarShowcase = () => {
@@ -20,14 +21,22 @@ const WarShowcase = () => {
  
         
                 setwarShowcase(
-                   
-                    <div className="mainholder" key={photo}>
-                    <h5 className="showcasetitle">War and Pieces</h5>
-                    <a href={url}>
-                    <div className="art-image-border">
-                    <img className=" maindiv" src={photo} alt="war and pieces" />
+
+
+
+                    <div className="upcoming" key={photo}> 
+                    <div className="upcomingbox">
+                    <Tilt className="tiltbox"> 
+                    <div className="image-border">
+                    <div className="upcomingcontent2">
+                    <p className="wartitle">War and Pieces</p>
                     </div>
+                    <a href={url}>
+                    <img className="upcomingimg" src={photo} alt="an upcoming event" />
                     </a>
+                    </div>
+                    </Tilt>
+                    </div>
                     </div>
                     
                     
