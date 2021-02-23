@@ -67,7 +67,7 @@ const ApproveCommunity = () => {
                         history.push('/') 
                     }
             return(
-                <table className="table table-bordered blogdisplay">
+                <table className="table table-bordered blogdisplay" key={showcase.name}>
                     <td className="blogitem">{showcase.name}</td>
                     <td className="blogitem">{showcase.bio}</td>
                     <td className="blogitem"><img className="adminblogimg"  src={showcase.photo} alt="a blogpost" /></td>

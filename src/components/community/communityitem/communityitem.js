@@ -8,7 +8,7 @@ const Item = ({items}) => {
         <div >
             <div className="artbanner">
         <div className="comtitle">
-            <img src={artimage} className="dungeonimg" />
+            <img src={artimage} className="dungeonimg" alt="Community banner" />
             <div className="thetitle">
         <h2>Art Showcase</h2>
             </div> 

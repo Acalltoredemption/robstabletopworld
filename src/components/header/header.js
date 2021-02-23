@@ -15,9 +15,9 @@ const Header = () => {
             <a name="top"></a>
             <div>
         <img className='banner' src={banner} alt='channel banner'></img>
-        <a href="https://www.youtube.com/user/seahawk8601"><img className="Youtube" src={Youtube}></img></a>
-        <a href="https://twitter.com/seahawk860"><img className="Twitter" src={Twitter}></img></a>
-        <a href="https://www.instagram.com/robstabletopworld/"><img className="Instagram" src={Instagram}></img></a>
+        <a href="https://www.youtube.com/user/seahawk8601"><img className="Youtube" src={Youtube} alt="Youtube logo"></img></a>
+        <a href="https://twitter.com/seahawk860"><img className="Twitter" src={Twitter} alt="Twitter logo"></img></a>
+        <a href="https://www.instagram.com/robstabletopworld/"><img className="Instagram" src={Instagram} alt="Instagram logo"></img></a>
          
         </div>
         </div>

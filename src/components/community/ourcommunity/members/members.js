@@ -7,7 +7,7 @@ const Members = ({members}) => {
         <div>
         <div className="artbanner">
         <div className="comtitle">
-            <img src={comimage} className="comimg" />
+            <img src={comimage} className="comimg" alt="Community Showcase Banner" />
             <div className="thetitle">
         <h2>Community Showcase</h2>
             </div>
@@ -30,7 +30,7 @@ const Members = ({members}) => {
                 return(
 <div key={member.name}>
 <div class="showcasecard">
-<img src={member.photo} alt="A community member photo" onClick={showModal} className='showcaseitem' />
+<img src={member.photo} alt="A community member photo" onClick={showModal} className='showcaseitem' alt="a showcase item" />
 <div class="container">
   <h4><b>{member.name}</b></h4>
 

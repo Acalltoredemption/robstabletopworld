@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import './membershowcase.css';
 import history from '../../../history/history';
 import Tilt from 'react-vanilla-tilt';
