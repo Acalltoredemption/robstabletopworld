@@ -28,6 +28,7 @@ import BlogEdit from './components/admin/blogedit/blogedit';
 import {Router} from 'react-router';
 import ArticlePage from './components/article/article';
 import history from './history/history';
+import UserLogin from './components/sidebar/userlogin/userlogin';
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -35,7 +36,7 @@ import './app.css';
 import {
     Route,
   } from "react-router-dom";
-import MakeBlog2 from './components/admin/makeblog/makeblog2/makeblog2';
+
 
 
 
@@ -49,6 +50,7 @@ return (
     <div className="Homepage">
         
         <Header /> 
+        <UserLogin />
         <NavBar />
         <AdminNav />
         

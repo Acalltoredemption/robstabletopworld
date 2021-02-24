@@ -10,7 +10,6 @@ import './sidebar.css';
 const SideBar = () => {
     return (
         <div>
-            <UserLogin />
             <Upcoming />
             <div>
             <Showcase />

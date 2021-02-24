@@ -28,13 +28,11 @@ const Login = () => {
         } catch(e) {
             setError('Failed to sign in!')
         }
-  
-
-
-        
+     
     }
 
     return ( 
+
         <div>
 <form className="loginform" onSubmit={handleSubmit}>
 
