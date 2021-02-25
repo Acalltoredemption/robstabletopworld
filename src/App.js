@@ -28,7 +28,7 @@ import BlogEdit from './components/admin/blogedit/blogedit';
 import {Router} from 'react-router';
 import ArticlePage from './components/article/article';
 import history from './history/history';
-import UserLogin from './components/sidebar/userlogin/userlogin';
+
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -50,7 +50,6 @@ return (
     <div className="Homepage">
         
         <Header /> 
-        <UserLogin />
         <NavBar />
         <AdminNav />
         

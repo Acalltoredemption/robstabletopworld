@@ -8,6 +8,7 @@
     width: 100%;
     height: 220px;
 }
+
 .thetitle {
     height: 20px;
     padding: 0 8px;
@@ -54,6 +55,33 @@
     grid-template-columns: auto auto auto;
     width: 100%;
     
+}
+@media(max-width: 600px){
+    .showcaseholder {
+        display: inline-grid;
+        grid-template-columns: auto;  
+        align-items: center;
+        justify-content: center;
+    }
+    img.artbanner{
+        width: auto;
+    }
+    .showcasecard {
+        width: 300px;
+        margin-left: 50px;
+    }
+    img.dungeonimg {
+        width: 350px;
+    }
+    img.modalitem {
+        width: 90%;
+    }
+    p.modaldesc {
+        position: absolute;
+        color: white;
+        bottom: 0px;
+
+    }
 }
 
 

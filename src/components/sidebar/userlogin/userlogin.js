@@ -77,12 +77,12 @@ async function handleLogout() {
 
 
     return ( 
-        <div className="loginholder">
+        <div className="loginholder loginbox">
         <div className="container">
-    <div className="d-flex justify-content-center h-100">
+    <div className="d-flex justify-content-center">
         <div class="card">
-            <div className="card-header">
-                <p style={{fontWeight: 'bold', margin: '10px'}}>{message}</p>
+            <div className="card-header cardheader">
+                <p style={{fontWeight: 'bold'}}>{message}</p>
             </div>
         <div className="card-body">
             <form autocomplete="off" onSubmit={handleSubmit}>

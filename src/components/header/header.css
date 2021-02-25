@@ -9,14 +9,14 @@
     background-color: transparent;
     width: 70px;
     position: absolute;
-    right: 0px;
+    left: 0px;
     top: 3px;
 }
 .Twitter {
     background-color: transparent;
     width: 70px;
     position: absolute;
-    right: 70px;
+    left: 70px;
     top: 3px;
 }
 
@@ -24,7 +24,7 @@
     background-color: transparent;
     width: 70px;
     position: absolute;
-    right: 140px;
+    left: 140px;
     top: 3px;
 }
 
@@ -36,4 +36,28 @@
 }
 .Instagram:hover {
     transform: scale(1.1);
+}
+@media(max-width: 600px){
+    .Instagram {
+        background-color: transparent;
+        width: 45px;
+        position: absolute;
+        left: 90px;
+        top: 3px;
+    }
+    .Youtube {
+        background-color: transparent;
+        width: 45px;
+        position: absolute;
+        left: 0px;
+        top: 3px;
+    }
+    .Twitter {
+        background-color: transparent;
+        width: 45px;
+        position: absolute;
+        left: 45px;
+        top: 3px;
+    }
+
 }

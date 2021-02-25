@@ -7,6 +7,7 @@ import {
   import Row from 'react-bootstrap/Row';
   import Col from 'react-bootstrap/Col';
   import {useAuth} from '../../../contexts/AuthContext';
+  import UserLogin from '../../../components/sidebar/userlogin/userlogin';
 
 
 const AdminNav = () => {
@@ -31,7 +32,7 @@ const AdminNav = () => {
   }
 
     return (
-        
+          <div>
           <div className="adminnavlinks">
             <nav>
                 <Container> 
@@ -60,6 +61,8 @@ const AdminNav = () => {
                   </Row>
                 </Container>
             </nav>
+          </div>
+          <UserLogin className="resizer" />
           </div>
         
       );
