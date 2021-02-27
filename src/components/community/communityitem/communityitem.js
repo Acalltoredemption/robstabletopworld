@@ -6,7 +6,7 @@ import artimage from '../../../images/ArtShowcase.png';
 const Item = ({items}) => {
     return(
         <div >
-            <div className="artbanner2">
+            <div className="artbanner">
         <div className="comtitle">
             <img src={artimage} className="dungeonimg" alt="Community banner " />
             <div className="thetitle">

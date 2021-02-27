@@ -41,7 +41,7 @@ const OurCommunity = () => {
         <Container>
             <Row>
                 <div>
-                <Members members={members} />
+                <Members members={currentShowcase} />
                 <Pagination postsPerPage={postsPerPage} totalPosts={members.length} paginate={paginate} />
                 </div>
             </Row>

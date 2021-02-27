@@ -1,30 +1,37 @@
-import React, {useState} from 'react';
+import React from 'react';
 import 'firebase/storage';
 import {firebase, db} from '../../../firebase/firebaseconfig';
 import history from '../../../history/history';
 
-
-
 const Addwar = () => {
 
-    const [title, setTitle] = useState('');
-    const [photo, setPhoto] = useState('');
-    const [url, setUrl] = useState('');
+    const [title, setTitle] = useState([]);
+    const [photo, setPhoto] = useState([]);
+    const [date, setDate] = useState([]);
+    const [url, setUrl] = useState([]);
 
-
-    const updateTitle = (e) => {
-        setTitle(e.target.value);
-    }
-    const updateUrl = (e) => {
-        setUrl(e.target.value);
-    }
-    const handleSubmit = (e) => {
+    handleChange = (e) => {
         e.preventDefault();
-        createWar();
+        setTitle({
+            [e.target.id]: e.target.value
+            
+        })
+        setDate({
+            [e.target.id]: e.target.value
+            
+        })
+        setUrl({
+            [e.target.id]: e.target.value
+            
+        })
+    }
+    handleSubmit = (e) => {
+        e.preventDefault();
+        createWar(title, photo, date, url);
     }
 
-    const createWar = () => {
-        const ref = firebase.storage().ref();
+    createWar = () => {
+        const ref = firebase.storage().ref()
         const file = document.querySelector("#photo").files[0];
         var filename = new Date() + '-' + file.name;
 
@@ -40,12 +47,9 @@ const Addwar = () => {
         .then(snapshot => snapshot.ref.getDownloadURL())
         .then(url => {
             const image = document.querySelector('#photo')
-            var photoset = url;
-            console.log(photoset);
             image.src = url;
             image.alt = '';
-            setPhoto(photoset);
-            console.log(photo);
+            setPhoto({photo: url})
             sendWar();
     
         })
@@ -53,7 +57,7 @@ const Addwar = () => {
 
         
     }
-    const sendWar = (war) => {
+    sendWar = (war) => {
         db.collection('war').add({
             ...war, 
             title: title,
@@ -73,25 +77,25 @@ const Addwar = () => {
         <div className="titleholder">
             <p>Update the contents of the War and Pieces redirect on homepage. Please fill out ALL fields.</p>
         </div>
-    <form id="add-blog-form" onSubmit={handleSubmit}>
+    <form id="add-blog-form" onSubmit={this.handleSubmit}>
 
         <div className="col-md-6">
             <div className="form-group">
                 <label htmlFor="title">Title</label>
-                <input className="form-control" type="text" onChange={updateTitle} id="title" name="title" placeholder="Post Title" />
+                <input className="form-control" type="text" onChange={this.handleChange} id="title" name="title" placeholder="Post Title" />
         </div>
         </div>
        
         <div className="col-md-6">
             <div className="form-group">
                 <label htmlFor="image">Image</label>
-                <input className="form-control" type="file"  placeholder="Image" name="image" id="photo" />
+                <input className="form-control" type="file" onChange={this.uploadImage} placeholder="Image" name="image" id="photo" />
         </div>
         </div>
         <div className="col-md-6">
             <div className="form-group">
                 <label htmlFor="title">URL</label>
-                <input className="form-control" type="text" onChange={updateUrl} id="url" name="url" placeholder="Video URL" />
+                <input className="form-control" type="text" onChange={this.handleChange} id="url" name="url" placeholder="Video URL" />
         </div>
         </div>
         <div className="col-md-12">
