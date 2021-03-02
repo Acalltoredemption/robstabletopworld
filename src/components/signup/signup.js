@@ -6,7 +6,8 @@ import {
   import { Container } from 'react-bootstrap';
 import {useAuth} from '../../contexts/AuthContext';
 import {Alert} from 'react-bootstrap';
-
+import {db} from '../../firebase/firebaseconfig';
+import history from '../../history/history';
 
 
 
@@ -14,6 +15,8 @@ const SigningUp = () => {
     const emailRef = useRef();
     const passwordRef = useRef();
     const passwordConfirmRef = useRef();
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
     const {signup, currentUser} = useAuth();
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false)
@@ -26,7 +29,6 @@ const SigningUp = () => {
             return setError('Passwords do not match!');
         } 
         
-        
         try {
             setError('')
             setLoading(true)
@@ -35,10 +37,25 @@ const SigningUp = () => {
             setError('Failed to create an account!')
         }
         setLoading(false)
-
-
-        
+        sendUsername();
     }
+
+    const handleChange = (e) => {
+        e.preventDefault();
+        setUsername(e.target.value);
+    }
+    const handleEmail = (e) => {
+        e.preventDefault();
+        setEmail(e.target.value);
+    }
+
+    const sendUsername = (user) => {
+        db.collection('usernames').doc(email).set({
+            username: username,
+        });
+        history.push('/');
+    }
+
 
     return (
 
@@ -50,12 +67,17 @@ const SigningUp = () => {
         <form className="loginform" onSubmit={handleSubmit}>
         <Container className="align-items-center w-100">
         <h2>Sign Up</h2>
-        {currentUser && currentUser.email}
         {error && <Alert variant="danger">{error}</Alert>}
         <div className="col-md-6">
             <div className="form-group">
                 <label htmlFor="email">Email</label>
-        <input className="form-control" type="text" ref={emailRef} id="email" name="email" placeholder="Email" />
+        <input className="form-control" type="text" ref={emailRef} onChange={handleEmail} id="email" name="email" placeholder="Email" />
+        </div>
+        </div>
+        <div className="col-md-6">
+            <div className="form-group">
+                <label htmlFor="username">Username</label>
+        <input className="form-control" type="text" onChange={handleChange} id="username" name="username" placeholder="Username" />
         </div>
         </div>
         <div className="col-md-6">

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import 'firebase/storage';
 import {firebase, db} from '../../../firebase/firebaseconfig';
 import history from '../../../history/history';
@@ -6,6 +6,7 @@ import history from '../../../history/history';
 
 
 const Addwar = () => {
+
 
     const [title, setTitle] = useState('');
     const [photo, setPhoto] = useState('');
@@ -17,6 +18,9 @@ const Addwar = () => {
     }
     const updateUrl = (e) => {
         setUrl(e.target.value);
+    }
+    const updatePhoto = (e) => {
+        setPhoto(e.target.value);
     }
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -41,11 +45,9 @@ const Addwar = () => {
         .then(url => {
             const image = document.querySelector('#photo')
             var photoset = url;
-            console.log(photoset);
             image.src = url;
             image.alt = '';
             setPhoto(photoset);
-            console.log(photo);
             sendWar();
     
         })
