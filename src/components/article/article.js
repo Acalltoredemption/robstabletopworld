@@ -3,7 +3,7 @@ import {db} from '../../firebase/firebaseconfig';
 import history from '../../history/history';
 import './article.css';
 import {useAuth} from '../../contexts/AuthContext';
-import {Alert} from 'react-bootstrap';
+import {auth} from '../../firebase/firebaseconfig';
 
 const  Article = () => {
 
@@ -14,7 +14,7 @@ const  Article = () => {
     const {currentUser} = useAuth();
     const loggedInArticle = document.querySelectorAll('#logged-in-article');
     const loggedOutArticle = document.querySelectorAll('#logged-out-article');
-
+    const [username, setUsername] = useState([]);
 
     if (currentUser && currentUser.email) {
         //toggle UI elements
@@ -28,10 +28,32 @@ const  Article = () => {
 
     }
 
-
+    useEffect(() => {
+        auth.onAuthStateChanged(function(user){
+            if(user){
+                var theusersEmail = user.email;
+                var nameCapitalized = theusersEmail.charAt(0).toUpperCase() + theusersEmail.slice(1);
+                fetchUsername(nameCapitalized);
+            }
+        })
+        const fetchUsername =  (nameCapitalized) => {
+            
+             db.collection('usernames').doc(nameCapitalized).get().then(snapshot => {
+                if (snapshot.exists){
+                    console.log('Found user data');
+                     var data = snapshot.data();
+                     setUsername(data.username.toString());
+                     console.log(username);
+                } else {
+                    console.log('no such document');
+                }
+            })
+        }
+    }, []);
 
 
     useEffect(() => {
+        console.log(useAuth);
         const fetchPosts = async () => {
             const queryString = window.location.search.substr(1);
             await db.collection('blogposts').doc(queryString).get().then(doc => {
@@ -72,7 +94,7 @@ const  Article = () => {
     function sendComment(comment){
             db.collection('comments').add({
                 ...comment, 
-                username: 'steve',
+                username: username,
                 unapproved: true,
                 blogRef: queryString,
                 content: commentContent,
