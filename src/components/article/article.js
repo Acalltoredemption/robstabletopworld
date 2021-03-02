@@ -2,16 +2,38 @@ import React, {useState, useEffect} from 'react';
 import {db} from '../../firebase/firebaseconfig';
 import history from '../../history/history';
 import './article.css';
+import {useAuth} from '../../contexts/AuthContext';
+import {Alert} from 'react-bootstrap';
 
 const  Article = () => {
 
     const [blog, setBlog] = useState([]);
     const [comments, setComments] = useState([]);
+    const queryString = window.location.search.substr(1);
+    const [commentContent, setCommentContent] = useState('');
+    const {currentUser} = useAuth();
+    const loggedInArticle = document.querySelectorAll('#logged-in-article');
+    const loggedOutArticle = document.querySelectorAll('#logged-out-article');
+
+
+    if (currentUser && currentUser.email) {
+        //toggle UI elements
+        loggedInArticle.forEach(item => item.style.display = 'flex');
+        loggedOutArticle.forEach(item => item.style.display = 'none');
+      
+    } else {
+        //toggle UI elements
+        loggedInArticle.forEach(item => item.style.display = 'none');
+        loggedOutArticle.forEach(item => item.style.display = 'flex');
+
+    }
+
+
+
 
     useEffect(() => {
         const fetchPosts = async () => {
             const queryString = window.location.search.substr(1);
-            console.log(queryString);
             await db.collection('blogposts').doc(queryString).get().then(doc => {
                 this.blogstore = []
                 
@@ -20,13 +42,9 @@ const  Article = () => {
                      
                 })
             ;
-            setBlog(this.blogstore);        
-        }
-        
+            setBlog(this.blogstore);    
+        }      
         fetchPosts();
-
-
-
     }, []);
 
     useEffect(() => {
@@ -39,15 +57,34 @@ const  Article = () => {
                      this.commentstore.push(data)
                 })
             });
-            setComments(this.commentstore);
+            setComments(this.commentstore);  
             
         }
-
         fetchComments();
+        
     }, []);
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        sendComment();
+    } 
 
-
+    function sendComment(comment){
+            db.collection('comments').add({
+                ...comment, 
+                username: 'steve',
+                unapproved: true,
+                blogRef: queryString,
+                content: commentContent,
+                date: new Date().toString(),
+    
+            })
+            history.push('/')
+    
+    }
+    const updateCommentContent = (e) => {
+        setCommentContent(e.target.value);
+    }
 
 
 
@@ -117,6 +154,7 @@ const  Article = () => {
 
                 { comments &&
                     comments.map(comment => {
+                        if(queryString === comment.blogRef.toString()){
                         return(
                             <div className="commentholder">
                             <div className="commentbox">
@@ -132,23 +170,28 @@ const  Article = () => {
                             </div>
 
                         )
+                        }
                     })
 
                 }
+         <form id="add-blog-form" onSubmit={handleSubmit}>
          <div className="row">
         <div className="col-md-12">
             <div className="form-group">
-                <label htmlFor="form_message">Comment:</label>
                 <div className="commentholder">
-                <textarea id="form_message" name="message" className="form-control" style={{width: '40rem'}} placeholder="Leave a comment on this article" rows="4" required="required" data-error="Leave a Comment on this article"></textarea>
+                <textarea id="form_message" name="message" className="form-control" style={{width: '40rem'}} onChange={updateCommentContent} placeholder="Leave a comment on this article" rows="4" required="required" data-error="Leave a Comment on this article"></textarea>
                 </div>
                 <div className="help-block with-errors"></div>
             </div>
         </div>
         <div className="col-md-12">
-            <input type="submit" className="btn btn-success btn-send" value="Send message" />
+            <div className="thecenterertwo">
+                <p id="logged-out-article">Please log in to comment on this blog.</p>
+            <input type="submit" id="logged-in-article" className="btn btn-success btn-send" value="Send message" />
+            </div>
         </div>
     </div>
+    </form>
     
 
 
