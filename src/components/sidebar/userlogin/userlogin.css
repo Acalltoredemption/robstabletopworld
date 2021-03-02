@@ -14,6 +14,15 @@
     justify-content: center;
     
 }
+.username {
+    color: green;
+}
+.welcome {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 0px;
+    
+}
 
 .loginholder {
     display: flex;

@@ -19,14 +19,13 @@ const userLogin = () => {
     const passwordRef = useRef();
     const {login} = useAuth();
     const [error, setError] = useState('');
-    const [username, setUsername] = useState('');
-    var user = auth.currentUser;
+    const [username, setUsername] = useState([]);
+    const [usersEmail, setUsersEmail] = useState('');
+   
 
-    
-  
     if (currentUser && currentUser.email) {
         //toggle UI elements
-        message = 'Welcome!';
+        message = 'Welcome';
         loggedIn.forEach(item => item.style.display = 'block');
         loggedOut.forEach(item => item.style.display = 'hidden');
     } else {
@@ -34,24 +33,31 @@ const userLogin = () => {
         message = 'Log in or Sign up';
         loggedIn.forEach(item => item.style.display = 'hidden');
         loggedOut.forEach(item => item.style.display = 'block');
+        
     }
 
     useEffect(() => {
-        const fetchUsername = async () => {
-        if(currentUser != null){
-            await db.collection('usernames').doc(user).get().then(snapshot => {
-               var userstore = []
-                snapshot.forEach(doc => {
-                    var data = doc.data(); 
-                     userstore.push(data)
-                     setUsername(userstore);
-                })
-            });
+        auth.onAuthStateChanged(function(user){
+            if(user){
+                var theusersEmail = user.email;
+                var nameCapitalized = theusersEmail.charAt(0).toUpperCase() + theusersEmail.slice(1);
+                setUsersEmail(nameCapitalized);
+                fetchUsername(nameCapitalized);
+            }
+        })
+        const fetchUsername =  (nameCapitalized) => {
             
-            
+             db.collection('usernames').doc(nameCapitalized).get().then(snapshot => {
+                if (snapshot.exists){
+                    console.log('Found user data');
+                     var data = snapshot.data();
+                     setUsername(data.username.toString());
+                     console.log(username);
+                } else {
+                    console.log('no such document');
+                }
+            })
         }
-        }
-        fetchUsername();
     }, []);
 
 
@@ -99,8 +105,8 @@ async function handleLogout() {
         <div className="container">
     <div className="d-flex justify-content-center">
         <div className="card">
-            <div className="card-header cardheader">
-                <p style={{fontWeight: 'bold'}}>{message} {username.username}</p>
+            <div className="card-header cardheader welcome">
+                <p id="logged-out" style={{fontWeight: 'bold'}}>{message} </p><b id="logged-in">{message} <gh className="username">{username}</gh></b>
             </div>
         <div className="card-body">
             <form autoComplete="off" onSubmit={handleSubmit}>
