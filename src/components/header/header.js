@@ -12,7 +12,7 @@ const Header = () => {
 
     return (
         <div>
-            <a name="top"></a>
+            <a name="top" style={{display: 'none'}}> screen anchor </a>
             <div>
         <img className='banner' src={banner} alt='channel banner'></img>
         <a href="https://www.youtube.com/user/seahawk8601"><img className="Youtube" src={Youtube} alt="Youtube logo"></img></a>

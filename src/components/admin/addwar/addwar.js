@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import 'firebase/storage';
 import {firebase, db} from '../../../firebase/firebaseconfig';
 import history from '../../../history/history';
@@ -44,16 +44,11 @@ const Addwar = () => {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        createWar();
+        sendWar();
     }
 
-    const createWar = () => {
-        sendWar();
- 
-    }
     
     const sendWar = (war) => {
-        console.log(photo);
          db.collection('war').add({
              ...war, 
              title: title,
@@ -65,7 +60,7 @@ const Addwar = () => {
          history.push('/')
     }
 
-
+  
 
 
     return ( 

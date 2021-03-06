@@ -191,7 +191,7 @@ const  Article = () => {
                             </div>
                             </div>
 
-                        )
+                        );
                         }
                     })
 

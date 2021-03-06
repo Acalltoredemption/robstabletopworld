@@ -20,7 +20,6 @@ const userLogin = () => {
     const {login} = useAuth();
     const [error, setError] = useState('');
     const [username, setUsername] = useState([]);
-    const [usersEmail, setUsersEmail] = useState('');
    
 
     if (currentUser && currentUser.email) {
@@ -41,7 +40,6 @@ const userLogin = () => {
             if(user){
                 var theusersEmail = user.email;
                 var nameCapitalized = theusersEmail.charAt(0).toUpperCase() + theusersEmail.slice(1);
-                setUsersEmail(nameCapitalized);
                 fetchUsername(nameCapitalized);
             }
         })
@@ -95,10 +93,6 @@ async function handleLogout() {
         history.push('/signup')
     }
 
-    function handleLogin() {
-        history.push('/login')
-    }
-
 
     return ( 
         <div className="loginholder loginbox">
@@ -106,19 +100,19 @@ async function handleLogout() {
     <div className="d-flex justify-content-center">
         <div className="card">
             <div className="card-header cardheader welcome">
-                <p id="logged-out" style={{fontWeight: 'bold'}}>{message} </p><b id="logged-in">{message} <gh className="username">{username}</gh></b>
+                <p id="logged-out" style={{fontWeight: 'bold'}}>{message} </p><b id="logged-in">{message} <h5 className="username">{username}</h5></b>
             </div>
         <div className="card-body">
             <form autoComplete="off" onSubmit={handleSubmit}>
                 <div className="input-group form-group">
                     <div className="input-group-prepend">
-                        <span className="input-group-text"><img src={Person} /></span>
+                        <span className="input-group-text"><img src={Person} alt="user sprite"/></span>
                     </div>
                     <input type="text" ref={emailRef} className="form-control" placeholder="Username"></input>
                 </div>
                 <div className="input-group form-group">
                     <div className="input-group-prepend">
-                        <span className="input-group-text"><img src={Lock} /></span>
+                        <span className="input-group-text"><img src={Lock} alt="a lock"/></span>
                     </div>
                     <input type="password" ref={passwordRef} className="form-control" placeholder="Password"></input>
                 </div>

@@ -3,7 +3,6 @@ import {db} from '../../../firebase/firebaseconfig';
 import './approved.css';
 import history from '../../../history/history';
 import '../../../firebase/firebaseconfig';
-import firebase from 'firebase'
 
 const Approved = () => {
         const [showcase, setShowcase] = useState([]);

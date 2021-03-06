@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import {db} from '../../../firebase/firebaseconfig';
 import history from '../../../history/history';
 import '../../../firebase/firebaseconfig';
-import firebase from 'firebase'
 
 const ViewMerch = () => {
         const [merch, setMerch] = useState([]);

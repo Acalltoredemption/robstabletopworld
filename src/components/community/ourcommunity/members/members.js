@@ -30,14 +30,14 @@ const Members = ({members}) => {
                 return(
 <div key={member.name}>
 <div class="showcasecard">
-<img src={member.photo} alt="A community member photo" onClick={showModal} className='showcaseitem' alt="a showcase item" />
+<img src={member.photo} onClick={showModal} className='showcaseitem' alt="a showcase item" />
 <div class="container">
   <h4><b>{member.name}</b></h4>
 
 
         <div id={specialkey} className="hidemodal">
-            <span className="closebutton" onClick={closeModal}>X</span>
-        <img className="modalitem" src={member.photo} alt="a community photo submission"  />
+            <span className="closebutton" onClick={closeModal}>X</span> 
+        <img className="modalitem" src={member.photo} alt="a community submission"  />
         <p className="modaldesc">{member.bio}</p>
         </div>
 

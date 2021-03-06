@@ -1,16 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import './warnpieces.css';
 import 'firebase/firestore';
-import history from '../../../history/history';
 import {db} from '../../../firebase/firebaseconfig';
 import Tilt from 'react-vanilla-tilt';
 
 
 const WarShowcase = () => {
     const [warshowcase, setwarShowcase] = useState('')
-    function redirect(){
-        history.push('/warandpieces')
-    }
     useEffect(() => {
         db.collection('war').orderBy('date', 'asc').get().then((snapshot) => {
             snapshot.docs.forEach(doc => {

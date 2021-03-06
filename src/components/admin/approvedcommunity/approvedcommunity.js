@@ -3,7 +3,6 @@ import {db} from '../../../firebase/firebaseconfig';
 import './approvedcommunity.css';
 import history from '../../../history/history';
 import '../../../firebase/firebaseconfig';
-import firebase from 'firebase'
 
 const ApprovedCommunity = () => {
         const [showcase, setShowcase] = useState([]);
