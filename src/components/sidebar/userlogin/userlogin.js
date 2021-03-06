@@ -50,7 +50,6 @@ const userLogin = () => {
                     console.log('Found user data');
                      var data = snapshot.data();
                      setUsername(data.username.toString());
-                     console.log(username);
                 } else {
                     console.log('no such document');
                 }

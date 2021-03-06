@@ -40,10 +40,8 @@ const  Article = () => {
             
              db.collection('usernames').doc(nameCapitalized).get().then(snapshot => {
                 if (snapshot.exists){
-                    console.log('Found user data');
                      var data = snapshot.data();
                      setUsername(data.username.toString());
-                     console.log(username);
                 } else {
                     console.log('no such document');
                 }
@@ -53,7 +51,6 @@ const  Article = () => {
 
 
     useEffect(() => {
-        console.log(useAuth);
         const fetchPosts = async () => {
             const queryString = window.location.search.substr(1);
             await db.collection('blogposts').doc(queryString).get().then(doc => {
@@ -178,7 +175,7 @@ const  Article = () => {
                     comments.map(comment => {
                         if(queryString === comment.blogRef.toString()){
                         return(
-                            <div className="commentholder">
+                            <div className="commentholder" key={comment.date}>
                             <div className="commentbox">
                             <div className="commentusername">
                                 {comment.username}

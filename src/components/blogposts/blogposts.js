@@ -9,7 +9,7 @@ const BlogPosts = () => {
     const [blogs, setBlogs] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(5);
-
+    
 
     
 
