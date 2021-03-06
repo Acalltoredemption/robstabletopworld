@@ -20,14 +20,6 @@ const Addwar = () => {
         setUrl(e.target.value);
     }
     const updatePhoto = (e) => {
-        setPhoto(e.target.value);
-    }
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        createWar();
-    }
-
-    const createWar = () => {
         const ref = firebase.storage().ref();
         const file = document.querySelector("#photo").files[0];
         var filename = new Date() + '-' + file.name;
@@ -44,27 +36,33 @@ const Addwar = () => {
         .then(snapshot => snapshot.ref.getDownloadURL())
         .then(url => {
             const image = document.querySelector('#photo')
-            var photoset = url;
             image.src = url;
             image.alt = '';
-            setPhoto(photoset);
-            sendWar();
-    
+            setPhoto(url);
+            
         })
-
-
-        
     }
-    const sendWar = (war) => {
-        db.collection('war').add({
-            ...war, 
-            title: title,
-            photo: photo, 
-            url: url,
-            date: new Date()
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        createWar();
+    }
 
-        })
-        history.push('/')
+    const createWar = () => {
+        sendWar();
+ 
+    }
+    
+    const sendWar = (war) => {
+        console.log(photo);
+         db.collection('war').add({
+             ...war, 
+             title: title,
+             photo: photo, 
+             url: url,
+             date: new Date()
+
+         })
+         history.push('/')
     }
 
 
@@ -87,7 +85,7 @@ const Addwar = () => {
         <div className="col-md-6">
             <div className="form-group">
                 <label htmlFor="image">Image</label>
-                <input className="form-control" type="file"  placeholder="Image" name="image" id="photo" />
+                <input className="form-control" type="file"  onChange={updatePhoto} placeholder="Image" name="image" id="photo" />
         </div>
         </div>
         <div className="col-md-6">

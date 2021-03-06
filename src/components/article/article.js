@@ -72,7 +72,7 @@ const  Article = () => {
     useEffect(() => {
         const fetchComments = async () => {
             var commentRef = db.collection('comments');
-            await commentRef.orderBy('approved').get().then(snapshot => {
+            await commentRef.where("approved", "==", true).get().then(snapshot => {
                 this.commentstore = []
                 snapshot.forEach(doc => {
                     const data = doc.data()
