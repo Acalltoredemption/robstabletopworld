@@ -35,7 +35,7 @@ const userLogin = () => {
         
     }
 
-    useEffect(() => {
+    useEffect(() => { 
         auth.onAuthStateChanged(function(user){
             if(user){
                 var theusersEmail = user.email;
@@ -99,7 +99,7 @@ async function handleLogout() {
     <div className="d-flex justify-content-center">
         <div className="card">
             <div className="card-header cardheader welcome">
-                <p id="logged-out" style={{fontWeight: 'bold'}}>{message} </p><b id="logged-in">{message} <h5 className="username">{username}</h5></b>
+                <p id="logged-out" style={{fontWeight: 'bold'}}>{message} </p><b id="logged-in">{message} <b className="username">{username}</b></b>
             </div>
         <div className="card-body">
             <form autoComplete="off" onSubmit={handleSubmit}>
