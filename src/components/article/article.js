@@ -69,7 +69,7 @@ const  Article = () => {
     useEffect(() => {
         const fetchComments = async () => {
             var commentRef = db.collection('comments');
-            await commentRef.where("approved", "==", true).get().then(snapshot => {
+            await commentRef.orderBy("date", "asc").get().then(snapshot => {
                 this.commentstore = []
                 snapshot.forEach(doc => {
                     const data = doc.data()
@@ -133,7 +133,7 @@ const  Article = () => {
                 return(
         <div className="blogpost" key={blog.title}>
       <div className="blogbox">       
-         <div className="pageblogpost-image">
+         <div className="pageblogpost-imagemain">
          <div className='pagecontent'>
          <h1 className='title'>{blog.title}</h1>
          </div>
@@ -148,7 +148,7 @@ const  Article = () => {
          
          <div className="thecenterertwo" id="secondimg">
             <div className="hidediv" >
-        <div className="pageblogpost-image" >
+        <div className="pageblogpost-imagemain" >
          <img className="blogimg" src={blog.secondphoto} alt="a blogpost" />
          </div>
          </div>
@@ -159,7 +159,7 @@ const  Article = () => {
          </div>
 
          <div className="thecentererthree" id="thirdimg"> 
-        <div className="pageblogpost-image">
+        <div className="pageblogpost-imagemain">
          <img className="blogimg" src={blog.thirdphoto} alt="a blogpost" />
          </div>
         </div>
