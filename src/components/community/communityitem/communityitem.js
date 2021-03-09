@@ -10,7 +10,7 @@ const Item = ({items}) => {
         <div className="comtitle">
             <img src={artimage} className="dungeonimg" alt="Community banner " />
             <div className="thetitle">
-        <h2>Art Showcase</h2>
+        <h2 className="titlestyler">Art Showcase</h2>
             </div> 
         </div>
         </div>

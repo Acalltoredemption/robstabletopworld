@@ -9,7 +9,7 @@ const Members = ({members}) => {
         <div className="comtitle">
             <img src={comimage} className="dungeonimg" alt="Community Showcase Banner" />
             <div className="thetitle">
-        <h2>Community Showcase</h2>
+        <h2 className="titlestyler">Community Showcase</h2>
             </div>
         </div>
         </div>

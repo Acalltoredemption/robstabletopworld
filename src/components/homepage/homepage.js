@@ -4,12 +4,13 @@ import BlogPosts from '../blogposts/blogposts';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import './homepage.css';
 
 
 const Homepage = () => {
     return (
         <div>
-        <Container>
+        <Container className="containerstyler">
             <Row>
                 <Col sm={8}>
        
@@ -24,7 +25,7 @@ const Homepage = () => {
          </Row>
          </Container>
         </div>
-    );
+    )
 }
 
 export default Homepage;

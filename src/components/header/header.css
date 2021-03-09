@@ -11,7 +11,7 @@
     color: white;
     font-size: 55px;
     font-weight: bold;
-
+    -webkit-text-stroke: 1px black;
 }
 
 .Youtube {

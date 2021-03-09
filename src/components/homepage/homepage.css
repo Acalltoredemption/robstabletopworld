@@ -1,0 +1,6 @@
+@media(max-width: 1300px){
+    .styler{
+        display: inline-grid;
+        grid-template-columns: auto;
+    }
+}
