@@ -7,7 +7,7 @@ const Members = ({members}) => {
         <div>
         <div className="artbanner">
         <div className="comtitle">
-            <img src={comimage} className="comimg" alt="Community Showcase Banner" />
+            <img src={comimage} className="dungeonimg" alt="Community Showcase Banner" />
             <div className="thetitle">
         <h2>Community Showcase</h2>
             </div>
