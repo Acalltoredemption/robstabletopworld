@@ -14,8 +14,8 @@ const OurCommunity = () => {
 
     useEffect(() => {
         const fetchMembers = async () => {
-            var showcaseRef = db.collection('community');
-            await showcaseRef.orderBy('approved').get().then(snapshot => {
+            var showcaseRef = db.collection('community').orderBy('date', 'desc').orderBy('approved', 'asc');
+            await showcaseRef.get().then(snapshot => {
                 this.membersStore= []
                 snapshot.forEach(doc => {
                     const data = doc.data()

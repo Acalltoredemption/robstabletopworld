@@ -33,7 +33,9 @@ const Item = ({items}) => {
   
 <div key={item.name} >
 <div class="showcasecard">
-<img src={item.photo} alt="A community artwork submission" onClick={showModal} id="theimage" className='showcaseimage' />
+    <div onClick={showModal}>
+<img src={item.photo} alt="A community artwork submission" id="theimage" className='showcaseimage' />
+</div>
 <div class="container scalebox">
   <h4><b>{item.name}</b></h4>
 
