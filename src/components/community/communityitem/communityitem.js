@@ -24,16 +24,17 @@ const Item = ({items}) => {
                 document.getElementById(item.name).className="hidemodal"
             }
             function showModal(){
-                document.getElementById(item.name).className="showmodal"
+                document.getElementById(item.name).className="showmodal";
+                document.getElementById("theimage").display="none";
             }
 
             
                 return(
   
-<div key={item.name}>
+<div key={item.name} >
 <div class="showcasecard">
-<img src={item.photo} alt="A community artwork submission" onClick={showModal} className='showcaseimage' />
-<div class="container">
+<img src={item.photo} alt="A community artwork submission" onClick={showModal} id="theimage" className='showcaseimage' />
+<div class="container scalebox">
   <h4><b>{item.name}</b></h4>
 
 
