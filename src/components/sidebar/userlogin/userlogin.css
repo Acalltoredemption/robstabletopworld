@@ -28,7 +28,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 15px;
+    padding: 0px;
+    transform: scale(0.85);
 }
 
 .marginbox {
@@ -38,8 +39,8 @@
 
 .loginbox {
     position: absolute;
-    right: 0px;
-    top: 0px;
+    right: -20px;
+    top: -10px;
 }
 @media(max-width: 1100px){
 .username {
@@ -48,6 +49,11 @@
 .loginbox {
     position: relative;
 
+}
+.loginbox{
+    position: relative;
+    right: 0px;
+    top: 0px;
 }
 }
 

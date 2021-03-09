@@ -29,9 +29,9 @@ const Members = ({members}) => {
             
                 return(
 <div key={member.name}>
-<div class="showcasecard">
+<div className="showcasecard">
 <img src={member.photo} onClick={showModal} className='showcaseitem' alt="a showcase item" />
-<div class="container">
+<div className="container">
   <h4><b>{member.name}</b></h4>
 
 

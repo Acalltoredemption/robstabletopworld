@@ -32,11 +32,11 @@ const Item = ({items}) => {
                 return(
   
 <div key={item.name} >
-<div class="showcasecard">
+<div className="showcasecard">
     <div onClick={showModal}>
 <img src={item.photo} alt="A community artwork submission" id="theimage" className='showcaseimage' />
 </div>
-<div class="container scalebox">
+<div className="container scalebox">
   <h4><b>{item.name}</b></h4>
 
 
