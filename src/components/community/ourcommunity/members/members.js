@@ -19,17 +19,20 @@ const Members = ({members}) => {
             members.map(member => {
             var specialkey = member.name;
 
+
             function closeModal(){
                 document.getElementById(member.name).className="hidemodal"
+                document.getElementById(member.bio).classList.add("resizer");
             }
             function showModal(){
-                document.getElementById(member.name).className="showmodal"
+                document.getElementById(member.bio).classList.remove("resizer");
+                document.getElementById(member.name).className="showmodal";
             }
 
             
                 return(
 <div key={member.name}>
-<div className="showcasecard">
+<div className="showcasecard resizer" id={member.bio}>
 <img src={member.photo} onClick={showModal} className='showcaseitem' alt="a showcase item" />
 <div className="container">
   <h4><b>{member.name}</b></h4>

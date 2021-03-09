@@ -22,17 +22,18 @@ const Item = ({items}) => {
 
             function closeModal(){
                 document.getElementById(item.name).className="hidemodal"
+                document.getElementById(item.description).classList.add("resizer");
             }
             function showModal(){
+                document.getElementById(item.description).classList.remove("resizer");
                 document.getElementById(item.name).className="showmodal";
-                document.getElementById("theimage").display="none";
             }
 
             
                 return(
   
 <div key={item.name} >
-<div className="showcasecard">
+<div className="showcasecard resizer" id={item.description}>
     <div onClick={showModal}>
 <img src={item.photo} alt="A community artwork submission" id="theimage" className='showcaseimage' />
 </div>
