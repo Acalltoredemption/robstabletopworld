@@ -1,0 +1,7 @@
+.aboutmebox {
+    display: inline-grid;
+    grid-template-columns: 30%, 30%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
