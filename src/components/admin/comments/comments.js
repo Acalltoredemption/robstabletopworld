@@ -47,8 +47,9 @@ const ApproveComments = () => {
                 messages && 
                 messages.map(message => {
                     function deleteComment (e) {
-                        db.collection('messages').doc(message.id).delete();
-                        history.push('/')
+                        let id = e.target.getAttribute('blogRef');
+                        db.collection('messages').doc(id).delete();
+                        history.push('/') 
                      }
                      return(
                         <table className="table table-bordered blogdisplay">
@@ -56,7 +57,7 @@ const ApproveComments = () => {
                             <td className="blogitem">{message.message}</td>
                             <td className="blogitem">{message.email}</td>
                             <td className="blogitem">{message.date}</td>
-                            <td className="blogitem"><button type="submit" onClick={(e) => deleteComment(e)} className="btn btn-danger">Delete</button> </td>
+                            <td className="blogitem"><button type="submit" onClick={(e) => deleteComment(e)} blogRef={message.id} className="btn btn-danger">Delete</button> </td>
                             
                         </table>
                      )

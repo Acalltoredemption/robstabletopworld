@@ -56,7 +56,7 @@ const BlogEdit = () => {
                     <td className="blogitem">{blog.title}</td>
                     <td className="blogitem">{blog.author}</td>
                     <td className="blogitem"><img className="adminblogimg"  src={blog.photo} alt="a blogpost" /></td>
-                    <td className="blogitem"><button type="submit" onClick={(e) => deleteBlog(e)} className="btn btn-danger">Delete</button> </td>
+                    <td className="blogitem"><button type="submit" onClick={(e) => deleteBlog(e)} blogRef={blog.id} className="btn btn-danger">Delete</button> </td>
                     </tr>
                     </tbody>
                 </table>

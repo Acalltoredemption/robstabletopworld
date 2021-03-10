@@ -50,7 +50,8 @@ const SigningUp = () => {
     }
 
     const sendUsername = (user) => {
-        db.collection('usernames').doc(email).set({
+        var emailCapitalized = email.charAt(0).toUpperCase() + email.slice(1);
+        db.collection('usernames').doc(emailCapitalized).set({
             username: username,
         });
         history.push('/');
@@ -93,7 +94,7 @@ const SigningUp = () => {
         </div>
         </div>
         <div className="col-md-12">
-                    <input type="submit" disabled={loading}className="btn btn-success btn-send" value="Log In" />
+                    <input type="submit" disabled={loading}className="btn btn-success btn-send" value="Sign Up" />
                 </div>
                 </Container>
         </form>
