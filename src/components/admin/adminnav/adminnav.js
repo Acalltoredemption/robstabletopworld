@@ -1,7 +1,7 @@
 import React from 'react';
 import './adminnav.css';
 import {
-    Link
+    NavLink
   } from "react-router-dom";
   import Container from 'react-bootstrap/Container';
   import Row from 'react-bootstrap/Row';
@@ -38,28 +38,28 @@ const AdminNav = () => {
                 <Container> 
                     <Row>
                   <Col sm>
-                  <Link to="/makeblog" id="logged-in-admin"><div className="navlink admin-link">Make Blogpost</div></Link>
+                  <NavLink to="/makeblog" id="logged-in-admin" activeStyle={{ fontWeight: "bold"}}><div className="navlink admin-link">Make Blogpost</div></NavLink>
                   </Col>
                   <Col sm>
-                  <Link to="/makeevent" id="logged-in-admin"><div className="navlink admin-link">Vid of the Week</div></Link>
+                  <NavLink to="/makeevent" id="logged-in-admin" activeStyle={{ fontWeight: "bold"}}><div className="navlink admin-link">Vid of the Week</div></NavLink>
                   </Col>
                   <Col sm>
-                  <Link to="/blogedit" id="logged-in-admin"><div className="navlink admin-link">View Blogs</div></Link>
+                  <NavLink to="/blogedit" id="logged-in-admin" activeStyle={{ fontWeight: "bold"}}><div className="navlink admin-link">View Blogs</div></NavLink>
                   </Col>
                   <Col sm>
-                  <Link to="/approve" id="logged-in-admin"><div className="navlink admin-link">Art Submissions</div></Link>
+                  <NavLink to="/approve" id="logged-in-admin" activeStyle={{ fontWeight: "bold"}}><div className="navlink admin-link">Art Submissions</div></NavLink>
                   </Col>
                   <Col sm>
-                  <Link to="/communitysubmissions" id="logged-in-admin"><div className="navlink admin-link">Community Submissions</div></Link>
+                  <NavLink to="/communitysubmissions" id="logged-in-admin" activeStyle={{ fontWeight: "bold"}}><div className="navlink admin-link">Community Submissions</div></NavLink>
                   </Col>
                   <Col sm>
-                  <Link to="/warandpieces" id="logged-in-admin"><div className="navlink admin-link">War & Pieces</div></Link>
+                  <NavLink to="/warandpieces" id="logged-in-admin" activeStyle={{ fontWeight: "bold"}}><div className="navlink admin-link">War & Pieces</div></NavLink>
                   </Col>
                   <Col sm>
-                  <Link to="/comments" id="logged-in-admin"><div className="navlink admin-link">Message Inbox</div></Link>
+                  <NavLink to="/comments" id="logged-in-admin" activeStyle={{ fontWeight: "bold"}}><div className="navlink admin-link">Message Inbox</div></NavLink>
                   </Col>
                   <Col sm>
-                  <Link to="/articlecomments" id="logged-in-admin"><div className="navlink admin-link">Article Comments</div></Link>
+                  <NavLink to="/articlecomments" id="logged-in-admin" activeStyle={{ fontWeight: "bold"}}><div className="navlink admin-link">Article Comments</div></NavLink>
                   </Col>
                   </Row>
                 </Container>

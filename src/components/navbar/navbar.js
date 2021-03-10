@@ -1,8 +1,8 @@
 import React from 'react';
 import './navbar.css';
-import {
-    Link
-  } from "react-router-dom";
+  import
+    {NavLink}
+   from "react-router-dom";
   import Container from 'react-bootstrap/Container';
   import Row from 'react-bootstrap/Row';
   import Col from 'react-bootstrap/Col';
@@ -32,22 +32,22 @@ const Navbar = () => {
                 <Container>
                     <Row>
                     <Col sm>
-                  <Link to="/"><div className="navlink">Home</div></Link>
+                  <NavLink exact to="/"  activeStyle={{ fontWeight: "bold"}}><div className="navlink">Home</div></NavLink>
                   </Col>
                   <Col sm>
-                  <Link to="/about"><div className="navlink">About Me</div></Link>
+                  <NavLink to="/about" activeStyle={{ fontWeight: "bold"}}><div className="navlink">About Me</div></NavLink>
                   </Col>
                   <Col sm>
-                  <Link to="/contact"><div className="navlink">Contact Me</div></Link>
+                  <NavLink to="/contact" activeStyle={{ fontWeight: "bold" }}><div className="navlink">Contact Me</div></NavLink>
                   </Col>
                   <Col sm>
-                  <Link to="/art"><div className="navlink">Art Showcase</div></Link>
+                  <NavLink to="/art" activeStyle={{ fontWeight: "bold" }}><div className="navlink">Art Showcase</div></NavLink>
                   </Col>
                   <Col sm>
-                  <Link to="/community"><div className="navlink">Our Community</div></Link>
+                  <NavLink to="/community" activeStyle={{ fontWeight: "bold" }}><div className="navlink">Our Community</div></NavLink>
                   </Col>
                   <Col sm id="logged-in">
-                  <Link to="/submissions" id="logged-in"><div className="navlink" id="logged-in">Submissions</div></Link>
+                  <NavLink to="/submissions" id="logged-in" activeStyle={{ fontWeight: "bold" }}><div className="navlink" id="logged-in">Submissions</div></NavLink>
                   </Col>
 
                   </Row>
