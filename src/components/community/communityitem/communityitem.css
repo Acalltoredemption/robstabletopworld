@@ -107,11 +107,13 @@
         }
         img.modalitem {
             width: 90%;
+            height: 70%;
+            position: flex;
         }
         p.modaldesc {
-            position: absolute;
+            position: flex;
             color: white;
-            bottom: 0px;
+            width: 90%;
     
         }
         .titlestyler{
