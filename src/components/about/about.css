@@ -5,3 +5,36 @@
     align-items: center;
     justify-content: center;
 }
+
+.itema{
+    padding: 50px;
+    padding-top: 75px;
+    grid-column-start: 0;
+    grid-column-end: 1;
+}
+
+.itemb{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    padding: 50px;
+}
+
+@media(max-width: 1000px){
+    .aboutmebox{
+        display: inline-grid;
+        grid-template-columns: auto;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    .itema{
+        padding: 40px;
+        grid-column-start: auto;
+        grid-column-end: auto;
+    }
+    
+    .itemb{
+        grid-column-start: auto;
+        grid-column-end: auto;
+    }
+}

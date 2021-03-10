@@ -1,20 +1,38 @@
 import React from 'react';
 import aboutme from '../../images/AboutMe.jpg';
 import './about.css'
+import {
+    Link
+} from 'react-router-dom';
+
 const About = () => {
     return (
         <div>
         <div className="aboutmebox">
-            <div>
+            <div className="itema">
             <img src={aboutme} />
             </div>
-            <div>
+            <div className="itemb">
             <p>
-            With over 30 years of experience in the hobby, Rob Oren has taught thru his YouTube Channel, "Rob's Tabletop World".   Home of Painting Miniatures 101. Begin adding color to your world as Rob makes painting miniatures simple with easy instructions that anyone can do! Rob has shown a deep and committed passion for both wargames and table top gaming. A family man and a 7 time National Power Lifting Champion, Rob will bring that same commitment and competitive drive for excellence to his video reviews, paint tutorials, and just about everything else he gets into for his wonderful Miniature Market Sponsor as well as his amazing Orenite community family. The man with the biggest heart! Learn why so many people look up to Rob!!
+Having over 30 years of experience in the hobby, Rob Oren has taught through his YouTube
+channel a way of painting miniatures that is simple and with easy instructions that anyone
+can do!
+<br></br>
+<br></br>
+A family man and 7 time national powerlifting champion, Rob brings this same commitment and
+competitive drive to excellence to his video reviews, painting tutorials, and just about
+anything else he gets into; alongside his wonderful sponsor Miniature Market, and his amazing
+community.
+<br></br>
+<br></br>
+Learn why so many people look up to Rob and his passion for wargames and tabletop gaming!
+Please join us as we have fun and raise money for charities and try to make a difference in
+everyones every day life!
+<br></br>
+<br></br>
+We hope you enjoy your stay here on our website, and encourage you to become an offical community member and  <Link to="/signup">Register</Link> where you can share your favorite artwork and miniatures with us.
+<br></br>
 
-We review new games, have live painting miniatures streams, and have live weekend Playthrus.
-
-Please join us as we have fun and raise money for charities and try to make a difference in everyone's everyday life!
             </p>
             </div>
         </div>
