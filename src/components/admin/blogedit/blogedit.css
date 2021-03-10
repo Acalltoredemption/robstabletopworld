@@ -8,3 +8,7 @@
 .blogitem {
     width: 20%;
 }
+
+.listdisplay {
+    display: none;
+}

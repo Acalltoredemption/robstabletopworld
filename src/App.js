@@ -4,6 +4,7 @@ import NavBar from './components/navbar/navbar';
 import HomePage from './components/homepage/homepage';
 import AboutPage from './components/about/about';
 import ContactPage from './components/contact/contact';
+import EditBlog from './components/admin/editblog/editblog';
 import ApproveArticleComments from './components/admin/articlecomments/articlecomments';
 import ApprovedArticleComments from './components/admin/articlecomments/approvedarticlecomments';
 import MakeBlogPage from './components/admin/makeblog/makeblog';
@@ -64,6 +65,7 @@ return (
         <Route path='/communitysubmit' component={CommunitySubmit} />
         <Route path='/community' component={OurCommunityPage} />
         <Route path='/art' component={ArtPage} />
+        <Route path='/editblog' component={EditBlog} />
         <Route path='/articlecomments' component={ApproveArticleComments} />
         <Route path='/approvedcomments' component={ApprovedArticleComments} />
         <Route path='/makeblog' component={MakeBlogPage} />

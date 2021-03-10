@@ -19,7 +19,7 @@ const BlogEdit = () => {
                     })
                 });
                 setBlogs(this.blogstore);
-                           
+                          
             }      
             fetchPosts();
         }, []);
@@ -28,37 +28,39 @@ const BlogEdit = () => {
            let id = e.target.getAttribute('blogRef');
            db.collection('blogposts').doc(id).delete();
            history.push('/')
-        
-           
         }
+
     
 
         return(
             <div>
-                <div id="bulkOptionContainer" className="col-xs-4">
-                <table class="table table-bordered blogdisplay">
+                <div id="bulkOptionContainer" className="col-xs-4" display="block"  id="list-display">
+                <table className="table table-bordered blogdisplay">
                 <thead>
                     <tr>
                         <th className="blogitem">Title</th>
                         <th className="blogitem">Author</th>
                         <th className="blogitem">Image</th>
                         <th className="blogitem">Delete</th>
-                        <th className="blogitem">Edit</th>
                     </tr>
                 </thead>
              </table>
                 {
                 blogs && 
                 blogs.map(blog => {
-
             return(
+                <div key={blog.photo}>
                 <table className="table table-bordered blogdisplay">
+                    <tbody>
+                        <tr>
                     <td className="blogitem">{blog.title}</td>
                     <td className="blogitem">{blog.author}</td>
                     <td className="blogitem"><img className="adminblogimg"  src={blog.photo} alt="a blogpost" /></td>
-                    <td className="blogitem"><button type="submit" onClick={(e) => deleteBlog(e)} blogRef={blog.id} className="btn btn-danger">Delete</button> </td>
-                    <td className="blogitem" id={blog.date}><input type="submit" className="btn btn-primary btn-send" value="Edit Blog" /> </td>
+                    <td className="blogitem"><button type="submit" onClick={(e) => deleteBlog(e)} className="btn btn-danger">Delete</button> </td>
+                    </tr>
+                    </tbody>
                 </table>
+                </div>
              )
              }
              )
@@ -66,8 +68,7 @@ const BlogEdit = () => {
              }
 
              </div>
-            </div>
-            
+            </div>   
                 )
             
         

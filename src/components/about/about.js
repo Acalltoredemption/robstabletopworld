@@ -10,7 +10,9 @@ const About = () => {
         <div>
         <div className="aboutmebox">
             <div className="itema">
+                <div className="aboutborder">
             <img src={aboutme} />
+            </div>
             </div>
             <div className="itemb">
             <p>
