@@ -66,7 +66,7 @@ const userLogin = () => {
             setError('')
 
           await login(emailRef.current.value, passwordRef.current.value);
-          toast.success(`Welcome back, ${username}`);
+          toast.success(`Welcome back ${username}`);
           history.push('/')
         } catch(e) {
             toast.error('Failed to sign in!');
@@ -84,9 +84,10 @@ async function handleLogout() {
 
         try {
             await logout()
-            history.push('/')
+            history.push('/');
+            toast.success('Logout Successful!');
         } catch(e) {
-            console.log('failed to log out')
+            toast.error('Failed to log out!');
         }
     }
 
