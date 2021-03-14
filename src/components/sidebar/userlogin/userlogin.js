@@ -66,7 +66,7 @@ const userLogin = () => {
             setError('')
 
           await login(emailRef.current.value, passwordRef.current.value);
-          toast.success(`Welcome back ${username}`);
+          toast.success(`Welcome back!`);
           history.push('/')
         } catch(e) {
             toast.error('Failed to sign in!');

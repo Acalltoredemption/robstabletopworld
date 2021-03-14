@@ -12,7 +12,8 @@ class MakeEvent extends Component {
         description: '',
         photo: '',
         createdat: '',
-        url: ''
+        url: '',
+        photostate: '',
     }
     handleChange = (e) => {
         e.preventDefault();
@@ -25,6 +26,13 @@ class MakeEvent extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         this.createEvent(this.state);
+    }
+    photoStateHold = (e) => {
+        const file = document.querySelector("#photo").files[0];
+        var filenames = new Date() + '-' + file.name;
+        this.setState({
+            photostate: filenames
+        })
     }
 
     createEvent = () => {
@@ -94,7 +102,7 @@ return (
         <div className="col-md-6">
             <div className="form-group">
                 <label htmlFor="image">Video Image (or thumbnail)</label>
-                <input className="form-control" type="file" onChange={this.uploadImage} placeholder="Post Image" name="image" id="photo" />
+                <input className="form-control" type="file" onChange={this.photoStateHold} placeholder="Post Image" name="image" id="photo" />
         </div>
         </div>
 
@@ -106,7 +114,7 @@ return (
         </div>
 
         <div className="col-md-12">
-            <input type="submit" className="btn btn-success btn-send" value="Create Event" />
+            <input type="submit" disabled={this.state.title === '' || this.state.description === '' || this.state.url === '' || this.state.photostate === ''}  className="btn btn-success btn-send" value="Create Event" />
         </div>
 
         <img id="img" alt=""></img>

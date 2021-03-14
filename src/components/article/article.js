@@ -208,7 +208,7 @@ const  Article = () => {
         <div className="col-md-12">
             <div className="thecenterertwo">
                 <p id="logged-out-article">Please log in to comment on this blog.</p>
-            <input type="submit" id="logged-in-article" className="btn btn-success btn-send" value="Send message" />
+            <input type="submit" disabled={commentContent.length < 5}id="logged-in-article" className="btn btn-success btn-send" value="Send message" />
             </div>
         </div>
     </div>

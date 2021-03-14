@@ -91,7 +91,7 @@ const Addwar = () => {
         </div>
         </div>
         <div className="col-md-12">
-            <input type="submit" className="btn btn-success btn-send" value="Create" />
+            <input type="submit" disabled={ !title || !photo || !url} className="btn btn-success btn-send" value="Create" />
         </div>
 
 

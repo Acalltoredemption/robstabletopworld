@@ -17,6 +17,8 @@ class MakeBlog2 extends Component {
         photo: '',
         secondphoto: '',
         date: '',
+        photostate: '',
+        photostatetwo: '',
     }
     handleChange = (e) => {
         e.preventDefault();
@@ -39,6 +41,20 @@ class MakeBlog2 extends Component {
     makeBlog3 = (e) => {
         e.preventDefault();
         history.push('/makeblog3');
+    }
+    photoStateHold = (e) => {
+        const file = document.querySelector("#photo").files[0];
+        var filenames = new Date() + '-' + file.name;
+        this.setState({
+            photostate: filenames
+        })
+    }
+    photoStateHoldTwo = (e) => {
+        const file = document.querySelector("#secondphoto").files[0];
+        var filenamestwo = new Date() + '-' + file.name;
+        this.setState({
+            photostatetwo: filenamestwo
+        })
     }
 
 
@@ -146,7 +162,7 @@ return (
         <div className="col-md-6">
             <div className="form-group">
                 <label htmlFor="image">Blog Image</label>
-                <input className="form-control" type="file" onChange={this.uploadImage} placeholder="Post Image" name="image" id="photo" />
+                <input className="form-control" type="file" onChange={this.photoStateHold} placeholder="Post Image" name="image" id="photo" />
         </div>
         </div>
 
@@ -161,12 +177,12 @@ return (
         <div className="col-md-6">
             <div className="form-group">
                 <label htmlFor="image2">Second Blog Image</label>
-                <input className="form-control" type="file" onChange={this.uploadImage} placeholder="Post Image" name="image2" id="secondphoto" />
+                <input className="form-control" type="file" onChange={this.photoStateHoldTwo} placeholder="Post Image" name="image2" id="secondphoto" />
         </div>
         </div>
 
         <div className="col-md-12">
-            <input type="submit" className="btn btn-success btn-send" value="Create Blog" />
+            <input type="submit" disabled={this.state.author === '' || this.state.title === '' || this.state.content === '' || this.state.photostate === '' || this.state.photostatetwo === ''} className="btn btn-success btn-send" value="Create Blog" />
         </div>
 
         <img id="img" alt =""></img>

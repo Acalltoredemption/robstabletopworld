@@ -24,7 +24,7 @@ const Approve = () => {
                 setShowcase(this.showcases);
                            
             }      
-            toast.success('Submission has been approved!');
+            
             fetchShowcases();
         }, []);
     
@@ -55,6 +55,7 @@ const Approve = () => {
                 showcase.map(showcase => {
                     function deleteBlog (e) {
                         db.collection('showcase').doc(showcase.id).delete();
+                        toast.warn('Submission has been deleted');
                         history.push('/')
                      }
 
@@ -66,6 +67,7 @@ const Approve = () => {
                         docRef.update({
                             unapproved: firebase.firestore.FieldValue.delete()
                         })
+                        toast.success('Submission has been approved!');
                         history.push('/') 
                     }
             return(

@@ -15,6 +15,7 @@ class MakeBlog extends Component {
         author: '',
         photo: '',
         date: '',
+        photostate: '',
     }
     handleChange = (e) => {
         e.preventDefault();
@@ -27,6 +28,13 @@ class MakeBlog extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         this.createBlog(this.state);
+    }
+    photoStateHold = (e) => {
+        const file = document.querySelector("#photo").files[0];
+        var filenames = new Date() + '-' + file.name;
+        this.setState({
+            photostate: filenames
+        })
     }
 
     makeBlog2 = (e) => {
@@ -122,12 +130,12 @@ return (
         <div className="col-md-6">
             <div className="form-group">
                 <label htmlFor="image">Blog Image</label>
-                <input className="form-control" type="file" onChange={this.uploadImage} placeholder="Post Image" name="image" id="photo" />
+                <input className="form-control" type="file" onChange={this.photoStateHold} placeholder="Post Image" name="image" id="photo" />
         </div>
         </div>
 
         <div className="col-md-12">
-            <input type="submit" className="btn btn-success btn-send" value="Create Blog" />
+            <input type="submit" disabled={this.state.author === '' || this.state.title === '' || this.state.content === '' || this.state.photostate === ''} className="btn btn-success btn-send" value="Create Blog" />
         </div>
 
         <img id="img" alt =""></img>

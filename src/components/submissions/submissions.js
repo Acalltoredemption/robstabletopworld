@@ -13,6 +13,7 @@ class Submissions extends Component {
         name: '',
         photo: '',
         date: '',
+        photostate: '',
     }
     handleChange = (e) => {
         e.preventDefault();
@@ -25,6 +26,13 @@ class Submissions extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         this.createShowcase(this.state);
+    }
+    photoStateHold = (e) => {
+        const file = document.querySelector("#photo").files[0];
+        var filenames = new Date() + '-' + file.name;
+        this.setState({
+            photostate: filenames
+        })
     }
 
     createShowcase = () => {
@@ -92,11 +100,11 @@ return (
         <div className="col-md-6">
             <div className="form-group">
                 <label htmlFor="image">Project Photo</label>
-                <input className="form-control" type="file" onChange={this.uploadImage} placeholder="Post Image" name="image" id="photo" />
+                <input className="form-control" type="file" onChange={this.photoStateHold} placeholder="Post Image" name="image" id="photo" />
         </div>
         </div>
         <div className="col-md-12">
-            <input type="submit" className="btn btn-primary btn-send" value="Submit" />
+            <input type="submit" disabled={this.state.description === '' || this.state.name === '' || this.state.photostate === ''}className="btn btn-primary btn-send" value="Submit" />
         </div>
 
         <img id="img" alt =""></img>

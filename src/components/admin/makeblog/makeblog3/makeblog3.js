@@ -18,6 +18,9 @@ class MakeBlog3 extends Component {
         date: '',
         thirdphoto: '',
         thirdcontent: '',
+        photostate: '',
+        photostatetwo: '',
+        photostatethree: '',
     }
     handleChange = (e) => {
         e.preventDefault();
@@ -41,6 +44,28 @@ class MakeBlog3 extends Component {
         e.preventDefault();
         history.push('/makeblog2');
     }
+    photoStateHold = (e) => {
+        const file = document.querySelector("#photo").files[0];
+        var filenames = new Date() + '-' + file.name;
+        this.setState({
+            photostate: filenames
+        })
+    }
+    photoStateHoldTwo = (e) => {
+        const file = document.querySelector("#secondphoto").files[0];
+        var filenamestwo = new Date() + '-' + file.name;
+        this.setState({
+            photostatetwo: filenamestwo
+        })
+    }
+    photoStateHoldThree = (e) => {
+        const file = document.querySelector("#thirdphoto").files[0];
+        var filenamesthree = new Date() + '-' + file.name;
+        this.setState({
+            photostatethree: filenamesthree
+        })
+    }
+
 
 
     createBlog = () => {
@@ -172,7 +197,7 @@ return (
         <div className="col-md-6">
             <div className="form-group">
                 <label htmlFor="image">Blog Image</label>
-                <input className="form-control" type="file" onChange={this.uploadImage} placeholder="Post Image" name="image" id="photo" />
+                <input className="form-control" type="file" onChange={this.photoStateHold} placeholder="Post Image" name="image" id="photo" />
         </div>
         </div>
 
@@ -187,7 +212,7 @@ return (
         <div className="col-md-6">
             <div className="form-group">
                 <label htmlFor="image2">Second Blog Image</label>
-                <input className="form-control" type="file" onChange={this.uploadImage} placeholder="Post Image" name="image2" id="secondphoto" />
+                <input className="form-control" type="file" onChange={this.photoStateHoldTwo} placeholder="Post Image" name="image2" id="secondphoto" />
         </div>
         </div>
 
@@ -201,12 +226,12 @@ return (
         <div className="col-md-6">
             <div className="form-group">
                 <label htmlFor="image3">Third Blog Image</label>
-                <input className="form-control" type="file" onChange={this.uploadImage} placeholder="Post Image" name="image3" id="thirdphoto" />
+                <input className="form-control" type="file" onChange={this.photoStateHoldThree} placeholder="Post Image" name="image3" id="thirdphoto" />
         </div>
         </div>
 
         <div className="col-md-12">
-            <input type="submit" className="btn btn-success btn-send" value="Create Blog" />
+            <input type="submit" disabled={this.state.author === '' || this.state.title === '' || this.state.content === '' || this.state.photostate === '' || this.state.photostatetwo === '' || this.state.photostatethree === ''} className="btn btn-success btn-send" value="Create Blog" />
         </div>
 
         <img id="img" alt =""></img>

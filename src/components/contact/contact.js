@@ -73,7 +73,7 @@ class Contact extends Component {
             </div>
         </div>
         <div className="col-md-12">
-            <input type="submit" className="btn btn-success btn-send" value="Send message" />
+            <input type="submit" disabled={this.state.name === '' || this.state.email === '' || this.state.message === ''}className="btn btn-success btn-send" value="Send message" />
         </div>
     </div>
     <div className="row">

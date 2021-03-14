@@ -58,6 +58,7 @@ const ApproveCommunity = () => {
                      }
 
                     function approveBlog (e) {
+                        toast.success('Community entry has been approved.');
                         db.collection('community').doc(showcase.id).set({
                             approved: true
                         }, { merge: true});
@@ -65,7 +66,7 @@ const ApproveCommunity = () => {
                         docRef.update({
                             unapproved: firebase.firestore.FieldValue.delete()
                         })
-                        toast.success('Community entry has been approved.')
+                        
                         history.push('/') 
                     }
             return(
