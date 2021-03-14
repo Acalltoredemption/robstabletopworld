@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {db} from '../../../firebase/firebaseconfig';
 import './blogedit.css';
 import history from '../../../history/history';
+import {toast} from 'react-toastify';
 
 const BlogEdit = () => {
         const [blogs, setBlogs] = useState([]);
@@ -27,6 +28,7 @@ const BlogEdit = () => {
         function deleteBlog (e) {
            let id = e.target.getAttribute('blogref');
            db.collection('blogposts').doc(id).delete();
+           toast.warning('Blog has been deleted!');
            history.push('/')
         }
 

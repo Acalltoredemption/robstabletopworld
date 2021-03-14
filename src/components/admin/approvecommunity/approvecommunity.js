@@ -4,6 +4,7 @@ import './approvecommunity.css';
 import history from '../../../history/history';
 import '../../../firebase/firebaseconfig';
 import firebase from 'firebase'
+import {toast} from 'react-toastify';
 
 const ApproveCommunity = () => {
         const [showcase, setShowcase] = useState([]);
@@ -64,6 +65,7 @@ const ApproveCommunity = () => {
                         docRef.update({
                             unapproved: firebase.firestore.FieldValue.delete()
                         })
+                        toast.success('Community entry has been approved.')
                         history.push('/') 
                     }
             return(

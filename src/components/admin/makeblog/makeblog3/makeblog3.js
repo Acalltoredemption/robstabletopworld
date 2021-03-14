@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import 'firebase/storage';
 import {firebase, db} from '../../../../firebase/firebaseconfig';
 import history from '../../../../history/history';
-
+import {toast} from 'react-toastify';
   
 
 
@@ -127,6 +127,7 @@ class MakeBlog3 extends Component {
             date: new Date()
 
         })
+        toast.success('New blog created.');
         history.push('/')
     }
 

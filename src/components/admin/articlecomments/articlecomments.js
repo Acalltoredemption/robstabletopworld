@@ -4,6 +4,7 @@ import './articlecomments.css';
 import history from '../../../history/history';
 import '../../../firebase/firebaseconfig';
 import firebase from 'firebase'
+import {toast} from 'react-toastify';
 
 const ArticleComments = () => {
         const [showcase, setShowcase] = useState([]);
@@ -53,6 +54,7 @@ const ArticleComments = () => {
                 showcase.map(showcase => {
                     function deleteBlog (e) {
                         db.collection('comments').doc(showcase.id).delete();
+                        toast.warn('Article comment has been deleted.')
                         history.push('/')
                      }
 
@@ -64,6 +66,7 @@ const ArticleComments = () => {
                         docRef.update({
                             unapproved: firebase.firestore.FieldValue.delete()
                         })
+                        toast.success('Article comment has been approved.')
                         history.push('/') 
                     }
             return(

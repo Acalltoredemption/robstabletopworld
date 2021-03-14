@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import 'firebase/storage';
 import {firebase, db} from '../../../firebase/firebaseconfig';
 import history from '../../../history/history';
-
+import {toast} from 'react-toastify';
 
 
 const Addwar = () => {
@@ -57,6 +57,7 @@ const Addwar = () => {
              date: new Date()
 
          })
+         toast.success('War and pieces section has been updated!');
          history.push('/')
     }
 

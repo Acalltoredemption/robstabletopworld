@@ -4,6 +4,7 @@ import history from '../../history/history';
 import './article.css';
 import {useAuth} from '../../contexts/AuthContext';
 import {auth} from '../../firebase/firebaseconfig';
+import {toast} from 'react-toastify';
 
 const  Article = () => {
 
@@ -98,6 +99,7 @@ const  Article = () => {
                 date: new Date().toString(),
     
             })
+            toast.success('Comment submitted for approval.');
             history.push('/')
     
     }

@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {db} from '../../../firebase/firebaseconfig';
 import history from '../../../history/history';
 import '../../../firebase/firebaseconfig';
-
+import {toast} from 'react-toastify';
 
 const ApproveComments = () => {
         const [messages, setMessages] = useState([]);
@@ -49,6 +49,7 @@ const ApproveComments = () => {
                     function deleteComment (e) {
                         let id = e.target.getAttribute('blogRef');
                         db.collection('messages').doc(id).delete();
+                        toast.success('Message has been deleted.');
                         history.push('/') 
                      }
                      return(

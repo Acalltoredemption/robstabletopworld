@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {firebase, db} from "../../../firebase/firebaseconfig";
 import history from '../../../history/history';
 import './makeevent.css';
-
+import {toast} from 'react-toastify';
 
 
 
@@ -60,6 +60,7 @@ class MakeEvent extends Component {
             createdat: new Date()
 
         })
+        toast.success('Video of the week section updated.');
         history.push('/')
     }
 

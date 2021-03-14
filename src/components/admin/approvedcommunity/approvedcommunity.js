@@ -3,6 +3,7 @@ import {db} from '../../../firebase/firebaseconfig';
 import './approvedcommunity.css';
 import history from '../../../history/history';
 import '../../../firebase/firebaseconfig';
+import { toast } from 'react-toastify';
 
 const ApprovedCommunity = () => {
         const [showcase, setShowcase] = useState([]);
@@ -51,6 +52,7 @@ const ApprovedCommunity = () => {
                 showcase.map(showcase => {
                     function deleteBlog (e) {
                         db.collection('community').doc(showcase.id).delete();
+                        toast.warning('Entry has been deleted')
                         history.push('/')
                      }
             return(

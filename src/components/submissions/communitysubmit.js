@@ -3,7 +3,7 @@ import 'firebase/storage';
 import {firebase, db} from '../../firebase/firebaseconfig';
 import history from '../../history/history';
 import './submissions.css'
-  
+import {toast} from 'react-toastify';
 
 
 
@@ -60,6 +60,7 @@ class CommunitySubmissions extends Component {
             unapproved: true
 
         })
+        toast('Entry submitted and awaiting approval.');
         history.push('/')
     }
 

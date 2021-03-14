@@ -3,6 +3,8 @@ import {db} from '../../../firebase/firebaseconfig';
 import './approved.css';
 import history from '../../../history/history';
 import '../../../firebase/firebaseconfig';
+import {toast} from 'react-toastify';
+
 
 const Approved = () => {
         const [showcase, setShowcase] = useState([]);
@@ -51,6 +53,7 @@ const Approved = () => {
                 showcase.map(showcase => {
                     function deleteBlog (e) {
                         db.collection('showcase').doc(showcase.id).delete();
+                        toast.warning('Art entry has been removed.')
                         history.push('/')
                      }
 

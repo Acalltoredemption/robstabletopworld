@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './contact.css';
 import history from '../../history/history';
 import {db} from '../../firebase/firebaseconfig';
-
+import {toast} from 'react-toastify';
 
 class Contact extends Component {
     state = {
@@ -31,6 +31,7 @@ class Contact extends Component {
             date: new Date().toString()
 
         })
+        toast.success('Your message has been sent!');
         history.push('/')
     }
 

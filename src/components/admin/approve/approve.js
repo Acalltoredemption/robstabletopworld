@@ -4,6 +4,7 @@ import './approve.css';
 import history from '../../../history/history';
 import '../../../firebase/firebaseconfig';
 import firebase from 'firebase'
+import {toast} from 'react-toastify';
 
 const Approve = () => {
         const [showcase, setShowcase] = useState([]);
@@ -23,6 +24,7 @@ const Approve = () => {
                 setShowcase(this.showcases);
                            
             }      
+            toast.success('Submission has been approved!');
             fetchShowcases();
         }, []);
     
