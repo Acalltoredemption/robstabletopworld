@@ -37,6 +37,9 @@
     margin-right: 4px;
 }
 
+.loginshader:hover {
+transform: scale(0.9);
+}
 .loginbox {
     position: absolute;
     right: -20px;

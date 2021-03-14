@@ -11,9 +11,9 @@
         margin-bottom: 15px;
         
     }
-    .upcomingimg { 
+    .upupcomingimg { 
         display: block;
-        width: 220px;
+        width: 300px;
         margin-left: auto;
         margin-right: auto;
     } 
@@ -39,8 +39,8 @@
         font-size: 14px;
     }
     
-    .image-border{
-        width: 220px;
+    .upimage-border{
+        width: 300px;
         overflow: hidden;
         border-style: groove;
         border-width: thick;

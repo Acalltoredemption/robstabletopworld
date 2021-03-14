@@ -37,7 +37,7 @@ const ApproveCommunity = () => {
                     <div><input type="submit" className="btn btn-success btn-send" onClick={() => history.push('/approvedcommunity')} value="View Approved Members" /></div>
                     <div>Unapproved Community Members</div>
                     </div>
-                <table class="table table-bordered blogdisplay">
+                <table className="table table-bordered blogdisplay">
                 <thead>
                     <tr>
                         <th className="blogitem">Name</th>
@@ -68,11 +68,15 @@ const ApproveCommunity = () => {
                     }
             return(
                 <table className="table table-bordered blogdisplay" key={showcase.name}>
+                    <tbody>
+                        <tr>
                     <td className="blogitem">{showcase.name}</td>
                     <td className="blogitem">{showcase.bio}</td>
                     <td className="blogitem"><img className="adminblogimg"  src={showcase.photo} alt="a blogpost" /></td>
                     <td className="blogitem"><button type="submit" onClick={(e) => deleteBlog(e)} className="btn btn-danger">Delete</button> </td>
                     <td className="blogitem" id={showcase.date}><input type="submit" onClick={(e) => approveBlog(e)} showcaseid={showcase.id} className="btn btn-success btn-send" value="Approve" /> </td>
+                    </tr>
+                    </tbody>
                 </table>
              )
              }

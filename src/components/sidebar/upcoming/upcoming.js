@@ -28,12 +28,12 @@ const Upcoming = () => {
 <div className="upcoming" key={photo}> 
 <div className="upcomingbox">
 <Tilt className="tiltbox"> 
-<div className="image-border">
+<div className="upimage-border">
 <div className="upcomingcontent2">
 <p className="wartitletwo">Video of the Week</p>
 </div>
 <a href={url}>
-<img className="upcomingimg" src={photo} alt="an upcoming event" />
+<img className="upupcomingimg" src={photo} alt="an upcoming event" />
 </a>
 </div>
 </Tilt>

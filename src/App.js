@@ -31,6 +31,8 @@ import BlogEdit from './components/admin/blogedit/blogedit';
 import {Router} from 'react-router';
 import ArticlePage from './components/article/article';
 import history from './history/history';
+import {ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -55,6 +57,7 @@ return (
         <Header /> 
         <NavBar />
         <AdminNav />
+        <ToastContainer position="top-center" />
         
         
         <Route exact path='/' component={HomePage} />

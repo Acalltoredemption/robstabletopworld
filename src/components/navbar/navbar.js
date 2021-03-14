@@ -49,6 +49,9 @@ const Navbar = () => {
                   <Col sm id="logged-in">
                   <NavLink to="/submissions" id="logged-in" activeStyle={{ fontWeight: "bold" }}><div className="navlink" id="logged-in">Submissions</div></NavLink>
                   </Col>
+                  <Col sm>
+                  <NavLink  to="/store" activeStyle={{ fontWeight: "bold" }}><div className="navlink">Store(Coming soon!)</div></NavLink>
+                  </Col>
 
                   </Row>
                 </Container>

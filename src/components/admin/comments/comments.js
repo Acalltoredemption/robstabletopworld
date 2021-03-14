@@ -32,7 +32,7 @@ const ApproveComments = () => {
                     <div className="approvalheading">
                     <div>Message Inbox</div>
                     </div>
-                <table class="table table-bordered blogdisplay">
+                <table className="table table-bordered blogdisplay">
                 <thead>
                     <tr>
                         <th className="blogitem">Name</th>

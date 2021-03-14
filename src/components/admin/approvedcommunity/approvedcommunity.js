@@ -36,7 +36,7 @@ const ApprovedCommunity = () => {
                     <div><input type="submit" className="btn btn-success btn-send" onClick={() => history.push('/communitysubmissions')} value="View UnApproved Members" /></div>
                     <div>Approved Community Members</div>
                     </div>
-                <table class="table table-bordered blogdisplay">
+                <table className="table table-bordered blogdisplay">
                 <thead>
                     <tr>
                         <th className="blogitem">Name</th>

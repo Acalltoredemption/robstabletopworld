@@ -1,4 +1,4 @@
-@media(max-width: 1300px){
+@media(max-width: 800px){
     .styler{
         display: inline-grid;
         grid-template-columns: auto;

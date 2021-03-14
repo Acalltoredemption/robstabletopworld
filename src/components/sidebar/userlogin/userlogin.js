@@ -7,6 +7,7 @@ import Person from '../../../images/person.svg';
 import Lock from '../../../images/lock.svg';
 import {db} from '../../../firebase/firebaseconfig';
 import {auth} from '../../../firebase/firebaseconfig';
+import {toast} from 'react-toastify';
 
 
 const userLogin = () => {
@@ -24,7 +25,7 @@ const userLogin = () => {
 
     if (currentUser && currentUser.email) {
         //toggle UI elements
-        message = 'Welcome';
+        message = '';
         loggedIn.forEach(item => item.style.display = 'block');
         loggedOut.forEach(item => item.style.display = 'hidden');
     } else {
@@ -65,9 +66,10 @@ const userLogin = () => {
             setError('')
 
           await login(emailRef.current.value, passwordRef.current.value);
+          toast.success(`Welcome back, ${username}`);
           history.push('/')
         } catch(e) {
-            setError('Failed to sign in!')
+            toast.error('Failed to sign in!');
         }
      
     }
@@ -94,7 +96,7 @@ async function handleLogout() {
 
 
     return ( 
-        <div className="loginholder loginbox">
+        <div className="loginholder loginbox loginshader">
         <div className="container">
     <div className="d-flex justify-content-center">
         <div className="card">

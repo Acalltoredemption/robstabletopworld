@@ -72,7 +72,8 @@ return (
         <div className="infodiv communitysubmit">
         <button type="submit" onClick={() => history.push('/submissions')} className="btn communitybutton btn-primary">Art Submissions</button>
             <h3>Community Submissions</h3>
-            <p>Join the Robs Tabletop World community! Tell us a bit about yourself and be featured here on the website!</p>
+            <p>Join the Robs Tabletop World community! Tell us a bit about yourself and be featured here on the website! 
+                <br></br>Once per month we will select a community member to win a Miniature Market gift certificate!</p>
         </div>
         <div className="col-md-6">
             <div className="form-group">

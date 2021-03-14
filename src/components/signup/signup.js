@@ -8,6 +8,7 @@ import {useAuth} from '../../contexts/AuthContext';
 import {Alert} from 'react-bootstrap';
 import {db} from '../../firebase/firebaseconfig';
 import history from '../../history/history';
+import {toast} from 'react-toastify';
 
 
 
@@ -54,6 +55,7 @@ const SigningUp = () => {
         db.collection('usernames').doc(emailCapitalized).set({
             username: username,
         });
+        toast.success('Register success.');
         history.push('/');
     }
 

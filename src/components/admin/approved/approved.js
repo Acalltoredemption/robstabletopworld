@@ -36,7 +36,7 @@ const Approved = () => {
                     <div><input type="submit" className="btn btn-success btn-send" onClick={() => history.push('/approve')} value="View UnApproved Submissions" /></div>
                     <div>Approved Submissions</div>
                     </div>
-                <table class="table table-bordered blogdisplay">
+                <table className="table table-bordered blogdisplay">
                 <thead>
                     <tr>
                         <th className="blogitem">Name</th>

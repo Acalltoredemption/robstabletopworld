@@ -25,7 +25,7 @@ const BlogEdit = () => {
         }, []);
     
         function deleteBlog (e) {
-           let id = e.target.getAttribute('blogRef');
+           let id = e.target.getAttribute('blogref');
            db.collection('blogposts').doc(id).delete();
            history.push('/')
         }
@@ -34,7 +34,7 @@ const BlogEdit = () => {
 
         return(
             <div>
-                <div id="bulkOptionContainer" className="col-xs-4" display="block"  id="list-display">
+                <div id="bulkOptionContainer" className="col-xs-4">
                 <table className="table table-bordered blogdisplay">
                 <thead>
                     <tr>
@@ -56,7 +56,7 @@ const BlogEdit = () => {
                     <td className="blogitem">{blog.title}</td>
                     <td className="blogitem">{blog.author}</td>
                     <td className="blogitem"><img className="adminblogimg"  src={blog.photo} alt="a blogpost" /></td>
-                    <td className="blogitem"><button type="submit" onClick={(e) => deleteBlog(e)} blogRef={blog.id} className="btn btn-danger">Delete</button> </td>
+                    <td className="blogitem"><button type="submit" onClick={(e) => deleteBlog(e)} blogref={blog.id} className="btn btn-danger">Delete</button> </td>
                     </tr>
                     </tbody>
                 </table>

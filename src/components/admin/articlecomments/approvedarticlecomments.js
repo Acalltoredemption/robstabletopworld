@@ -36,7 +36,7 @@ const ApprovedArticleComments = () => {
                     <div><input type="submit" className="btn btn-success btn-send" onClick={() => history.push('/articlecomments')} value="View UnApproved Comments" /></div>
                     <div>Approved Comments</div>
                     </div>
-                <table class="table table-bordered blogdisplay">
+                <table className="table table-bordered blogdisplay">
                 <thead>
                     <tr>
                         <th className="blogitem">Username</th>
