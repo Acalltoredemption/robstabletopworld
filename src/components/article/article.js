@@ -5,6 +5,7 @@ import './article.css';
 import {useAuth} from '../../contexts/AuthContext';
 import {auth} from '../../firebase/firebaseconfig';
 import {toast} from 'react-toastify';
+import moment from 'moment';
 
 const  Article = () => {
 
@@ -183,7 +184,7 @@ const  Article = () => {
                                 {comment.username}
                                 </div>
                                 <div className="commentdate">
-                                {comment.date}
+                                {`${moment(comment.date).fromNow()}`}
                                 </div>
                                 {comment.content}
 

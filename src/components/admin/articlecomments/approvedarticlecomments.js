@@ -2,7 +2,8 @@ import React, {useState, useEffect} from 'react';
 import {db} from '../../../firebase/firebaseconfig';
 import history from '../../../history/history';
 import '../../../firebase/firebaseconfig';
-
+import moment from 'moment';
+import {toast} from 'react-toastify';
 
 const ApprovedArticleComments = () => {
         const [showcase, setShowcase] = useState([]);
@@ -50,7 +51,9 @@ const ApprovedArticleComments = () => {
                 showcase && 
                 showcase.map(showcase => {
                     function deleteBlog (e) {
+                        toast.warn('Article comment has been deleted.');
                         db.collection('comments').doc(showcase.id).delete();
+                        
                         history.push('/')
                      }
 
@@ -58,7 +61,7 @@ const ApprovedArticleComments = () => {
                 <table className="table table-bordered blogdisplay">
                     <td className="blogitem">{showcase.username}</td>
                     <td className="blogitem">{showcase.content}</td>
-                    <td className="blogitem">{showcase.date}</td>
+                    <td className="blogitem">{`${moment(showcase.date).fromNow()}`}</td>
                     <td className="blogitem"><button type="submit" onClick={(e) => deleteBlog(e)} className="btn btn-danger">Delete</button> </td>
                 </table>
              )

@@ -5,6 +5,7 @@ import history from '../../../history/history';
 import '../../../firebase/firebaseconfig';
 import firebase from 'firebase'
 import {toast} from 'react-toastify';
+import moment from 'moment';
 
 const ArticleComments = () => {
         const [showcase, setShowcase] = useState([]);
@@ -73,7 +74,7 @@ const ArticleComments = () => {
                 <table className="table table-bordered blogdisplay" key={showcase.id}>
                     <td className="blogitem">{showcase.username}</td>
                     <td className="blogitem">{showcase.content}</td>
-                    <td className="blogitem">{showcase.date}</td>
+                    <td className="blogitem">{`${moment(showcase.date).fromNow()}`}</td>
                     <td className="blogitem"><button type="submit" onClick={(e) => deleteBlog(e)} className="btn btn-danger">Delete</button> </td>
                     <td className="blogitem" id={showcase.date}><input type="submit" onClick={(e) => approveBlog(e)} showcaseid={showcase.id} className="btn btn-success btn-send" value="Approve" /> </td>
                 </table>

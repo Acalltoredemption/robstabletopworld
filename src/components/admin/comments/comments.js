@@ -3,6 +3,7 @@ import {db} from '../../../firebase/firebaseconfig';
 import history from '../../../history/history';
 import '../../../firebase/firebaseconfig';
 import {toast} from 'react-toastify';
+import moment from 'moment';
 
 const ApproveComments = () => {
         const [messages, setMessages] = useState([]);
@@ -57,7 +58,7 @@ const ApproveComments = () => {
                             <td className="blogitem">{message.name}</td>
                             <td className="blogitem">{message.message}</td>
                             <td className="blogitem">{message.email}</td>
-                            <td className="blogitem">{message.date}</td>
+                            <td className="blogitem">{`${moment(message.date).fromNow()}`}</td>
                             <td className="blogitem"><button type="submit" onClick={(e) => deleteComment(e)} blogRef={message.id} className="btn btn-danger">Delete</button> </td>
                             
                         </table>
