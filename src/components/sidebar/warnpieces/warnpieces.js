@@ -3,7 +3,9 @@ import './warnpieces.css';
 import 'firebase/firestore';
 import {db} from '../../../firebase/firebaseconfig';
 import Tilt from 'react-vanilla-tilt';
+import {Badge} from 'antd';
 
+const {Ribbon} = Badge;
 
 const WarShowcase = () => {
     const [warshowcase, setwarShowcase] = useState('')
@@ -23,14 +25,13 @@ const WarShowcase = () => {
                     <div className="upcoming" key={photo}> 
                     <div className="upcomingbox">
                     <Tilt className="tiltbox"> 
+                    <Ribbon text="War and Pieces" color="cyan">
                     <div className="image-border">
-                    <div className="upcomingcontent2">
-                    <p className="wartitle">War and Pieces</p>
-                    </div>
                     <a href={url}>
                     <img className="upcomingimg" src={photo} alt="an upcoming event" />
                     </a>
                     </div>
+                    </Ribbon>
                     </Tilt>
                     </div>
                     </div>

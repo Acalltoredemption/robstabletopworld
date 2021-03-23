@@ -3,7 +3,9 @@ import './membershowcase.css';
 import history from '../../../history/history';
 import Tilt from 'react-vanilla-tilt';
 import backgroundphoto from '../../../images/communitybackground.png';
+import {Badge} from 'antd';
 
+const {Ribbon} = Badge;
 
 const MemberShowcase = () => {
 
@@ -18,12 +20,11 @@ const MemberShowcase = () => {
             <div className="upcoming" onClick={redirect}> 
             <div className="upcomingbox">
             <Tilt className="tiltbox"> 
+            <Ribbon text="Our Community" color="cyan">
             <div className="image-border">
-            <div className="upcomingcontent2">
-            <p className="wartitle">Our Community</p>
-            </div>
             <img className="upcomingimg" src={backgroundphoto} alt="an upcoming event" />
             </div>
+            </Ribbon>
             </Tilt>
             </div> 
             </div>  
