@@ -36,6 +36,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
 import {
@@ -48,6 +49,7 @@ import {
 
 
 const App = () => {
+
 
 return (
     <AuthProvider>
@@ -75,7 +77,7 @@ return (
         <Route path='/makeblog2' component={MakeBlog2Page} />
         <Route path='/makeblog3' component={MakeBlog3Page} />
         <Route path='/warandpieces' component={AddWarPage} />
-        <Route path='/makeevent' component={MakeEventPage} />
+        <Route path='/makeevent'  component={MakeEventPage} />
         <Route path='/approve' component={ApprovePage} />
         <Route path='/approvedcommunity' component={ApprovedCommunity} />
         <Route path='/communitysubmissions' component={ApproveCommunity} />

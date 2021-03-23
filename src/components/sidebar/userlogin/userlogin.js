@@ -8,6 +8,10 @@ import Lock from '../../../images/lock.svg';
 import {db} from '../../../firebase/firebaseconfig';
 import {auth} from '../../../firebase/firebaseconfig';
 import {toast} from 'react-toastify';
+import {Badge} from 'antd';
+
+const {Ribbon} = Badge;
+
 
 
 const userLogin = () => {
@@ -21,11 +25,13 @@ const userLogin = () => {
     const {login} = useAuth();
     const [error, setError] = useState('');
     const [username, setUsername] = useState([]);
+
    
 
     if (currentUser && currentUser.email) {
         //toggle UI elements
-        message = '';
+        message = `Welcome ${username}`;
+        console.log(auth);
         loggedIn.forEach(item => item.style.display = 'block');
         loggedOut.forEach(item => item.style.display = 'hidden');
     } else {
@@ -97,12 +103,16 @@ async function handleLogout() {
 
 
     return ( 
+        
         <div className="loginholder loginbox loginshader">
+            
         <div className="container">
+        
     <div className="d-flex justify-content-center">
+    <Ribbon text={message} color="green" size="large">
         <div className="card">
             <div className="card-header cardheader welcome">
-                <p id="logged-out" style={{fontWeight: 'bold'}}>{message} </p><b id="logged-in">{message} <b className="username">{username}</b></b>
+            <br/>
             </div>
         <div className="card-body">
             <form autoComplete="off" onSubmit={handleSubmit}>
@@ -135,14 +145,12 @@ async function handleLogout() {
             </div>
         </div>
         </div>
+        </Ribbon>
     </div>
-
 </div>
 
-
-
-
         </div>
+        
 
      );
 }

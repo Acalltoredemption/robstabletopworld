@@ -2,8 +2,11 @@ import React, {useEffect, useState} from 'react';
 import Tilt from 'react-vanilla-tilt';
 import './upcoming.css';
 import 'firebase/firestore';
-
+import {Badge} from 'antd';
 import {db} from '../../../firebase/firebaseconfig';
+const {Ribbon} = Badge;
+
+
 
  
 
@@ -45,6 +48,7 @@ const Upcoming = () => {
     {description}
 </div>
 </div>  
+
                 )
             })
         })
