@@ -6,6 +6,9 @@ import {useAuth} from '../../contexts/AuthContext';
 import {auth} from '../../firebase/firebaseconfig';
 import {toast} from 'react-toastify';
 import moment from 'moment';
+import {Badge} from 'antd';
+
+const {Ribbon} = Badge;
 
 const  Article = () => {
 
@@ -178,18 +181,19 @@ const  Article = () => {
                     comments.map(comment => {
                         if(queryString === comment.blogRef.toString()){
                         return(
+                            
                             <div className="commentholder" key={comment.date}>
+                                
                             <div className="commentbox">
-                            <div className="commentusername">
-                                {comment.username}
-                                </div>
+                            <Ribbon text={comment.username} color="geekblue">
                                 <div className="commentdate">
                                 {`${moment(comment.date).fromNow()}`}
                                 </div>
                                 {comment.content}
-
+                                </Ribbon>
                             </div>
                             </div>
+                            
 
                         );
                         }
