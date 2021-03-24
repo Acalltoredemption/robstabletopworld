@@ -1,7 +1,9 @@
 import React from 'react';
 import './communityitem.css';
 import artimage from '../../../images/ArtShowcase.png';
+import {Badge} from 'antd';
 
+const {Ribbon} = Badge;
 
 const Item = ({items}) => {
     return(
@@ -34,11 +36,11 @@ const Item = ({items}) => {
   
 <div key={item.name} >
 <div className="showcasecard resizer" id={item.description}>
+    <Ribbon color="gold" text={item.name}>
     <div onClick={showModal}>
 <img src={item.photo} alt="A community artwork submission" id="theimage" className='showcaseimage' />
 </div>
-<div className="container scalebox">
-  <h4><b>{item.name}</b></h4>
+</Ribbon>
 
 
         <div id={specialkey} className="hidemodal">
@@ -46,9 +48,6 @@ const Item = ({items}) => {
         <img className="modalitem" src={item.photo} alt="a community artwork submission"  />
         <p className="modaldesc">{item.description}</p>
         </div>
-
-
-</div>
 </div>
 </div>
 

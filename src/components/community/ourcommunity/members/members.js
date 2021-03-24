@@ -1,7 +1,9 @@
 import React from 'react';
 import './members.css';
 import comimage from '../../../../images/CommunityShowcase.png';
+import {Badge} from 'antd';
 
+const {Ribbon} = Badge;
 const Members = ({members}) => {
     return(
         <div>
@@ -33,9 +35,9 @@ const Members = ({members}) => {
                 return(
 <div key={member.name}>
 <div className="showcasecard resizer" id={member.bio}>
+    <Ribbon color="gold" text={member.name}>
 <img src={member.photo} onClick={showModal} className='showcaseitem' alt="a showcase item" />
-<div className="container">
-  <h4><b>{member.name}</b></h4>
+</Ribbon>
 
 
         <div id={specialkey} className="hidemodal">
@@ -44,8 +46,6 @@ const Members = ({members}) => {
         <p className="modaldesc">{member.bio}</p>
         </div>
 
-
-</div>
 </div>
 </div>
 
