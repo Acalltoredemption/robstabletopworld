@@ -78,7 +78,7 @@ return (
         <Route path='/makeblog3' component={MakeBlog3Page} />
         <Route path='/warandpieces' component={AddWarPage} />
         <Route path='/makeevent'  component={MakeEventPage} />
-        <Route path='/approve' component={ApprovePage} />
+        <Route path='/approve' component={ApprovePage}  />
         <Route path='/approvedcommunity' component={ApprovedCommunity} />
         <Route path='/communitysubmissions' component={ApproveCommunity} />
         <Route path='/comments' component={ApproveComments} />
