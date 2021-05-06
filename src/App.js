@@ -48,7 +48,7 @@ import {
 
 
 
-const app = () => {
+const App = () => {
 
 
 return (
@@ -98,4 +98,4 @@ return (
 )
 }
 
-export default app;
+export default App;
