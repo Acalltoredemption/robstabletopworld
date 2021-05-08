@@ -1,3 +1,5 @@
+var CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
+
 module.exports = {
     mode: "development",
     entry: path.resolve(__dirname, 'src') + "/index.js",
@@ -7,7 +9,7 @@ module.exports = {
     }
   };
 
-var CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
+
 
 var webpackConfig = {
     plugins: [
@@ -15,4 +17,4 @@ var webpackConfig = {
         // other plugins ...
     ]
     // other webpack config ...
-}
+} 
