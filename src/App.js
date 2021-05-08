@@ -39,7 +39,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
-import {
+import { 
     Route,
   } from "react-router-dom";
 
