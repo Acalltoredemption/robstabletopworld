@@ -1,6 +1,5 @@
 module.exports = {
     mode: "development",
-    entry: { 'bundle': './src/index.js' },
 
     resolve: {
         extensions: ['', '.js', '.jsx']
