@@ -1,6 +1,6 @@
 module.exports = {
     mode: "development",
-    entry: path.resolve(__dirname, 'src') + "/app",
+    entry: { 'bundle': './src/index.js' },
 
     resolve: {
         extensions: ['', '.js', '.jsx']
