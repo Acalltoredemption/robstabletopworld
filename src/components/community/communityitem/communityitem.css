@@ -11,13 +11,14 @@
 
 .thetitle {
     height: 20px;
-    padding: 0 8px;
+    padding: 8px;
     color: white;
     text-decoration: outline;
+    text-decoration-color: gray;
     position: absolute;
     margin-bottom: 50px;
     margin-left: 200px;
-    -webkit-text-stroke: 1px black;
+    -webkit-text-stroke: 1px white;
 } 
 .dungeonimg {
     width: 600px;

@@ -32,7 +32,7 @@ const Upcoming = () => {
 <div className="upcomingbox">
     
 <Tilt className="tiltbox"> 
-<Ribbon text={title} color="green" text="Video of the Week!">
+<Ribbon color="green" text="Video of the Week!">
 <div className="upimage-border">
 <a href={url}>
 <img className="upupcomingimg" src={photo} alt="an upcoming event" />
