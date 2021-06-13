@@ -1,5 +1,5 @@
 import React from 'react';
-import banner from '../../images/banner2.png';
+import banner from '../../images/banner.png';
 import './header.css';
 import Youtube from  '../../images/Youtube.png';
 import Twitter from '../../images/Twitter.png';
