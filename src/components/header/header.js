@@ -9,10 +9,25 @@ import Donate from '../../images/donate.png';
 import
 {NavLink}
 from "react-router-dom";
+import {useAuth} from '../../contexts/AuthContext';
+
 
 
 const Header = () => {
+    const {currentUser} = useAuth();
 
+    const loggedIn = document.querySelectorAll('#logged-in');
+    const loggedOut = document.querySelectorAll('#logged-out');
+  
+    if (currentUser && currentUser.email) {
+        //toggle UI elements
+        loggedIn.forEach(item => item.style.display = 'block');
+        loggedOut.forEach(item => item.style.display = 'none');
+    } else {
+        //toggle UI elements
+        loggedIn.forEach(item => item.style.display = 'none');
+        loggedOut.forEach(item => item.style.display = 'block');
+    }
 
   
     return (
@@ -21,24 +36,24 @@ const Header = () => {
             <a name="top" style={{display: 'none'}}> screen anchor </a>
             <div className="bannerparent">
         <img className='banner' src={banner} alt='channel banner'></img>
-        <a href="https://www.youtube.com/user/seahawk8601"><img className="Youtube" src={Youtube} alt="Youtube logo"></img></a>
-        <a href="https://twitter.com/seahawk860"><img className="Twitter" src={Twitter} alt="Twitter logo"></img></a>
-        <a href="https://www.instagram.com/robstabletopworld/"><img className="Instagram" src={Instagram} alt="Instagram logo"></img></a>
-        <a href="https://www.miniaturemarket.com/"><img className="MiniatureMarket" src={MiniatureMarket} alt="Miniature Market logo"></img></a>
-        <a href="https://streamlabs.com/robstabletopworld/tip"><img className="Donate" src={Donate} alt="Donation Button"></img></a>
+        <a href="https://www.youtube.com/user/seahawk8601" target="_blank" rel="noopener noreferrer" ><img className="Youtube" src={Youtube} alt="Youtube logo"></img></a>
+        <a href="https://twitter.com/seahawk860" target="_blank" rel="noopener noreferrer"><img className="Twitter" src={Twitter} alt="Twitter logo"></img></a>
+        <a href="https://www.instagram.com/robstabletopworld/" target="_blank" rel="noopener noreferrer"><img className="Instagram" src={Instagram} alt="Instagram logo"></img></a>
+        <a href="https://www.miniaturemarket.com/" target="_blank" rel="noopener noreferrer"><img className="MiniatureMarket" src={MiniatureMarket} alt="Miniature Market logo"></img></a>
+        <a href="https://streamlabs.com/robstabletopworld/tip" target="_blank" rel="noopener noreferrer"><img className="Donate" src={Donate} alt="Donation Button"></img></a>
         </div>
         </div>
 
-<input id="page-nav-toggle" class="main-navigation-toggle" type="checkbox" />
+<input id="page-nav-toggle" className="main-navigation-toggle" type="checkbox" />
 <label for="page-nav-toggle">
-  <svg class="icon--menu-toggle" viewBox="0 0 60 30">
-    <g class="icon-group">
-      <g class="icon--menu">
+  <svg className="icon--menu-toggle" viewBox="0 0 60 30">
+    <g className="icon-group">
+      <g className="icon--menu">
         <path d="M 6 0 L 54 0" />
         <path d="M 6 15 L 54 15" />
         <path d="M 6 30 L 54 30" />
       </g>
-      <g class="icon--close">
+      <g className="icon--close">
         <path d="M 15 0 L 45 30" />
         <path d="M 15 30 L 45 0" />
       </g>
@@ -59,6 +74,6 @@ const Header = () => {
 </nav>
 </div>
     )
-}
+}; 
 
 export default Header;

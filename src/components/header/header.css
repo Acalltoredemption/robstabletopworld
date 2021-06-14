@@ -80,8 +80,8 @@
     background-color: transparent;
     width: 150px;
     position: absolute;
-    left: 25px;
-    top: 70px;
+    left: 270px;
+    top: 3px;
 }
 
 .Youtube:hover {
@@ -141,7 +141,7 @@
 
 @import url("https://fonts.googleapis.com/css?family=Merriweather:900&display=swap");
 :root {
-  --color-primary: #002626;
+  --color-primary: #0d8b8b;
   --color-secondary: #F0F7EE;
   --duration: 1s;
   --nav-duration: calc(var(--duration) / 4);
@@ -194,7 +194,7 @@ h1 {
   width: var(--size);
   height: var(--size);
   stroke-width: 6;
-  color: white;
+
 }
 
 .icon-group {
@@ -203,7 +203,9 @@ h1 {
 }
 
 .icon--menu {
-  stroke: var(--color-primary);
+  stroke: var(--color-secondary);
+  width: 200%;
+
 }
 
 .icon--close {

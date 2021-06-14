@@ -27,7 +27,7 @@ const WarShowcase = () => {
                     <Tilt className="tiltbox"> 
                     <Ribbon text="War and Pieces" color="cyan">
                     <div className="image-border">
-                    <a href={url}>
+                    <a href={url} target="_blank">
                     <img className="upcomingimg" src={photo} alt="an upcoming event" />
                     </a>
                     </div>

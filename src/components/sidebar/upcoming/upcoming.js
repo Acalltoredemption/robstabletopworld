@@ -34,20 +34,13 @@ const Upcoming = () => {
 <Tilt className="tiltbox"> 
 <Ribbon color="green" text="Video of the Week!">
 <div className="upimage-border">
-<a href={url}>
+<a href={url} target="_blank">
 <img className="upupcomingimg" src={photo} alt="an upcoming event" />
 </a>
 </div>
 </Ribbon>
 </Tilt>
 </div> 
-<div className="upcoming-descs">
-    {title}
-</div>
-
-<div className="upcoming-descs">
-    {description}
-</div>
 </div>  
 
                 )
