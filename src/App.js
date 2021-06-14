@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from './components/header/header';
-import NavBar from './components/navbar/navbar';
 import HomePage from './components/homepage/homepage';
 import AboutPage from './components/about/about';
 import ContactPage from './components/contact/contact';
@@ -57,7 +56,6 @@ return (
     <div className="Homepage">
         
         <Header /> 
-        <NavBar />
         <AdminNav />
         <ToastContainer position="top-center" />
         

@@ -40,11 +40,7 @@
 .loginshader:hover {
 transform: scale(0.9);
 }
-.loginbox {
-    position: absolute;
-    right: -20px;
-    top: -10px;
-}
+
 @media(max-width: 1100px){
 .username {
     color: blue;

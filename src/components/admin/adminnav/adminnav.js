@@ -7,7 +7,6 @@ import {
   import Row from 'react-bootstrap/Row';
   import Col from 'react-bootstrap/Col';
   import {useAuth} from '../../../contexts/AuthContext';
-  import UserLogin from '../../../components/sidebar/userlogin/userlogin';
 
 
 const AdminNav = () => {
@@ -65,7 +64,6 @@ const AdminNav = () => {
                 </Container>
             </nav>
           </div>
-          <UserLogin className="resizer" />
           </div>
         
       );

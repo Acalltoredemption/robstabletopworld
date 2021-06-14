@@ -4,6 +4,7 @@ import MemberShowcase from './membershowcase/membershowcase';
 import Showcase from './artshowcase/artshowcase';
 import WarShowcase from './warnpieces/warnpieces';
 import MiniMarket from './miniaturemarket/miniaturemarket';
+import UserLogin from './userlogin/userlogin';
 import './sidebar.css';
 
 
@@ -12,6 +13,7 @@ const SideBar = () => {
         <div>
             <Upcoming />
             <MiniMarket />
+            <UserLogin />
             
             <div>
             <Showcase />

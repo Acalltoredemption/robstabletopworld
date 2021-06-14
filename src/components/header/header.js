@@ -63,8 +63,8 @@ const Header = () => {
 
 <nav class="main-navigation">
   <ul>
-    <li><NavLink exact to="/"  activeStyle={{ fontWeight: "bold"}}>Home</NavLink></li>
-    <li><NavLink to="/about" activeStyle={{ fontWeight: "bold"}}>About Me</NavLink></li>
+    <li><NavLink exact to="/" activeStyle={{ fontWeight: "bold"}}>Home</NavLink></li>
+    <li><NavLink to="/about"  activeStyle={{ fontWeight: "bold"}}>About Me</NavLink></li>
     <li><NavLink to="/contact" activeStyle={{ fontWeight: "bold" }}>Contact Me</NavLink></li>
     <li><NavLink to="/art" activeStyle={{ fontWeight: "bold" }}>Art Showcase</NavLink></li>
     <li><NavLink to="/community" activeStyle={{ fontWeight: "bold" }}>Our Community</NavLink></li>
