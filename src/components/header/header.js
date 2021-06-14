@@ -6,13 +6,17 @@ import Twitter from '../../images/Twitter.png';
 import Instagram from '../../images/Instagram.png';
 import MiniatureMarket from '../../images/MiniatureMarket.png';
 import Donate from '../../images/donate.png';
+import
+{NavLink}
+from "react-router-dom";
 
 
 const Header = () => {
 
 
-
+  
     return (
+        <div>
         <div>
             <a name="top" style={{display: 'none'}}> screen anchor </a>
             <div className="bannerparent">
@@ -24,6 +28,36 @@ const Header = () => {
         <a href="https://streamlabs.com/robstabletopworld/tip"><img className="Donate" src={Donate} alt="Donation Button"></img></a>
         </div>
         </div>
+
+<input id="page-nav-toggle" class="main-navigation-toggle" type="checkbox" />
+<label for="page-nav-toggle">
+  <svg class="icon--menu-toggle" viewBox="0 0 60 30">
+    <g class="icon-group">
+      <g class="icon--menu">
+        <path d="M 6 0 L 54 0" />
+        <path d="M 6 15 L 54 15" />
+        <path d="M 6 30 L 54 30" />
+      </g>
+      <g class="icon--close">
+        <path d="M 15 0 L 45 30" />
+        <path d="M 15 30 L 45 0" />
+      </g>
+    </g>
+  </svg>
+</label>
+
+<nav class="main-navigation">
+  <ul>
+    <li><NavLink exact to="/"  activeStyle={{ fontWeight: "bold"}}>Home</NavLink></li>
+    <li><NavLink to="/about" activeStyle={{ fontWeight: "bold"}}>About Me</NavLink></li>
+    <li><NavLink to="/contact" activeStyle={{ fontWeight: "bold" }}>Contact Me</NavLink></li>
+    <li><NavLink to="/art" activeStyle={{ fontWeight: "bold" }}>Art Showcase</NavLink></li>
+    <li><NavLink to="/community" activeStyle={{ fontWeight: "bold" }}>Our Community</NavLink></li>
+    <li><NavLink to="/submissions" id="logged-in" activeStyle={{ fontWeight: "bold" }}>Submissions</NavLink></li>
+    <li><NavLink  to="/store" activeStyle={{ fontWeight: "bold" }}>Store(Coming soon!)</NavLink></li>
+  </ul>
+</nav>
+</div>
     )
 }
 
