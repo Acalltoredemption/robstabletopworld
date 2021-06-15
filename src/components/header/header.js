@@ -31,48 +31,61 @@ const Header = () => {
 
   
     return (
-        <div>
-        <div>
-            <a name="top" style={{display: 'none'}}> screen anchor </a>
-            <div className="bannerparent">
-        <img className='banner' src={banner} alt='channel banner'></img>
-        <a href="https://www.youtube.com/user/seahawk8601" target="_blank" rel="noopener noreferrer" ><img className="Youtube" src={Youtube} alt="Youtube logo"></img></a>
-        <a href="https://twitter.com/seahawk860" target="_blank" rel="noopener noreferrer"><img className="Twitter" src={Twitter} alt="Twitter logo"></img></a>
-        <a href="https://www.instagram.com/robstabletopworld/" target="_blank" rel="noopener noreferrer"><img className="Instagram" src={Instagram} alt="Instagram logo"></img></a>
-        <a href="https://www.miniaturemarket.com/" target="_blank" rel="noopener noreferrer"><img className="MiniatureMarket" src={MiniatureMarket} alt="Miniature Market logo"></img></a>
-        <a href="https://streamlabs.com/robstabletopworld/tip" target="_blank" rel="noopener noreferrer"><img className="Donate" src={Donate} alt="Donation Button"></img></a>
-        </div>
-        </div>
+    <div>
+      <div>
+          <a name="top" style={{display: 'none'}}> screen anchor </a>
+          <div className="bannerparent">
+      <img className='banner' src={banner} alt='channel banner'></img>
+      </div>
+      </div>
 
-<input id="page-nav-toggle" className="main-navigation-toggle" type="checkbox" />
-<label for="page-nav-toggle">
-  <svg className="icon--menu-toggle" viewBox="0 0 60 30">
-    <g className="icon-group">
-      <g className="icon--menu">
-        <path d="M 6 0 L 54 0" />
-        <path d="M 6 15 L 54 15" />
-        <path d="M 6 30 L 54 30" />
-      </g>
-      <g className="icon--close">
-        <path d="M 15 0 L 45 30" />
-        <path d="M 15 30 L 45 0" />
-      </g>
-    </g>
-  </svg>
-</label>
 
-<nav class="main-navigation">
-  <ul>
-    <li><NavLink exact to="/" activeStyle={{ fontWeight: "bold"}}>Home</NavLink></li>
-    <li><NavLink to="/about"  activeStyle={{ fontWeight: "bold"}}>About Me</NavLink></li>
-    <li><NavLink to="/contact" activeStyle={{ fontWeight: "bold" }}>Contact Me</NavLink></li>
-    <li><NavLink to="/art" activeStyle={{ fontWeight: "bold" }}>Art Showcase</NavLink></li>
-    <li><NavLink to="/community" activeStyle={{ fontWeight: "bold" }}>Our Community</NavLink></li>
-    <li><NavLink to="/submissions" id="logged-in" activeStyle={{ fontWeight: "bold" }}>Submissions</NavLink></li>
-    <li><NavLink  to="/store" activeStyle={{ fontWeight: "bold" }}>Store(Coming soon!)</NavLink></li>
-  </ul>
+      <nav class="navbar navbar-expand-lg navbar-light navshadow">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"/></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+  <div class="float-right">
+  <a href="https://www.youtube.com/user/seahawk8601" target="_blank" rel="noopener noreferrer" ><img className="Youtube" src={Youtube} alt="Youtube logo"></img></a>
+      <a href="https://twitter.com/seahawk860" target="_blank" rel="noopener noreferrer"><img className="Twitter" src={Twitter} alt="Twitter logo"></img></a>
+      <a href="https://www.instagram.com/robstabletopworld/" target="_blank" rel="noopener noreferrer"><img className="Instagram " src={Instagram} alt="Instagram logo"></img></a>
+      <a href="https://www.miniaturemarket.com/" target="_blank" rel="noopener noreferrer"><img className="MiniatureMarket" src={MiniatureMarket} alt="Miniature Market logo"></img></a> 
+      <a href="https://streamlabs.com/robstabletopworld/tip" target="_blank" rel="noopener noreferrer"><img className="Donate" src={Donate} alt="Donation Button"></img></a>    
+  </div>
 </nav>
+
 </div>
+
     )
 }; 
 
