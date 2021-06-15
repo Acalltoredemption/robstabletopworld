@@ -1,9 +1,9 @@
 .banner {
     display: block;
-    width: 100%;
-    margin-left: none;
+    width: 80%;
+    margin-left: auto;
     margin-right: auto;
-    height: 300px;
+    height: 350px;
 }
 .bannertitle {
     position: absolute;
@@ -37,6 +37,13 @@
             font-weight: bold;
             -webkit-text-stroke: 1px black;
         }
+        .banner {
+          display: block;
+          width: 100%;
+          margin-left: auto;
+          margin-right: auto;
+          height: 300px;
+      }
     }
 }
 
@@ -46,6 +53,9 @@
 
 .bannerparent {
     position: relative;
+    color: black;
+    background-color: black;
+    text-align: center;
 }
 .Youtube {
     background-color: transparent;
