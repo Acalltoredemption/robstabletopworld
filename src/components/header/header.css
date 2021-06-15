@@ -1,6 +1,6 @@
 .banner {
     display: block;
-    width: 80%;
+    width: 85%;
     margin-left: auto;
     margin-right: auto;
     height: 350px;
@@ -152,7 +152,7 @@
 @import url("https://fonts.googleapis.com/css?family=Merriweather:900&display=swap");
 :root {
   --color-primary: #0d8b8b;
-  --color-secondary: #F0F7EE;
+  --color-secondary: #ffffff;
   --duration: 1s;
   --nav-duration: calc(var(--duration) / 4);
   --ease: cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -197,13 +197,14 @@ h1 {
 }
 
 .icon--menu-toggle {
-  --size: calc(1rem + 4vmin);
+  --size: calc(4rem + 5vmin);
   display: flex;
   align-items: center;
   justify-content: center;
   width: var(--size);
   height: var(--size);
   stroke-width: 6;
+  
 
 }
 

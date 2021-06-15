@@ -9,11 +9,12 @@
     margin-right: 5px;
     margin-top: 15px;
     margin-bottom: 15px;
+
     
 }
 .upcomingimg {
     display: block;
-    width: 220px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -40,7 +41,7 @@
 }
 
 .image-border{
-    width: 220px;
+    width: 100%;
     overflow: hidden;
     border-style: groove;
     border-width: thick;

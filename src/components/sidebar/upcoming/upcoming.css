@@ -6,7 +6,7 @@
 
     .upupcomingimg { 
         display: block;
-        width: 250px;
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
     } 
@@ -33,7 +33,7 @@
     }
     
     .upimage-border{
-        width: 300px;
+        width: 100%;
         overflow: hidden;
         border-style: groove;
         border-width: thick;

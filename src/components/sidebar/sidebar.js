@@ -11,11 +11,11 @@ import './sidebar.css';
 const SideBar = () => {
     return (
         <div>
+            <div>
             <Upcoming />
             <MiniMarket />
             <UserLogin />
-            
-            <div>
+        
             <Showcase />
             <MemberShowcase />
             <WarShowcase />
