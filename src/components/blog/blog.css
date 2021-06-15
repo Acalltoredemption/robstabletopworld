@@ -45,10 +45,10 @@
     margin-bottom: 15px;
 }
 .cardStyles {
-    width: 500px;
+    width: 100%;
 }
 .pageblogpost-imagemain {
-    width: 500px;
+    width: 100%;
     overflow: hidden;
  border-style: groove;
  border-width: thick;
@@ -62,7 +62,7 @@
 }
 @media(max-width: 700px){
     .pageblogpost-imagemain {
-        width: 370px;
+        width: 100%;
         overflow: hidden;
      border-style: groove;
      border-width: thick;
@@ -79,7 +79,8 @@
 
 .blogimg {
     display: block;
-    width: 500px;
+    width: 100% !important;
+    height: 350px;
     margin-left: auto;
     margin-right: auto;
     z-index: 1;
@@ -112,6 +113,7 @@
 
   
 .pagecontent {
+    width: 75%;
     height: 40px;
     padding: 0 15px;
     display: flex;

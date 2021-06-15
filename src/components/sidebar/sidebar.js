@@ -12,9 +12,10 @@ const SideBar = () => {
     return (
         <div>
             <div>
+            <UserLogin />
             <Upcoming />
             <MiniMarket />
-            <UserLogin />
+            
         
             <Showcase />
             <MemberShowcase />
