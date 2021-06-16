@@ -25,17 +25,20 @@ const userLogin = () => {
     const {login} = useAuth();
     const [error, setError] = useState('');
     const [username, setUsername] = useState([]);
+    let greeting = '';
 
    
 
     if (currentUser && currentUser.email) {
         //toggle UI elements
-        message = `Welcome ${username}`;
+        message = `Logged In`;
+        greeting = `Welcome ${username}`;
         console.log(auth);
         loggedIn.forEach(item => item.style.display = 'block');
         loggedOut.forEach(item => item.style.display = 'hidden');
     } else {
         //toggle UI elements
+        greeting = '';
         message = 'Log in or Sign up';
         loggedIn.forEach(item => item.style.display = 'hidden');
         loggedOut.forEach(item => item.style.display = 'block');
@@ -109,7 +112,7 @@ async function handleLogout() {
         <div className="container">
         
     <div className="d-flex justify-content-center">
-    <Ribbon text={message} color="green" size="large">
+    <Ribbon  id="logged-out" text={message} color="green" size="large">
         <div className="card">
             <div className="card-header cardheader welcome">
             <br/>
@@ -118,15 +121,16 @@ async function handleLogout() {
             <form autoComplete="off" onSubmit={handleSubmit}>
                 <div className="input-group form-group">
                     <div className="input-group-prepend">
-                        <span className="input-group-text"><img src={Person} alt="user sprite"/></span>
+                        <span className="input-group-text" id="logged-out"><img src={Person} id="logged-out" alt="user sprite"/></span>
                     </div>
-                    <input type="text" ref={emailRef} className="form-control" placeholder="Username"></input>
+                    <p>{greeting}</p>
+                    <input type="text" id="logged-out" ref={emailRef} className="form-control" placeholder="Username"></input>
                 </div>
                 <div className="input-group form-group">
                     <div className="input-group-prepend">
-                        <span className="input-group-text"><img src={Lock} alt="a lock"/></span>
+                        <span className="input-group-text" id="logged-out" ><img src={Lock} id="logged-out" alt="a lock"/></span>
                     </div>
-                    <input type="password" ref={passwordRef} className="form-control" placeholder="Password"></input>
+                    <input type="password" id="logged-out" ref={passwordRef} className="form-control" placeholder="Password"></input>
                 </div>
                 {error && <Alert variant="danger">{error}</Alert>}
                 <div className="form-group">

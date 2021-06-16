@@ -21,9 +21,7 @@ const Upcoming = () => {
         db.collection('events').orderBy('createdat', 'asc').get().then((snapshot) => {
             snapshot.docs.forEach(doc => {
                
-                let description = doc.data().description;
                 let photo = doc.data().photo;
-                let title = doc.data().title;
                 let url = doc.data().url;
         
                 setEvents(

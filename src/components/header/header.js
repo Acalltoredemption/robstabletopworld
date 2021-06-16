@@ -13,7 +13,12 @@ import {useAuth} from '../../contexts/AuthContext';
 
 
 
+
 const Header = () => {
+
+
+
+
     const {currentUser} = useAuth();
 
     const loggedIn = document.querySelectorAll('#logged-in');
@@ -42,37 +47,58 @@ const Header = () => {
 
       <nav class="navbar navbar-expand-lg navbar-light navshadow">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <NavLink exact to="/" className="nav-link">Home</NavLink>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
+
+
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            About
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"/></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
+          <li class="nav-item">
+        <NavLink to="/about" className="nav-link">About Me</NavLink>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        <NavLink to="/contact" className="nav-link">Contact Me</NavLink>
         </li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Community
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li class="nav-item">
+        <NavLink to="/art" className="nav-link">Art Showcase</NavLink>
+        </li>
+        <li class="nav-item">
+        <NavLink to="/community" className="nav-link">Our Community</NavLink>
+        </li>
+        <li class="nav-item">
+        <NavLink to="/submissions" id="logged-in" className="nav-link">Submissions</NavLink>
+        </li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+        <NavLink exact to="/login" id="logged-out" className="nav-link">Log In</NavLink>
+        </li>
+        <li class="nav-item">
+        <NavLink exact to="/signup" id="logged-out" className="nav-link">Sign Up</NavLink>
+        </li>
+
+
+
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
     </div>
   </div>
   <div class="float-right">
