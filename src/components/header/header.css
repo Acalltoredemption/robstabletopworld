@@ -110,32 +110,36 @@
 }
 @media(max-width: 600px){
     .Instagram {
-        background-color: transparent;
-        width: 45px;
-        position: absolute;
-        left: 90px;
-        top: 3px;
+      background-color: transparent;
+      height: 52px;
+      width: 52px;
+      right: 57px;
+      top: 0px;
+      position: absolute;
     }
     .Youtube {
-        background-color: transparent;
-        width: 45px;
-        position: absolute;
-        left: 0px;
-        top: 3px;
+      background-color: transparent;
+      height: 52px;
+      width: 52px;
+      right: 161px;
+      top: 0px;
+      position: absolute;
     }
     .Twitter {
-        background-color: transparent;
-        width: 45px;
-        position: absolute;
-        left: 45px;
-        top: 3px;
+      background-color: transparent;
+      height: 52px;
+      width: 52px;
+      right: 109px;
+      position: absolute;
+      top: 0px;
     }
     .MiniatureMarket {
-        background-color: transparent;
-        width: 45px;
-        position: absolute;
-        left: 135px;
-        top: 3px;
+      background-color: transparent;
+      height: 52px;
+      width: 52px;
+      right: 5px;
+      position: absolute;
+      top: 0px;
     }
     .Donate {
         background-color: transparent;

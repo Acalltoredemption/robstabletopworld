@@ -66,7 +66,7 @@ const Header = () => {
           <li class="nav-item">
         <NavLink to="/about" className="nav-link">About Me</NavLink>
         </li>
-        <li class="nav-item">
+        <li class="nav-item"> 
         <NavLink to="/contact" className="nav-link">Contact Me</NavLink>
         </li>
           </ul>
