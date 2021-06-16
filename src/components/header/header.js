@@ -20,7 +20,7 @@ const Header = () => {
 
 
     const {currentUser} = useAuth();
-
+    const loggedInAdmin = document.querySelectorAll('#logged-in-admin')
     const loggedIn = document.querySelectorAll('#logged-in');
     const loggedOut = document.querySelectorAll('#logged-out');
   
@@ -28,10 +28,14 @@ const Header = () => {
         //toggle UI elements
         loggedIn.forEach(item => item.style.display = 'block');
         loggedOut.forEach(item => item.style.display = 'none');
+        if (currentUser.uid === 'cw67NhgIsDhyAdp2AMEuFm11a2G2'){
+          loggedInAdmin.forEach(item => item.style.display = 'block');
+        }
     } else {
         //toggle UI elements
         loggedIn.forEach(item => item.style.display = 'none');
         loggedOut.forEach(item => item.style.display = 'block');
+        loggedInAdmin.forEach(item => item.style.display = 'none');
     }
 
   
@@ -48,7 +52,7 @@ const Header = () => {
       <nav class="navbar navbar-expand-lg navbar-light navshadow">
   <div class="container-fluid">
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -85,6 +89,38 @@ const Header = () => {
         </li>
         <li class="nav-item">
         <NavLink to="/submissions" id="logged-in" className="nav-link">Submissions</NavLink>
+        </li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown" id="logged-in-admin">
+          <a class="nav-link dropdown-toggle text-success font-weight-bold" id="logged-in-admin" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            ADMIN
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li class="nav-item">
+          <NavLink to="/makeblog" className="nav-link" id="logged-in-admin">Make Blogpost</NavLink>
+        </li>
+        <li class="nav-item">
+        <NavLink to="/makeevent" className="nav-link" id="logged-in-admin">Vid of the Week</NavLink>
+        </li>
+        <li class="nav-item">
+        <NavLink to="/blogedit" className="nav-link" id="logged-in-admin">View Blogs</NavLink>
+        </li>
+        <li class="nav-item">
+        <NavLink to="/approve" className="nav-link" id="logged-in-admin">Art Submissions</NavLink>
+        </li>
+        <li class="nav-item">
+        <NavLink to="/communitysubmissions" className="nav-link" id="logged-in-admin">Community Submissions</NavLink>
+        </li>
+        <li class="nav-item">
+        <NavLink to="/warandpieces" className="nav-link" id="logged-in-admin">War & Pieces</NavLink>
+        </li>
+        <li class="nav-item">
+        <NavLink to="/comments" className="nav-link" id="logged-in-admin">Message Inbox</NavLink>
+        </li>
+        <li class="nav-item">
+        <NavLink to="/articlecomments" className="nav-link" id="logged-in-admin">Article Comments</NavLink>
         </li>
           </ul>
         </li>

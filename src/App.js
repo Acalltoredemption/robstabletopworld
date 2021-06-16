@@ -25,7 +25,6 @@ import ApproveComments from './components/admin/comments/comments';
 import AddWarPage from './components/admin/addwar/addwar';
 import ArtPage from './components/community/community';
 import {AuthProvider} from './contexts/AuthContext';
-import AdminNav from './components/admin/adminnav/adminnav';
 import BlogEdit from './components/admin/blogedit/blogedit';
 import {Router} from 'react-router';
 import ArticlePage from './components/article/article';
@@ -56,7 +55,6 @@ return (
     <div className="Homepage">
         
         <Header /> 
-        <AdminNav />
         <ToastContainer position="top-center" />
         
         
