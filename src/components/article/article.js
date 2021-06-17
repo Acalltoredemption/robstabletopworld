@@ -138,14 +138,12 @@ const  Article = () => {
 
                 return(
         <div className="blogpost" key={blog.title}>
-      <div className="blogbox">       
-         <div className="pageblogpost-imagemain">
-         <div className='pagecontent'>
-         <h1 className='title'>{blog.title}</h1>
-         </div>
-         <img className="blogimg"  src={blog.photo} alt="a blogpost" /> 
+      <div className="blogbox2">       
+         <div className="pageblogpost-image2">
+         <img className="blogimg2"  src={blog.photo} alt="a blogpost" /> 
          </div>
          </div>
+         <div className="blogpost-author">{blog.title}</div>
          <div className="blogpost-author">{blog.author}</div>
          <div className="blogpost-summary">
              {blog.content}
@@ -154,8 +152,8 @@ const  Article = () => {
          
          <div className="thecenterertwo" id="secondimg">
             <div className="hidediv" >
-        <div className="pageblogpost-imagemain" >
-         <img className="blogimg" src={blog.secondphoto} alt="a blogpost" />
+        <div className="pageblogpost-image2" >
+         <img className="blogimg2" src={blog.secondphoto} alt="a blogpost" />
          </div>
          </div>
         </div>
@@ -165,8 +163,8 @@ const  Article = () => {
          </div>
 
          <div className="thecentererthree" id="thirdimg"> 
-        <div className="pageblogpost-imagemain">
-         <img className="blogimg" src={blog.thirdphoto} alt="a blogpost" />
+        <div className="pageblogpost-image2">
+         <img className="blogimg2" src={blog.thirdphoto} alt="a blogpost" />
          </div>
         </div>
 

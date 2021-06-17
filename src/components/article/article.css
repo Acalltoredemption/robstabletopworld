@@ -10,7 +10,7 @@
     border-radius: 10px;
 }
 
-.blogbox {
+.blogbox2 {
 
     display: flex;
     align-items: center;
@@ -46,7 +46,7 @@
 .cardStyles {
     width: 500px;
 }
-.pageblogpost-image {
+.pageblogpost-image2 {
     width: 500px;
     overflow: hidden;
  border-style: groove;
@@ -59,7 +59,7 @@
 }
 
 
-.blogimg {
+.blogimg2 {
     display: block;
     width: 500px;
     margin-left: auto;
@@ -103,7 +103,7 @@
     margin-top: 10px;
 }
 
-.pagecontent {
+.pagecontent2 {
     height: 40px;
     padding: 0 15px;
     display: flex;
@@ -117,12 +117,12 @@
     z-index: 5;
 }
 
-.pagecontent:hover {
+.pagecontent2:hover {
     opacity: 0.9;
     cursor: pointer;
 }
 
-    .title {
+    .title2 {
       font-weight: bold;
       margin-bottom: 2px;
       font-size: 16px;
