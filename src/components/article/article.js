@@ -183,11 +183,13 @@ const  Article = () => {
                             <div className="commentholder" key={comment.date}>
                                 
                             <div className="commentbox">
-                            <Ribbon text={comment.username} color="geekblue">
+                            <Ribbon text={comment.username} color="geekblue"> 
                                 <div className="commentdate">
                                 {`${moment(comment.date).fromNow()}`}
                                 </div>
+                                <p className="ribbonpad">
                                 {comment.content}
+                                </p>
                                 </Ribbon>
                             </div>
                             </div>
