@@ -63,7 +63,7 @@ const Header = () => {
 
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             About
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -77,7 +77,7 @@ const Header = () => {
         </li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Community
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -94,7 +94,7 @@ const Header = () => {
         </li>
 
         <li class="nav-item dropdown" id="logged-in-admin">
-          <a class="nav-link dropdown-toggle text-success font-weight-bold" id="logged-in-admin" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle text-success font-weight-bold" id="logged-in-admin" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             ADMIN
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
