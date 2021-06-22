@@ -52,21 +52,17 @@ const SigningUp = () => {
 
     const sendUsername = (user) => {
         var emailCapitalized = email.charAt(0).toUpperCase() + email.slice(1);
-
-     
-            if(db.collection('usernames').doc(emailCapitalized)){
-                setError('Email already exists!');
+        db.collection('usernames').doc(emailCapitalized).get().then(snapshot => {
+            if (snapshot.exists){
+                setError('Email already in use!');
             } else {
+                db.collection('usernames').doc(emailCapitalized).get().then
                 db.collection('usernames').doc(emailCapitalized).set({
                     username: username,
                 });
-        
                 toast.success('Register success.');
                 history.push('/');
-            }
-        
-        
-
+            } })
     }
 
 
