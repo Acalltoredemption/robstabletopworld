@@ -122,6 +122,9 @@ const Header = () => {
         <li class="nav-item">
         <NavLink to="/articlecomments" className="nav-link" id="logged-in-admin">Article Comments</NavLink>
         </li>
+        <li class="nav-item">
+        <NavLink to="/fileupload" className="nav-link" id="logged-in-admin">Upload Files</NavLink>
+        </li>
           </ul>
         </li>
 

@@ -16,6 +16,7 @@ import AddMerch from './components/admin/addmerch/addmerch';
 import ViewMerch from './components/admin/viewmerch/viewmerch';
 import SubmissionsPage from './components/submissions/submissions';
 import CommunitySubmit from './components/submissions/communitysubmit';
+import FileUpload from './components/admin/fileupload/fileupload';
 import OurCommunityPage from './components/community/ourcommunity/ourcommunity';
 import ApprovePage from './components/admin/approve/approve';
 import ApprovedPage from './components/admin/approved/approved';
@@ -84,6 +85,7 @@ return (
         <Route path='/blogedit' component={BlogEdit} />
         <Route path='/login' component={LoginPage} />
         <Route path='/signup' component={SignupPage} />
+        <Route path='/fileupload' component={FileUpload} />
        
     
     </div>
