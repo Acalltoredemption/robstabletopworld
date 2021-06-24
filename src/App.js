@@ -12,6 +12,7 @@ import MakeBlog3Page from './components/admin/makeblog/makeblog3/makeblog3';
 import MakeEventPage from './components/admin/makeevent/makeevent';
 import LoginPage from './components/login/login';
 import SignupPage from './components/signup/signup';
+import FileShare from './components/fileshare/fileshare';
 import AddMerch from './components/admin/addmerch/addmerch';
 import ViewMerch from './components/admin/viewmerch/viewmerch';
 import SubmissionsPage from './components/submissions/submissions';
@@ -86,6 +87,7 @@ return (
         <Route path='/login' component={LoginPage} />
         <Route path='/signup' component={SignupPage} />
         <Route path='/fileupload' component={FileUpload} />
+        <Route path="/fileshare" component={FileShare} />
        
     
     </div>

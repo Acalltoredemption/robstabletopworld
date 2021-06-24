@@ -1,0 +1,9 @@
+.fileshare {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filebox {
+    padding: 25px;
+}
