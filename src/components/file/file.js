@@ -13,7 +13,7 @@ const  File = ({files}) => {
                     <div className="filebox">
                         <h3>{file.title}</h3>
                         <h5>{file.content}</h5>
-                       <button className="btn-primary" href={file.photo}>View File</button>
+                       <a className="btn btn-primary" target="_blank" rel="noopener noreferrer" href={file.photo}>View File</a>
                         
 
                     </div>
