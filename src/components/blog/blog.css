@@ -9,9 +9,11 @@
 
 .tiltbox {
     border-radius: 10px;
-    width: 100% !important;
+    width: 90% !important;
+    background-color: transparent  !important;
     background: transparent !important;
     overflow: hidden !important;
+    padding: 0px;
 }
 
 
@@ -22,6 +24,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background: transparent !important;
+    background-color: transparent !important;
 
 }
 
