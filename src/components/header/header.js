@@ -101,33 +101,42 @@ const Header = () => {
             ADMIN
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li className="adminnav">
+              Site Content
+            </li>
           <li class="nav-item">
           <NavLink to="/makeblog" className="nav-link" id="logged-in-admin">Make Blogpost</NavLink>
+        </li>
+        <li class="nav-item">
+        <NavLink to="/blogedit" className="nav-link" id="logged-in-admin">View Blogs</NavLink>
+        </li>     
+        <li class="nav-item">
+        <NavLink to="/fileupload" className="nav-link" id="logged-in-admin">Upload Files</NavLink>
         </li>
         <li class="nav-item">
         <NavLink to="/makeevent" className="nav-link" id="logged-in-admin">Vid of the Week</NavLink>
         </li>
         <li class="nav-item">
-        <NavLink to="/blogedit" className="nav-link" id="logged-in-admin">View Blogs</NavLink>
+        <NavLink to="/warandpieces" className="nav-link" id="logged-in-admin">War & Pieces</NavLink>
         </li>
-        <li class="nav-item">
-        <NavLink to="/approve" className="nav-link" id="logged-in-admin">Art Submissions</NavLink>
+
+        <li className="adminnav">
+          Users Submissions
         </li>
         <li class="nav-item">
         <NavLink to="/communitysubmissions" className="nav-link" id="logged-in-admin">Community Submissions</NavLink>
         </li>
         <li class="nav-item">
-        <NavLink to="/warandpieces" className="nav-link" id="logged-in-admin">War & Pieces</NavLink>
-        </li>
-        <li class="nav-item">
-        <NavLink to="/comments" className="nav-link" id="logged-in-admin">Message Inbox</NavLink>
+        <NavLink to="/approve" className="nav-link" id="logged-in-admin">Art Submissions</NavLink>
         </li>
         <li class="nav-item">
         <NavLink to="/articlecomments" className="nav-link" id="logged-in-admin">Article Comments</NavLink>
         </li>
         <li class="nav-item">
-        <NavLink to="/fileupload" className="nav-link" id="logged-in-admin">Upload Files</NavLink>
+        <NavLink to="/comments" className="nav-link" id="logged-in-admin">Message Inbox</NavLink>
         </li>
+
+
           </ul>
         </li>
 

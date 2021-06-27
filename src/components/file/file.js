@@ -11,10 +11,13 @@ const  File = ({files}) => {
             files.map(file => {
                 return(
                     <div className="filebox">
-                        <h3>{file.title}</h3>
-                        <h5>{file.content}</h5>
-                       <a className="btn btn-primary" target="_blank" rel="noopener noreferrer" href={file.photo}>View File</a>
-                        
+                       <div className="card">
+                <div className="card-body">
+                <h5 className="card-title">{file.title}</h5>
+                <p className="card-text">{file.content}</p>
+                <a href={file.photo} target="_blank" rel="noopener noreferrer" className="btn btn-primary">Get File</a>
+                </div>
+                </div>
 
                     </div>
                             )

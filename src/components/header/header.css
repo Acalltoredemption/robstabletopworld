@@ -158,3 +158,8 @@
 box-shadow: -2px 3px 15px 4px #000000;
   background-color: rgb(238, 238, 238);
 }
+
+.adminnav {
+  color: green;
+  padding: 5px;
+}
