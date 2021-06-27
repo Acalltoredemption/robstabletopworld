@@ -9,6 +9,9 @@
 
 .tiltbox {
     border-radius: 10px;
+    width: 90% !important;
+    background: transparent !important;
+    overflow: hidden !important;
 }
 
 
