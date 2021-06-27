@@ -28,7 +28,7 @@ const Header = () => {
         //toggle UI elements
         loggedIn.forEach(item => item.style.display = 'block');
         loggedOut.forEach(item => item.style.display = 'none');
-        if (currentUser.uid === 'cw67NhgIsDhyAdp2AMEuFm11a2G2'){
+        if (currentUser.uid === 'cw67NhgIsDhyAdp2AMEuFm11a2G2' | 'YAXN8aZhJQW3d7DhFuZzv8uM4kz1'){
           loggedInAdmin.forEach(item => item.style.display = 'block');
         }
     } else {
