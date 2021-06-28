@@ -13,7 +13,7 @@ const  Blog = ({blogs}) => {
             blogs.map(blog => {
                 return(
         <div className="blogpost" key={blog.title}>
-      <div className="blogbox">
+      <div className="blogbox"> 
      <Tilt className="tiltbox">       
          <div className="pageblogpost-imagemain">
          <div className='pagecontent' onClick={() => history.push('/article?' + blog.id)}>
