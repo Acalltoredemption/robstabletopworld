@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {useRef, useState, useEffect} from 'react';
+import { db } from '../../firebase/firebaseconfig';
+import { auth } from '../../firebase/firebaseconfig';
 import banner from '../../images/banner.png';
 import './header.css';
 import Youtube from  '../../images/Youtube.png';
@@ -16,8 +18,29 @@ import {useAuth} from '../../contexts/AuthContext';
 
 const Header = () => {
 
+  const [username, setUsername] = useState([]);
 
-
+  useEffect(() => { 
+    auth.onAuthStateChanged(function(user){
+        if(user){
+            var theusersEmail = user.email;
+            var nameCapitalized = theusersEmail.charAt(0).toUpperCase() + theusersEmail.slice(1);
+            fetchUsername(nameCapitalized);
+        }
+    })
+    const fetchUsername =  (nameCapitalized) => {
+        
+         db.collection('usernames').doc(nameCapitalized).get().then(snapshot => {
+            if (snapshot.exists){
+                console.log('Found user data');
+                 var data = snapshot.data();
+                 setUsername(data.username.toString());
+            } else {
+                console.log('no such document');
+            }
+        })
+    }
+},);
 
     const {currentUser} = useAuth();
     const loggedInAdmin = document.querySelectorAll('#logged-in-admin')
@@ -146,6 +169,9 @@ const Header = () => {
         <li class="nav-item">
         <NavLink exact to="/signup" id="logged-out" className="nav-link">Sign Up</NavLink>
         </li>
+        <li className="nav-link logininfo text-primary font-weight-bold">Signed in:</li>
+        <li className="nav-link text-primary font-weight-bold">{username}</li>  
+        
 
 
 

@@ -4,7 +4,6 @@ import MemberShowcase from './membershowcase/membershowcase';
 import Showcase from './artshowcase/artshowcase';
 import WarShowcase from './warnpieces/warnpieces';
 import MiniMarket from './miniaturemarket/miniaturemarket';
-import UserLogin from './userlogin/userlogin';
 import Donate from './donate/donate';
 import './sidebar.css';
 
@@ -13,7 +12,6 @@ const SideBar = () => {
     return (
         <div>
             <div>
-            <UserLogin />
             <Upcoming />
             <Donate />
             <MiniMarket />

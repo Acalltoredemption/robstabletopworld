@@ -45,14 +45,16 @@ import {
   function PrivateRoute ({children, ...rest}){
       const {currentUser} = useAuth();
       if (currentUser && currentUser.email) {
-      if (currentUser.uid === 'cw67NhgIsDhyAdp2AMEuFm11a2G2' | 'YAXN8aZhJQW3d7DhFuZzv8uM4kz1'){
+      if (currentUser.uid === 'cw67NhgIsDhyAdp2AMEuFm11a2G2'){
           AdminLogged = true;
+        } else if(currentUser.uid === 'YAXN8aZhJQW3d7DhFuZzv8uM4kz1') {
+            AdminLogged = true;
         } else {
       AdminLogged = false;
     }
 }
     
-      if(AdminLogged == true){
+      if(AdminLogged === true){
       return (
           <Route {...rest}>
   
