@@ -4,6 +4,7 @@ import HomePage from './components/homepage/homepage';
 import AboutPage from './components/about/about';
 import ContactPage from './components/contact/contact';
 import EditBlog from './components/admin/editblog/editblog';
+import FileEdit from './components/admin/fileedit/fileedit';
 import ApproveArticleComments from './components/admin/articlecomments/articlecomments';
 import ApprovedArticleComments from './components/admin/articlecomments/approvedarticlecomments';
 import MakeBlogPage from './components/admin/makeblog/makeblog';
@@ -101,6 +102,7 @@ return (
         <PrivateRoute path='/warandpieces' component={AddWarPage} />
         <PrivateRoute path='/makeevent'  component={MakeEventPage} />
         <PrivateRoute path='/approve' component={ApprovePage}  />
+        <PrivateRoute path='/fileedit' component={FileEdit} />
         <PrivateRoute path='/approvedcommunity' component={ApprovedCommunity} />
         <PrivateRoute path='/communitysubmissions' component={ApproveCommunity} />
         <PrivateRoute path='/comments' component={ApproveComments} />

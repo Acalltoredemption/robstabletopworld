@@ -1,4 +1,4 @@
-import React, {useRef, useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import { db } from '../../firebase/firebaseconfig';
 import { auth } from '../../firebase/firebaseconfig';
 import banner from '../../images/banner.png';
@@ -132,7 +132,10 @@ const Header = () => {
         </li>
         <li class="nav-item">
         <NavLink to="/blogedit" className="nav-link" id="logged-in-admin">View Blogs</NavLink>
-        </li>     
+        </li>
+        <li class="nav-item">
+        <NavLink to="/fileedit" className="nav-link" id="logged-in-admin">Delete Files</NavLink>
+        </li>       
         <li class="nav-item">
         <NavLink to="/fileupload" className="nav-link" id="logged-in-admin">Upload Files</NavLink>
         </li>
@@ -169,8 +172,8 @@ const Header = () => {
         <li class="nav-item">
         <NavLink exact to="/signup" id="logged-out" className="nav-link">Sign Up</NavLink>
         </li>
-        <li className="nav-link logininfo text-primary font-weight-bold">Signed in:</li>
-        <li className="nav-link text-primary font-weight-bold">{username}</li>  
+        <li className="nav-link logininfo text-primary font-weight-bold" id="logged-in">Signed in:</li>
+        <li className="nav-link text-primary font-weight-bold" id="logged-in">{username}</li>  
         
 
 
