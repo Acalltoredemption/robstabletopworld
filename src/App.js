@@ -33,9 +33,7 @@ import ArticlePage from './components/article/article';
 import history from './history/history';
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
-
-
+import { useAuth } from './contexts/AuthContext';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -43,6 +41,29 @@ import {
     Route,
   } from "react-router-dom";
 
+  var AdminLogged = false;
+  function PrivateRoute ({children, ...rest}){
+      const {currentUser} = useAuth();
+      if (currentUser && currentUser.email) {
+      if (currentUser.uid === 'cw67NhgIsDhyAdp2AMEuFm11a2G2' | 'YAXN8aZhJQW3d7DhFuZzv8uM4kz1'){
+          AdminLogged = true;
+        } else {
+      AdminLogged = false;
+    }
+}
+    
+      if(AdminLogged == true){
+      return (
+          <Route {...rest}>
+  
+          </Route>
+      )
+      } else {
+          return (
+              <div></div>
+          )
+      }
+  }
 
 
 
@@ -50,6 +71,7 @@ import {
 
 const App = () => {
 
+    
 
 return (
     <AuthProvider>
@@ -68,25 +90,25 @@ return (
         <Route path='/communitysubmit' component={CommunitySubmit} />
         <Route path='/community' component={OurCommunityPage} />
         <Route path='/art' component={ArtPage} />
-        <Route path='/editblog' component={EditBlog} />
-        <Route path='/articlecomments' component={ApproveArticleComments} />
-        <Route path='/approvedcomments' component={ApprovedArticleComments} />
-        <Route path='/makeblog' component={MakeBlogPage} />
-        <Route path='/makeblog2' component={MakeBlog2Page} />
-        <Route path='/makeblog3' component={MakeBlog3Page} />
-        <Route path='/warandpieces' component={AddWarPage} />
-        <Route path='/makeevent'  component={MakeEventPage} />
-        <Route path='/approve' component={ApprovePage}  />
-        <Route path='/approvedcommunity' component={ApprovedCommunity} />
-        <Route path='/communitysubmissions' component={ApproveCommunity} />
-        <Route path='/comments' component={ApproveComments} />
-        <Route path='/approved' component={ApprovedPage} />
-        <Route path="/addmerch" component={AddMerch} />
-        <Route path='/merch' component={ViewMerch} />
-        <Route path='/blogedit' component={BlogEdit} />
+        <PrivateRoute path='/editblog' component={EditBlog} />
+        <PrivateRoute path='/articlecomments' component={ApproveArticleComments} />
+        <PrivateRoute path='/approvedcomments' component={ApprovedArticleComments} />
+        <PrivateRoute path='/makeblog' component={MakeBlogPage} />
+        <PrivateRoute path='/makeblog2' component={MakeBlog2Page} />
+        <PrivateRoute path='/makeblog3' component={MakeBlog3Page} />
+        <PrivateRoute path='/warandpieces' component={AddWarPage} />
+        <PrivateRoute path='/makeevent'  component={MakeEventPage} />
+        <PrivateRoute path='/approve' component={ApprovePage}  />
+        <PrivateRoute path='/approvedcommunity' component={ApprovedCommunity} />
+        <PrivateRoute path='/communitysubmissions' component={ApproveCommunity} />
+        <PrivateRoute path='/comments' component={ApproveComments} />
+        <PrivateRoute path='/approved' component={ApprovedPage} />
+        <PrivateRoute path="/addmerch" component={AddMerch} />
+        <PrivateRoute path='/merch' component={ViewMerch} />
+        <PrivateRoute path='/blogedit' component={BlogEdit} />
         <Route path='/login' component={LoginPage} />
         <Route path='/signup' component={SignupPage} />
-        <Route path='/fileupload' component={FileUpload} />
+        <PrivateRoute path='/fileupload' component={FileUpload} />
         <Route path="/fileshare" component={FileShare} />
        
     
