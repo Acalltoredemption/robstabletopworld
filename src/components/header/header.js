@@ -1,6 +1,4 @@
-import React, {useState, useEffect} from 'react';
-import { db } from '../../firebase/firebaseconfig';
-import { auth } from '../../firebase/firebaseconfig';
+import React from 'react';
 import banner from '../../images/banner.png';
 import './header.css';
 import Youtube from  '../../images/Youtube.png';
@@ -18,29 +16,8 @@ import {useAuth} from '../../contexts/AuthContext';
 
 const Header = () => {
 
-  const [username, setUsername] = useState([]);
 
-  useEffect(() => { 
-    auth.onAuthStateChanged(function(user){
-        if(user){
-            var theusersEmail = user.email;
-            var nameCapitalized = theusersEmail.charAt(0).toUpperCase() + theusersEmail.slice(1);
-            fetchUsername(nameCapitalized);
-        }
-    })
-    const fetchUsername =  (nameCapitalized) => {
-        
-         db.collection('usernames').doc(nameCapitalized).get().then(snapshot => {
-            if (snapshot.exists){
-                console.log('Found user data');
-                 var data = snapshot.data();
-                 setUsername(data.username.toString());
-            } else {
-                console.log('no such document');
-            }
-        })
-    }
-},);
+
 
     const {currentUser} = useAuth();
     const loggedInAdmin = document.querySelectorAll('#logged-in-admin')
@@ -51,15 +28,32 @@ const Header = () => {
         //toggle UI elements
         loggedIn.forEach(item => item.style.display = 'block');
         loggedOut.forEach(item => item.style.display = 'none');
-        if (currentUser.uid === 'cw67NhgIsDhyAdp2AMEuFm11a2G2' | 'YAXN8aZhJQW3d7DhFuZzv8uM4kz1'){
-          loggedInAdmin.forEach(item => item.style.display = 'block');
-        }
+
     } else {
         //toggle UI elements
         loggedIn.forEach(item => item.style.display = 'none');
         loggedOut.forEach(item => item.style.display = 'block');
         loggedInAdmin.forEach(item => item.style.display = 'none');
     }
+
+
+
+    var AdminLogged = false;
+
+      if (currentUser && currentUser.email) {
+      if (currentUser.uid === 'cw67NhgIsDhyAdp2AMEuFm11a2G2' && currentUser.email === 'Acalltoredemption@gmail.com'){
+          AdminLogged = true;
+        } else if(currentUser.uid === 'YAXN8aZhJQW3d7DhFuZzv8uM4kz1' && currentUser.email === 'novaprime860@hotmail.com') {
+            AdminLogged = true;
+        } else {
+      AdminLogged = false;
+    }
+}
+    
+      if(AdminLogged === true){
+        loggedInAdmin.forEach(item => item.style.display = 'block');
+      } 
+
 
   
     return (
@@ -120,7 +114,7 @@ const Header = () => {
         </li>
 
         <li class="nav-item dropdown" id="logged-in-admin">
-          <a class="nav-link dropdown-toggle text-success font-weight-bold" id="logged-in-admin" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle text-success font-weight-bold" id="logged-in-admin navbarDropdown" display="none" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             ADMIN
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -132,10 +126,7 @@ const Header = () => {
         </li>
         <li class="nav-item">
         <NavLink to="/blogedit" className="nav-link" id="logged-in-admin">View Blogs</NavLink>
-        </li>
-        <li class="nav-item">
-        <NavLink to="/fileedit" className="nav-link" id="logged-in-admin">Delete Files</NavLink>
-        </li>       
+        </li>     
         <li class="nav-item">
         <NavLink to="/fileupload" className="nav-link" id="logged-in-admin">Upload Files</NavLink>
         </li>
@@ -172,9 +163,6 @@ const Header = () => {
         <li class="nav-item">
         <NavLink exact to="/signup" id="logged-out" className="nav-link">Sign Up</NavLink>
         </li>
-        <li className="nav-link logininfo text-primary font-weight-bold" id="logged-in">Signed in:</li>
-        <li className="nav-link text-primary font-weight-bold" id="logged-in">{username}</li>  
-        
 
 
 

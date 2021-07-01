@@ -205,7 +205,7 @@ const  Article = () => {
         <div className="col-md-12">
             <div className="form-group">
                 <div className="commentholder">
-                <textarea id="form_message" name="message" className="form-control" style={{width: '40rem'}} onChange={updateCommentContent} placeholder="Leave a comment on this article" rows="4" required="required" data-error="Leave a Comment on this article"></textarea>
+                <textarea id="form_message" name="message" className="form-control" style={{width: '80%'}} onChange={updateCommentContent} placeholder="Leave a comment on this article" rows="4" required="required" data-error="Leave a Comment on this article"></textarea>
                 </div>
                 <div className="help-block with-errors"></div>
             </div>
