@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import banner from '../../images/banner.png';
 import './header.css';
 import Youtube from  '../../images/Youtube.png';
@@ -15,15 +15,14 @@ import {useAuth} from '../../contexts/AuthContext';
 
 
 const Header = () => {
-
-
+  var [welcomeMessage, setwelcomeMessage] = useState('');
 
 
     const {currentUser} = useAuth();
     const loggedInAdmin = document.querySelectorAll('#logged-in-admin')
     const loggedIn = document.querySelectorAll('#logged-in');
     const loggedOut = document.querySelectorAll('#logged-out');
-  
+   
     if (currentUser && currentUser.email) {
         //toggle UI elements
         loggedIn.forEach(item => item.style.display = 'block');
@@ -33,26 +32,24 @@ const Header = () => {
         //toggle UI elements
         loggedIn.forEach(item => item.style.display = 'none');
         loggedOut.forEach(item => item.style.display = 'block');
-        loggedInAdmin.forEach(item => item.style.display = 'none');
+    }
+ 
+    if (currentUser && currentUser.email == "acalltoredemption@gmail.com"){
+      loggedInAdmin.forEach(item => item.style.display = "block");
+    }  else if(currentUser && currentUser.email == "novaprime860@hotmail.com"){
+      loggedInAdmin.forEach(item => item.style.display = "block");
+    } else {
+      loggedInAdmin.forEach(item => item.style.display = "none");
     }
 
 
-
-    var AdminLogged = false;
-
-      if (currentUser && currentUser.email) {
-      if (currentUser.uid === 'cw67NhgIsDhyAdp2AMEuFm11a2G2' && currentUser.email === 'Acalltoredemption@gmail.com'){
-          AdminLogged = true;
-        } else if(currentUser.uid === 'YAXN8aZhJQW3d7DhFuZzv8uM4kz1' && currentUser.email === 'novaprime860@hotmail.com') {
-            AdminLogged = true;
-        } else {
-      AdminLogged = false;
-    }
-}
-    
-      if(AdminLogged === true){
-        loggedInAdmin.forEach(item => item.style.display = 'block');
-      } 
+    useEffect(() => {
+      if (currentUser){
+        setwelcomeMessage(`Hello ${currentUser.email}`)
+      } else {
+        setwelcomeMessage('');
+      }
+  },);
 
 
   
@@ -163,6 +160,7 @@ const Header = () => {
         <li class="nav-item">
         <NavLink exact to="/signup" id="logged-out" className="nav-link">Sign Up</NavLink>
         </li>
+        <li className="nav-link text-success">{welcomeMessage}</li>
 
 
 
