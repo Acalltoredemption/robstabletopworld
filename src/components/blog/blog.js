@@ -14,7 +14,7 @@ const  Blog = ({blogs}) => {
                 return(
         <div className="blogpost" key={blog.title}>
       <div className="blogbox"> 
-     <Tilt className="tiltbox">       
+     <Tilt className="tiltboxBlog">       
          <div className="pageblogpost-imagemain">
          <div className='pagecontent' onClick={() => history.push('/article?' + blog.id)}>
          <h1 className='titlemain' onClick={() => history.push('/article?' + blog.id)}>{blog.title}</h1>
