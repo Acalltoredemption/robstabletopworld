@@ -2,6 +2,17 @@
     width: 100%;
     margin-left: 5px;
     margin-right: 5px;
-    margin-top: 15px;
+    margin-top: 25px;
     margin-bottom: 15px;
+}
+
+
+.sidebarStyle {
+    background-color: white;
+    margin-top: 25px;
+    border-radius: 15px;
+    padding-top: 15px;
+}
+.sidebarItems {
+    opacity: 1;
 }

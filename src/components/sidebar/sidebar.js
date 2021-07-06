@@ -10,8 +10,8 @@ import './sidebar.css';
 
 const SideBar = () => {
     return (
-        <div>
-            <div>
+        <div className="sidebarStyle">
+            <div className="sidebarItems">
             <Upcoming />
             <Donate />
             <MiniMarket />
