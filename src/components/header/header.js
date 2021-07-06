@@ -50,7 +50,7 @@ const Header = () => {
         setwelcomeMessage('');
       }
   },);
-
+ 
 
   
     return (
@@ -58,10 +58,10 @@ const Header = () => {
       <div>
           <a name="top" style={{display: 'none'}}> screen anchor </a>
           <div className="bannerparent">
-      <img className='banner' src={banner} alt='channel banner'></img>
+      <div className='banner' alt='channel banner'></div>
       </div>
       </div>
-
+ 
 
       <nav class="navbar navbar-expand-lg navbar-light navshadow">
   <div class="container-fluid">
