@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import banner from '../../images/banner.png';
+import history from '../../history/history'
 import './header.css';
 import Youtube from  '../../images/Youtube.png';
 import Twitter from '../../images/Twitter.png';
@@ -50,6 +50,10 @@ const Header = () => {
         setwelcomeMessage('');
       }
   },);
+
+  function headerClick() {
+    history.push('/')
+  }
  
 
   
@@ -58,7 +62,7 @@ const Header = () => {
       <div>
           <a name="top" style={{display: 'none'}}> screen anchor </a>
           <div className="bannerparent">
-      <div className='banner' alt='channel banner'></div>
+      <div className='banner' onClick={headerClick} alt='channel banner'></div>
       </div>
       </div>
  

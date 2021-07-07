@@ -111,7 +111,9 @@ const  Article = () => {
         setCommentContent(e.target.value);
     }
 
-
+    function loginRedirect(){
+        history.push('/login');
+    }
 
 
 
@@ -122,6 +124,8 @@ const  Article = () => {
             blog.map(blog => {
                 const secondImage = document.querySelectorAll('#secondimg');
                 const thirdImg = document.querySelectorAll('#thirdimg');
+                const secondParagraph = document.querySelectorAll('#secondcontent');
+                const thirdParagraph = document.querySelectorAll('#thirdcontent');
             
                 if (blog.secondphoto !== undefined) {
                     secondImage.forEach(item => item.style.display = 'flex');
@@ -135,6 +139,17 @@ const  Article = () => {
                     thirdImg.forEach(item => item.style.display = 'none');
                 }
 
+                if(blog.secondcontent !== undefined ){
+                    secondParagraph.forEach(item => item.style.display = 'flex');
+                } else {
+                    secondParagraph.forEach(item => item.style.display = 'none');
+                }
+                if(blog.thirdcontent !== undefined){
+                    thirdParagraph.forEach(item => item.style.display = 'flex');
+                } else {
+                    thirdParagraph.forEach(item => item.style.display = 'none');
+                }
+
 
                 return(
         <div className="blogpost" key={blog.title}>
@@ -145,7 +160,7 @@ const  Article = () => {
          </div>
          <div className="blogpost-author">{blog.title}</div>
          <div className="blogpost-author">{blog.author}</div>
-         <div className="blogpost-summary">
+         <div className="blogpost-summary" id="firstcontent">
              {blog.content}
          </div>
 
@@ -158,7 +173,7 @@ const  Article = () => {
          </div>
         </div>
 
-         <div className="blogpost-summary">
+         <div className="blogpost-summary" id="secondcontent">
              {blog.secondcontent}
          </div>
 
@@ -168,10 +183,10 @@ const  Article = () => {
          </div>
         </div>
 
-        <div className="blogpost-summary">
+        <div className="blogpost-summary" id="thirdcontent">
              {blog.thirdcontent}
          </div>
-         <hr></hr>
+
          <div className="buttondiv"> 
 
 
@@ -201,22 +216,21 @@ const  Article = () => {
 
                 }
          <form id="add-blog-form" onSubmit={handleSubmit}>
-         <div className="row">
-        <div className="col-md-12">
-            <div className="form-group">
-                <div className="commentholder">
-                <textarea id="form_message" name="message" className="form-control" style={{width: '80%'}} onChange={updateCommentContent} placeholder="Leave a comment on this article" rows="4" required="required" data-error="Leave a Comment on this article"></textarea>
-                </div>
-                <div className="help-block with-errors"></div>
+
+
+
+        <div id="commentscontainer" className="comments-container">
+            <div className="comments-field">
+            <textarea id="form_message" name="message" className="commentsfield" onChange={updateCommentContent} placeholder="Leave a comment on this article" rows="4" required="required" data-error="Leave a Comment on this article"></textarea>
+            <button type="submit" id="logged-in-article" className="submitbtn"disabled={commentContent.length < 5} >Submit</button>
+
+            <button id="logged-out-article" className="loggedoutbtn" onClick={loginRedirect}>Sign in to Comment!</button>
+
+            <div className="help-block with-errors"></div>
             </div>
+
         </div>
-        <div className="col-md-12">
-            <div className="thecenterertwo">
-                <p id="logged-out-article">Please log in to comment on this blog.</p>
-            <input type="submit" disabled={commentContent.length < 5}id="logged-in-article" className="btn btn-success btn-send" value="Send message" />
-            </div>
-        </div>
-    </div>
+
     </form>
     
 
