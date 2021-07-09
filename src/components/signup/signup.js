@@ -74,35 +74,29 @@ const SigningUp = () => {
         </div>
 
         <form className="loginform" onSubmit={handleSubmit}>
-        <Container className="align-items-center w-100">
-        <h2>Sign Up</h2>
+        <Container>
+        
+        <div className="logincard">
         {error && <Alert variant="danger">{error}</Alert>}
-        <div className="col-md-6">
             <div className="form-group">
-                <label htmlFor="email">Email</label>
-        <input className="form-control" type="text" ref={emailRef} onChange={handleEmail} id="email" name="email" placeholder="Email" />
+             
+        <input className="form-control" type="text" className="formstyle" ref={emailRef} onChange={handleEmail} id="email" name="email" placeholder="Email" />
         </div>
-        </div>
-        <div className="col-md-6">
             <div className="form-group">
-                <label htmlFor="username">Username</label>
-        <input className="form-control" type="text" onChange={handleChange} id="username" name="username" placeholder="Username" />
+              
+        <input className="form-control" type="text" className="formstyle" onChange={handleChange} id="username" name="username" placeholder="Username" />
         </div>
-        </div>
-        <div className="col-md-6">
             <div className="form-group">
-                <label htmlFor="password">Password</label>
-                <input className="form-control" type="text" ref={passwordRef} id="password" name="password" placeholder="Password" />
+                
+                <input className="form-control" type="text" className="formstyle" ref={passwordRef} id="password" name="password" placeholder="Password" />
         </div>
-        </div>
-        <div className="col-md-6">
             <div className="form-group">
-                <label htmlFor="password">Password Confirmation</label>
-                <input className="form-control" type="text" id="passwordConfirm" ref={passwordConfirmRef} name="passwordConfirm" placeholder="Password Confirmation" />
-        </div>
+            
+                <input className="form-control" type="text" className="formstyle" id="passwordConfirm" ref={passwordConfirmRef} name="passwordConfirm" placeholder="Password Confirmation" />
         </div>
         <div className="col-md-12">
-                    <input type="submit" disabled={loading}className="btn btn-success btn-send" value="Sign Up" />
+        <input type="submit" disabled={loading} className="submitbtns" value="Sign Up" />
+                </div>
                 </div>
                 </Container>
         </form>
