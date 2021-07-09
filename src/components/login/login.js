@@ -36,26 +36,28 @@ const Login = () => {
         <div>
 <form className="loginform" onSubmit={handleSubmit}>
 
-
+ 
 <div className="centerme">
             <p>Need an account? <Link to="/signup">Sign Up</Link></p>
         </div>
 {error && <Alert variant="danger">{error}</Alert>}
-<div className="col-md-6">
+
+<div className="logincard">
+
     <div className="form-group">
-        <label htmlFor="email">Email</label>
-<input className="form-control" ref={emailRef} type="text" id="email" name="email" placeholder="Email" />
+<input className=" formstyle" ref={emailRef} type="text" id="email" name="email" placeholder="Email" />
+
 </div>
-</div>
-<div className="col-md-6">
+
     <div className="form-group">
-        <label htmlFor="password">Password</label>
-        <input className="form-control" ref={passwordRef} type="text" id="password" name="password" placeholder="Password" />
-</div>
+        <input className=" formstyle" ref={passwordRef} type="text" id="password" name="password" placeholder="Password" />
+  
 </div>
 <div className="col-md-12">
-            <input type="submit" className="btn btn-success btn-send" value="Log In" />
+            <input type="submit" className="submitbtns" value="Log In" />
         </div>
+        </div>
+
 </form>
         </div>
      );
