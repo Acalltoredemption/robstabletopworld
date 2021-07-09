@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import 'firebase/storage';
 import {firebase, db} from '../../firebase/firebaseconfig';
 import history from '../../history/history';
-import './submissions.css'
+import './communitysubmit.css'
 import {toast} from 'react-toastify';
 
 
@@ -79,36 +79,38 @@ return (
     <form id="add-blog-form" onSubmit={this.handleCommunitySubmit}>
 
         <div className="infodiv communitysubmit">
+            <div className="logincard">
         <button type="submit" onClick={() => history.push('/submissions')} className="btn communitybutton btn-primary">Art Submissions</button>
+
             <h3>Community Submissions</h3>
             <p>Join the Robs Tabletop World community! Tell us a bit about yourself and be featured here on the website! 
                 <br></br>Once per month we will select a community member to win a Miniature Market gift certificate!</p>
-        </div>
-        <div className="col-md-6">
-            <div className="form-group">
-                <label htmlFor="name">Your Name</label>
-        <input className="form-control" type="text" onChange={this.handleChange} id="name" name="name" placeholder="Your Name" />
-        </div>
-        </div> 
-            <div className="col-md-12">
+       
+
+            <div className="form-group"></div>
+
+        <input className="form-control formstyle"  type="text" onChange={this.handleChange} id="name" name="name" placeholder="Your Name" />
+
+
                 <div className="form-group">
-                <label htmlFor="description">About You</label>
-        <textarea className="form-control" type="text" onChange={this.handleChange} id="bio" name="bio" placeholder="About You" />
-        </div>
+
+        <textarea className="form-control formstyle"  type="text" onChange={this.handleChange} id="bio" name="bio" placeholder="About You" />
         </div>
        
-        <div className="col-md-6">
+
             <div className="form-group">
-                <label htmlFor="image">Your Photo</label>
-                <input className="form-control" type="file" onChange={this.photoStateHold} placeholder="Post Image" name="photo" id="photo" />
+
+                <input className="form-control formstyle"  size="20"  type="file" onChange={this.photoStateHold} placeholder="Post Image" name="photo" id="photo" />
         </div>
-        </div>
-        <div className="col-md-12">
-            <input type="submit" disabled={this.state.bio === '' || this.state.name === '' || this.state.photostate === ''} className="btn btn-primary btn-send" value="Submit" />
+
+
+            <input type="submit"   disabled={this.state.bio === '' || this.state.name === '' || this.state.photostate === ''} className="submitbtns formstyle" value="Submit" />
+            </div>
+
         </div>
 
         <img id="img" alt =""></img>
-
+        
     </form>
 )
     }
