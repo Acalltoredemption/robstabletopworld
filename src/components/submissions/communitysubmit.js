@@ -99,11 +99,11 @@ return (
        
 
             <div className="form-group">
-
+            <label htmlFor="photo">Your Photo</label>
                 <input className="form-control formstyle"  size="20"  type="file" onChange={this.photoStateHold} placeholder="Post Image" name="photo" id="photo" />
         </div>
 
-
+           
             <input type="submit"   disabled={this.state.bio === '' || this.state.name === '' || this.state.photostate === ''} className="submitbtns formstyle" value="Submit" />
             </div>
 

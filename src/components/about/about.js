@@ -14,7 +14,7 @@ const About = () => {
             <img src={aboutme} alt="Rob with Ric Flair"/>
             </div>
             </div>
-            <div className="itemb">
+            <div className="logincard">
             <p>
 Having over 30 years of experience in the hobby, Rob Oren has taught through his YouTube
 channel a way of painting miniatures that is simple and with easy instructions that anyone

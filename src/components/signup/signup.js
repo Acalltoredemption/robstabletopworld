@@ -9,6 +9,7 @@ import {Alert} from 'react-bootstrap';
 import {db} from '../../firebase/firebaseconfig';
 import history from '../../history/history';
 import {toast} from 'react-toastify';
+import './signup.css';
 
 
 

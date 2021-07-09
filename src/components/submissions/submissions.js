@@ -80,35 +80,37 @@ return (
     <form id="add-blog-form" onSubmit={this.handleSubmit}>
 
         <div className="infodiv communitysubmit">
+            <div className="logincard">
         <button type="submit"  onClick={() => history.push('/communitysubmit')} className="communitybutton btn btn-primary">Community Submissions</button>
             <h3>Art Submissions</h3>
             <p>Have a project that came out well or something you'd like to share? Submit it below for consideration to be added to our Art Showcase!</p>
-        </div>
-        <div className="col-md-6">
+
+
             <div className="form-group">
-                <label htmlFor="name">Your Name</label>
+
         <input className="form-control" type="text" onChange={this.handleChange} id="name" name="name" placeholder="Author Name" />
-        </div>
+
         </div> 
-            <div className="col-md-12">
+
                 <div className="form-group">
-                <label htmlFor="description">Short Description</label>
+
         <textarea className="form-control" type="text" onChange={this.handleChange} id="description" name="description" placeholder="Description" />
-        </div>
+
         </div>
        
-        <div className="col-md-6">
+
             <div className="form-group">
                 <label htmlFor="image">Project Photo</label>
                 <input className="form-control" type="file" onChange={this.photoStateHold} placeholder="Post Image" name="image" id="photo" />
+
         </div>
-        </div>
-        <div className="col-md-12">
-            <input type="submit" disabled={this.state.description === '' || this.state.name === '' || this.state.photostate === ''}className="btn btn-primary btn-send" value="Submit" />
-        </div>
+
+            <input type="submit" disabled={this.state.description === '' || this.state.name === '' || this.state.photostate === ''}className="submitbtns formstyle" value="Submit" />
+
 
         <img id="img" alt =""></img>
-
+        </div>
+        </div>
     </form>
 )
     }
