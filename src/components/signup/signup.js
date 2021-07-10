@@ -81,19 +81,19 @@ const SigningUp = () => {
         {error && <Alert variant="danger">{error}</Alert>}
             <div className="form-group">
              
-        <input className="form-control" type="text" className="formstyle" ref={emailRef} onChange={handleEmail} id="email" name="email" placeholder="Email" />
+        <input className="form-control formstyle" type="text" ref={emailRef} onChange={handleEmail} id="email" name="email" placeholder="Email" />
         </div>
             <div className="form-group">
               
-        <input className="form-control" type="text" className="formstyle" onChange={handleChange} id="username" name="username" placeholder="Username" />
+        <input className="form-control formstyle" type="text" onChange={handleChange} id="username" name="username" placeholder="Username" />
         </div>
             <div className="form-group">
                 
-                <input className="form-control" type="text" className="formstyle" ref={passwordRef} id="password" name="password" placeholder="Password" />
+                <input className="form-control formstyle" type="text" ref={passwordRef} id="password" name="password" placeholder="Password" />
         </div>
             <div className="form-group">
             
-                <input className="form-control" type="text" className="formstyle" id="passwordConfirm" ref={passwordConfirmRef} name="passwordConfirm" placeholder="Password Confirmation" />
+                <input className="form-control formstyle" type="text" id="passwordConfirm" ref={passwordConfirmRef} name="passwordConfirm" placeholder="Password Confirmation" />
         </div>
         <div className="col-md-12">
         <input type="submit" disabled={loading} className="submitbtns" value="Sign Up" />

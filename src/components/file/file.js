@@ -11,7 +11,7 @@ const  File = ({files}) => {
             files.map(file => {
                 return(
                     <div className="filebox">
-                       <div className="card">
+                       <div className="card cardshadow">
                 <div className="card-body">
                 <h5 className="card-title">{file.title}</h5>
                 <p className="card-text">{file.content}</p>

@@ -7,11 +7,12 @@ const {Ribbon} = Badge;
 const Members = ({members}) => {
     return(
         <div>
+            <div className="container2">
         <div className="artbanner">
-        <div className="comtitle">
+        
             <img src={comimage} className="dungeonimg" alt="Community Showcase Banner" />
             <div className="thetitle">
-        <h2 className="titlestyler">Community Showcase</h2>
+        <h2 className="titlestyler2">Our Community</h2>
             </div>
         </div>
         </div>

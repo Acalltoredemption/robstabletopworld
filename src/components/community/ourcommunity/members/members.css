@@ -2,6 +2,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
+}
+.container2 {
+    position: relative;
+    text-align: center;
 }
 .comimg {
     width: 600px;
@@ -12,15 +17,21 @@
     border-radius: 4px;
     display: block;
 }
-.thetitle {
+.thetitle2 {
     height: 20px;
     padding: 0 8px;
     color: white;
     text-decoration: outline;
-    position: absolute;
+    position: relative;
     margin-bottom: 50px;
     margin-left: 200px;
     -webkit-text-stroke: 1px black;
+}
+.titlestyler2 {
+    position: absolute;
+    top:40%;
+    left: 40%;
+    
 }
 .showcaseitem {
     width: 100%;

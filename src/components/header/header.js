@@ -34,9 +34,9 @@ const Header = () => {
         loggedOut.forEach(item => item.style.display = 'block');
     }
  
-    if (currentUser && currentUser.email == "acalltoredemption@gmail.com"){
+    if (currentUser && currentUser.email === "acalltoredemption@gmail.com"){
       loggedInAdmin.forEach(item => item.style.display = "block");
-    }  else if(currentUser && currentUser.email == "novaprime860@hotmail.com"){
+    }  else if(currentUser && currentUser.email === "novaprime860@hotmail.com"){
       loggedInAdmin.forEach(item => item.style.display = "block");
     } else {
       loggedInAdmin.forEach(item => item.style.display = "none");
@@ -67,90 +67,90 @@ const Header = () => {
       </div>
  
 
-      <nav class="navbar navbar-expand-lg navbar-light navshadow">
-  <div class="container-fluid">
+      <nav className="navbar navbar-expand-lg navbar-light navshadow">
+  <div className="container-fluid">
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
+    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+        <li className="nav-item">
         <NavLink exact to="/" className="nav-link">Home</NavLink>
         </li>
 
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li className="nav-item dropdown">
+          <a className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             About
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li class="nav-item">
+          <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li className="nav-item">
         <NavLink to="/about" className="nav-link">About Me</NavLink>
         </li>
-        <li class="nav-item"> 
+        <li className="nav-item"> 
         <NavLink to="/contact" className="nav-link">Contact Me</NavLink>
         </li>
           </ul>
         </li>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li className="nav-item dropdown">
+          <a className="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Community
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li class="nav-item">
+          <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li className="nav-item">
         <NavLink to="/art" className="nav-link">Art Showcase</NavLink>
         </li>
-        <li class="nav-item">
+        <li className="nav-item">
         <NavLink to="/community" className="nav-link">Our Community</NavLink>
         </li>
-        <li class="nav-item">
+        <li className="nav-item">
         <NavLink to="/submissions" id="logged-in" className="nav-link">Submissions</NavLink>
         </li>
-        <li class="nav-item">
+        <li className="nav-item">
         <NavLink to="/fileshare" className="nav-link">File Share</NavLink>
         </li>
           </ul>
         </li>
 
-        <li class="nav-item dropdown" id="logged-in-admin">
-          <a class="nav-link dropdown-toggle text-success font-weight-bold" id="logged-in-admin navbarDropdown" display="none" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li className="nav-item dropdown" id="logged-in-admin">
+          <a className="nav-link dropdown-toggle text-success font-weight-bold" id="logged-in-admin navbarDropdown" display="none" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             ADMIN
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
             <li className="adminnav">
               Site Content
             </li>
-          <li class="nav-item">
+          <li className="nav-item">
           <NavLink to="/makeblog" className="nav-link" id="logged-in-admin">Make Blogpost</NavLink>
         </li>
-        <li class="nav-item">
+        <li className="nav-item">
         <NavLink to="/blogedit" className="nav-link" id="logged-in-admin">View Blogs</NavLink>
         </li>     
-        <li class="nav-item">
+        <li className="nav-item">
         <NavLink to="/fileupload" className="nav-link" id="logged-in-admin">Upload Files</NavLink>
         </li>
-        <li class="nav-item">
+        <li className="nav-item">
         <NavLink to="/makeevent" className="nav-link" id="logged-in-admin">Vid of the Week</NavLink>
         </li>
-        <li class="nav-item">
+        <li className="nav-item">
         <NavLink to="/warandpieces" className="nav-link" id="logged-in-admin">War & Pieces</NavLink>
         </li>
 
         <li className="adminnav">
           Users Submissions
         </li>
-        <li class="nav-item">
+        <li className="nav-item">
         <NavLink to="/communitysubmissions" className="nav-link" id="logged-in-admin">Community Submissions</NavLink>
         </li>
-        <li class="nav-item">
+        <li className="nav-item">
         <NavLink to="/approve" className="nav-link" id="logged-in-admin">Art Submissions</NavLink>
         </li>
-        <li class="nav-item">
+        <li className="nav-item">
         <NavLink to="/articlecomments" className="nav-link" id="logged-in-admin">Article Comments</NavLink>
         </li>
-        <li class="nav-item">
+        <li className="nav-item">
         <NavLink to="/comments" className="nav-link" id="logged-in-admin">Message Inbox</NavLink>
         </li>
 
@@ -158,10 +158,10 @@ const Header = () => {
           </ul>
         </li>
 
-        <li class="nav-item">
+        <li className="nav-item">
         <NavLink exact to="/login" id="logged-out" className="nav-link">Log In</NavLink>
         </li>
-        <li class="nav-item">
+        <li className="nav-item">
         <NavLink exact to="/signup" id="logged-out" className="nav-link">Sign Up</NavLink>
         </li>
         <li className="nav-link text-success">{welcomeMessage}</li>
@@ -171,7 +171,7 @@ const Header = () => {
       </ul>
     </div>
   </div>
-  <div class="float-right">
+  <div className="float-right">
   <a href="https://www.youtube.com/user/seahawk8601" target="_blank" rel="noopener noreferrer" ><img className="Youtube" src={Youtube} alt="Youtube logo"></img></a>
       <a href="https://twitter.com/seahawk860" target="_blank" rel="noopener noreferrer"><img className="Twitter" src={Twitter} alt="Twitter logo"></img></a>
       <a href="https://www.instagram.com/robstabletopworld/" target="_blank" rel="noopener noreferrer"><img className="Instagram " src={Instagram} alt="Instagram logo"></img></a>

@@ -8,12 +8,13 @@ const {Ribbon} = Badge;
 const Item = ({items}) => {
     return(
         <div >
+            <div className="container2">
             <div className="artbanner">
-        <div className="comtitle">
+ 
             <img src={artimage} className="dungeonimg" alt="Community banner " />
             <div className="thetitle">
-        <h2 className="titlestyler">Art Showcase</h2>
-            </div> 
+        <h2 className="titlestyler2">Art Showcase</h2>
+        </div>
         </div>
         </div>
         <div className="showcaseholder">
