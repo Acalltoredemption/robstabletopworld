@@ -17,7 +17,7 @@ import {useAuth} from '../../contexts/AuthContext';
 const Header = () => {
   var [welcomeMessage, setwelcomeMessage] = useState('');
 
-
+    const {logout} = useAuth();
     const {currentUser} = useAuth();
     const loggedInAdmin = document.querySelectorAll('#logged-in-admin')
     const loggedIn = document.querySelectorAll('#logged-in');
@@ -163,6 +163,11 @@ const Header = () => {
         </li>
         <li className="nav-item">
         <NavLink exact to="/signup" id="logged-out" className="nav-link">Sign Up</NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink onClick={logout} exact to="/" id="logged-in" className="nav-link">
+            Log Out
+          </NavLink>
         </li>
         <li className="nav-link text-success">{welcomeMessage}</li>
 

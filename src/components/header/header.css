@@ -11,6 +11,9 @@
     background-blend-mode:multiply;
 
 }
+.banner:hover {
+  cursor: pointer;
+}
 
 @media(max-width: 1200px){
   .banner {
