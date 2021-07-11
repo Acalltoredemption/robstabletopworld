@@ -54,11 +54,47 @@ const Header = () => {
   function headerClick() {
     history.push('/')
   }
+
+
+  const {body} = document;
+
+  function changeBackground(number) {
+    // Check if background is already showing
+    let previousBackground;
+    if (body.className){
+        previousBackground = body.className;
+    }
+    // Reset CSS class for body
+    body.className = '';
+
+    switch (number) {
+        case '1':
+        return(previousBackground === 'background-1' ? false : body.classList.add('background-1'));
+            case '2':
+                return(previousBackground === 'background-2' ? false : body.classList.add('background-2'));
+                case '3':
+                    return(previousBackground === 'background-3' ? false : body.classList.add('background-3'));
+                    default:
+                        break;
+    }
+}
  
 
   
     return (
     <div>
+      
+      <div className="background-toggles" title="Change Background">
+            <div className="background-1" onClick={() => changeBackground('1')}></div>
+            <div className="background-2" onClick={() => changeBackground('2')}></div>
+            <div className="background-3" onClick={() => changeBackground('3')}></div>
+        </div>
+
+
+
+
+
+
       <div>
           <a name="top" style={{display: 'none'}}> screen anchor </a>
           <div className="bannerparent">
