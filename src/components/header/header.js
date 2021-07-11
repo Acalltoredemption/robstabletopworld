@@ -92,9 +92,6 @@ const Header = () => {
 
 
 
-
-
-
       <div>
           <a name="top" style={{display: 'none'}}> screen anchor </a>
           <div className="bannerparent">

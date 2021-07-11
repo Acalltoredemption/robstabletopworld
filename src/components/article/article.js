@@ -153,8 +153,9 @@ const  Article = () => {
 
                 return(
         <div className="blogpost" key={blog.title}>
+            <div className="title-author-box">
          <div className="blogpost-author">{blog.title}</div>
-         <div className="blogpost-author">{blog.author}</div>
+         </div>
       <div className="blogbox2">       
          <div className="pageblogpost-image2">
          <img className="blogimg2"  src={blog.photo} alt="a blogpost" /> 
