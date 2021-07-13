@@ -10,6 +10,7 @@ import
 {NavLink}
 from "react-router-dom";
 import {useAuth} from '../../contexts/AuthContext';
+import { Navbar } from 'react-bootstrap';
 
 
 
@@ -57,7 +58,7 @@ const Header = () => {
 
 
   const {body} = document;
-
+  let Navbar = document.getElementById('navvy');
   function changeBackground(number) {
     // Check if background is already showing
     let previousBackground;
@@ -66,14 +67,24 @@ const Header = () => {
     }
     // Reset CSS class for body
     body.className = '';
+    // Get elements for toggling light and dark modes
+
+
+
+
 
     switch (number) {
         case '1':
+          Navbar.classList.remove('Navcolor-3');
         return(previousBackground === 'background-1' ? false : body.classList.add('background-1'));
-            case '2':
-                return(previousBackground === 'background-2' ? false : body.classList.add('background-2'));
                 case '3':
-                    return(previousBackground === 'background-3' ? false : body.classList.add('background-3'));
+                  if(Navbar.classList.contains('Navcolor-3')){
+                    Navbar.classList.remove('Navcolor-3');
+                  } else {
+                    Navbar.classList.add('Navcolor-3');
+                  }
+                  return(previousBackground === 'background-3' ? false : body.classList.add('background-3'));
+
                     default:
                         break;
     }
@@ -86,7 +97,6 @@ const Header = () => {
       
       <div className="background-toggles" title="Change Background">
             <div className="background-1" onClick={() => changeBackground('1')}></div>
-            <div className="background-2" onClick={() => changeBackground('2')}></div>
             <div className="background-3" onClick={() => changeBackground('3')}></div>
         </div>
 
@@ -100,7 +110,7 @@ const Header = () => {
       </div>
  
 
-      <nav className="navbar navbar-expand-lg navbar-light navshadow">
+      <nav className="navbar navbar-expand-lg navbar-light navshadow" id="navvy">
   <div className="container-fluid">
 
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -109,12 +119,14 @@ const Header = () => {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
+          <div className="darkmode">
         <NavLink exact to="/" className="nav-link">Home</NavLink>
+        </div>
         </li>
 
 
         <li className="nav-item dropdown">
-          <a className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a className="nav-link dropdown-toggle navitem1" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             About
           </a>
           <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
